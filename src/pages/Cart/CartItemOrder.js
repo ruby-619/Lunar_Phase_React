@@ -77,7 +77,7 @@ function CartItemOrder(props) {
                 <div className="itemPic-sm mr-3 overflow-hidden">
                   <img
                     className="h-100"
-                    src="/img/Product/mc01-00.jpg"
+                    src={`/img/Product/${item.itemCoverImg}`}
                     alt=""
                   />
                 </div>

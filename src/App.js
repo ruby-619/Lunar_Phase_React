@@ -20,12 +20,21 @@ import CartItem from './pages/Cart/CartItem'
 import CartEv from './pages/Cart/CartEv'
 
 // 晴
-import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
-import ArticleIndex2 from "./pages/article/ArticleIndex2.js";
-import ArticleIndex3 from "./pages/article/ArticleIndex3.js";
-import ArticleHealth from "./pages/article/ArticleHealth.js";
-import ArticleDetail from "./pages/article/ArticleDetail.js";
-import PeriodRecord from "./pages/article/PeriodRecord.js";
+// import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
+// import ArticleIndex2 from "./pages/article/ArticleIndex2.js";
+// import ArticleIndex3 from "./pages/article/ArticleIndex3.js";
+// import ArticleHealth from "./pages/article/ArticleHealth.js";
+// import ArticleDetail from "./pages/article/ArticleDetail.js";
+// import PeriodRecord from "./pages/article/PeriodRecord.js";
+
+// Apple
+import KitIndex from './pages/Kit/KitIndex'
+import KitTest1 from './pages/Kit/KitTest1'
+import KitTest2 from './pages/Kit/KitTest2'
+import KitTest3 from './pages/Kit/KitTest3'
+import KitTest4 from './pages/Kit/KitTest4'
+import KitSetList from './pages/Kit/KitSetList'
+import KitShoppingList from './pages/Kit/KitShoppingList'
 
 const _ = require('lodash');
 
@@ -114,7 +123,7 @@ function App() {
           {/* Tanya Route */}
 
           {/* 晴 */}
-          <Route path="/article/health">
+          {/* <Route path="/article/health">
             <ArticleHealth />
           </Route>
 
@@ -133,8 +142,32 @@ function App() {
           </Route>
           <Route path="/article3">
             <ArticleIndex3 />
-          </Route>
+          </Route> */}
           {/* 晴 */}
+
+          {/* Apple */}
+          <Route path="/kitIndex" component={KitIndex}>
+            {/* <KitIndex /> */}
+          </Route>
+          <Route path="/kitTest1">
+            <KitTest1 />
+          </Route>
+          <Route path="/kitTest2">
+            <KitTest2 />
+          </Route>
+          <Route path="/kitTest3">
+            <KitTest3 />
+          </Route>
+          <Route path="/kitTest4">
+            <KitTest4 />
+          </Route>
+          <Route path="/kitSetList">
+            <KitSetList />
+          </Route>
+          <Route path="/kitShoppingList" component={KitShoppingList}>
+            {/* <KitShoppingList /> */}
+          </Route>
+          {/* Apple */}
           </ScrollToTop>
         </Switch>
       </>
