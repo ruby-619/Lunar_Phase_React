@@ -13,6 +13,7 @@ import PdTopPick from './components/PdTopPick'
 import PdItemsAll from './components/PdItemsAll'
 
 function Product(props) {
+  const {cartQty}=props
   const [cateId, setCateId] = useState(0)
 
   // drawing animate
@@ -42,7 +43,7 @@ function Product(props) {
 
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty}/>
       {/* breadcrumb */}
       {/* ----- carousel ----- */}
       <PdSlider />

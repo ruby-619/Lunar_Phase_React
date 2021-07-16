@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import EventList from './pages/Event/EventList'
 import EventDetail from './pages/Event/EventDetail'
 import EventIndex2 from './pages/Event/EventIndex2'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import EventCategoryCard from './pages/Event/components/EventCategoryCard'
 
 // Tanya
@@ -64,16 +64,16 @@ function App() {
         <Switch>
           <ScrollToTop>
           <Route path="/category/:id?">
-            <EventCategoryCard />
+            <EventCategoryCard cartQty={cartQty}/>
           </Route>
           <Route path="/event-list">
-            <EventList />
+            <EventList cartQty={cartQty}/>
           </Route>
           <Route path="/event-detail/:id?">
-            <EventDetail />
+            <EventDetail cartQty={cartQty}/>
           </Route>
           <Route path="/event">
-            <EventIndex2 renderItem />
+            <EventIndex2 renderItem cartQty={cartQty}/>
           </Route>
 
           {/* J */}
@@ -93,17 +93,17 @@ function App() {
 
           {/* Tanya Route */}
           <Route path="/product">
-              <Product />
+              <Product cartQty={cartQty}/>
             </Route>
             <Route path="/product-detail/:itemId">
-              <ProductDetail />
+              <ProductDetail cartQty={cartQty}/>
             </Route>
             <Route exact path="/">
-              <IndexMy />
+              <IndexMy cartQty={cartQty}/>
             </Route>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Home />
-          </Route>
+          </Route> */}
           {/* Tanya Route */}
           </ScrollToTop>
         </Switch>

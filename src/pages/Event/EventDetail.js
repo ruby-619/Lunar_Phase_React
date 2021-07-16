@@ -5,10 +5,11 @@ import LunarPhaseFooter from '../../components/LunarPhaseFooter'
 import './Event.scss'
 
 
-const EventDetail = () => {
+const EventDetail = (props) => {
+  const{cartQty}=props
   return (
     <div>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty}/>
       <body className="bg2">
         <EventDetailCard />
         <LunarPhaseFooter />

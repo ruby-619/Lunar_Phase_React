@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link ,withRouter} from 'react-router-dom'
 import { Pagination } from 'react-bootstrap'
 import DateSearch from './Filter/DateSearch'
 import Location from './Filter/Location'
@@ -12,7 +12,7 @@ import { FcBookmark } from 'react-icons/fc'
 // import { NetworkAuthenticationRequire } from 'http-errors'
 // import { data } from 'jquery'
 
-const EventListCard = () => {
+const EventListCard = (props) => {
   const [collection, setcollection] = useState([1, 1, 1, 1, 1, 1])
   const [event, setEvent] = useState([]) //初始資料
   const [data, setdata] = useState([]) //初始資料
@@ -200,15 +200,15 @@ const EventListCard = () => {
 
           {displayEvent.map((v, i) => {
             return (
-              <Link to={`/event-detail/${v.id}`}>
-                {console.log(v.id)}
-
+             
                 <div class="ecard2 mt-5 d-flex">
                   <div class="photo2">
                     <img src={`/img/Event/${v.eventImg}`} />
                   </div>
                   <div class="text">
-                    <h4 className="TextAlignLeft">{v.eventName}</h4>
+                  
+                    <h4 onClick={()=>{props.history.push(`/event-detail/${v.id}`)} }className="TextAlignLeft">{v.eventName}</h4>
+                
                     <div class="line2 d-flex justify-content-between align-items-center border-bottom pb-3 pt-3">
                       <div className="h6-tc d-flex align-items-center">
                         <div>
@@ -226,7 +226,7 @@ const EventListCard = () => {
                           {collection[i] === 1 ? (
                             <BsBookmark
                               size="22px"
-                              onMouseDown={() => {
+                              onClick={() => {
                                 const newCollection = [...collection]
                                 newCollection[i] =
                                   newCollection[i] === 1 ? 0 : 1
@@ -236,8 +236,11 @@ const EventListCard = () => {
                           ) : (
                             <FcBookmark
                               size="22px"
-                              onMouseDown={() => {
-                                setcollection(1)
+                              onClick={() => {
+                                const newCollection = [...collection]
+                                newCollection[i] =
+                                  newCollection[i] === 1 ? 0 : 1
+                                setcollection(newCollection)
                               }}
                             />
                           )}
@@ -264,7 +267,7 @@ const EventListCard = () => {
                     </div>
                   </div>
                 </div>
-              </Link>
+                
             )
           })}
           <div>
@@ -274,7 +277,8 @@ const EventListCard = () => {
         {/* </div> */}
       </body>
     </div>
+    
   )
 }
 
-export default EventListCard
+export default withRouter(EventListCard)

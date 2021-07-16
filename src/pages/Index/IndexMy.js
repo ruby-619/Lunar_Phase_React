@@ -13,7 +13,8 @@ import { VscChevronLeft, VscChevronRight } from 'react-icons/vsc'
 // import { VscChevronRight } from 'react-icons/vsc'
 import { RiMoonClearFill } from 'react-icons/ri'
 
-function Index() {
+function Index(props) {
+  const { cartQty } = props
   return (
     <>
       {/* HEADER */}
@@ -82,7 +83,7 @@ function Index() {
 
       {/* NAVBAR */}
 
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty}/>
 
       {/* ABOUT */}
       <div id="about" className="index-about container-fluid">

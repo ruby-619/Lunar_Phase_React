@@ -12,7 +12,8 @@ import ArticleCard from './components/ArticleCard'
 import PdAlsoLove from './components/PdAlsoLove'
 import PdLinkKit from './components/PdLinkKit'
 
-function ProductDetail() {
+function ProductDetail(props) {
+  const { cartQty } = props
   const { itemId } = useParams()
   // console.log(itemId)
 
@@ -78,7 +79,7 @@ function ProductDetail() {
 
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty}/>
       {/* items */}
       {display}
       {/* <PdDetailBlock /> */}

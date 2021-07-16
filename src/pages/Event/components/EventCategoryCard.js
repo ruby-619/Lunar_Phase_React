@@ -8,6 +8,7 @@ import LunarPhaseFooter from '../../../components/LunarPhaseFooter'
 import LunarPhaseNavbar from '../../../components/LunarPhaseNavbar'
 
 const EventCategoryCard = (props) => {
+  const{cartQty}=props
   console.log(props)
   const [event, setEvent] = useState([])
   const [dataLoading, setDataLoading] = useState(false)
@@ -59,7 +60,7 @@ const EventCategoryCard = (props) => {
   )
   return (
     <div>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty}/>
       <body className="bg2">
         {/* <CategoryNav/> */}
         <div class="container">
