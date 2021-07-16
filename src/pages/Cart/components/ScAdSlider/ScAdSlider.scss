@@ -1,0 +1,96 @@
+
+@mixin trans($t:0.5s , $tdelay:0s){
+    transition: $t $tdelay;
+  }
+  @mixin flex_center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  @mixin size($w , $h:$w){
+    width: $w;
+    height: $h
+  }
+  
+  .carouselContainer{
+    // @include size(1000px, auto);
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+  }
+  .carouselArea{
+    // @include size(400px, auto);
+    white-space: nowrap;
+    position: relative;
+    overflow:hidden;
+    box-sizing:border-box;
+    >.carouselPosts{
+      position: relative;
+      transition:0.5s;
+    }
+  }
+  .carouselPostBox{
+    @include size(100%);
+    display:inline-block;
+    box-sizing:border-box;
+    background-color: #fff;
+
+    >.cover{
+      @include size(100%);
+      @include trans;
+      background-position:center,center;
+      background-size:cover;
+      &:hover{
+         transform: scale(1.1);
+      }
+    }
+  }
+  .controlLeft , .controlRight {
+    @include size(50px);
+    @include flex_center;
+    @include trans;
+    border: solid 1px white;
+    border-radius: 50%;
+    color:rgb(116, 70, 70);
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    &:hover{
+        background-color: #E64B4B;
+    }
+  }
+  .controlLeft{
+    left: 1.5rem;
+  }
+  .controlRight{
+    right: 1.5rem;
+  }
+
+  ////// version 2
+  .contentBox{
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+  }
+  .cardBox{
+    display:flex;
+    
+    .imageStyle{
+      width: 180px;
+      height: 130px;
+      object-fit: cover;
+      object-position: center center;
+      @include trans;
+    }
+  }
+
+  .youMayLike{
+      background-color: #fff;
+  }
+  

@@ -1,0 +1,595 @@
+body * {
+    //  outline: 1px solid red; 
+}
+
+$stepFont: 20px;
+$stepFont-lg: 16px;
+$stepFont-sm: 12px;
+$myLight: #F7F7EE;
+$myPink: #FDD2BB;
+$myPinkOpa: #fdd2bb4d;
+$myDark: #383844;
+$myRed: #E64B4B;
+$myGray: #9B9B9B;
+$myWhite: #fff;
+$myLineGray: #CDCDD2;
+$bg-hover: #fdd2bb69;
+
+@mixin sizeXl {
+    @media (max-width:1200px){
+        @content;
+    }
+}
+@mixin sizeLg {
+    @media (max-width:992px){
+        @content;
+    }
+}
+@mixin sizeMd {
+    @media (max-width:768px){
+        @content;
+    }
+}
+@mixin sizeSm {
+    @media (max-width:576px){
+        @content;
+    }
+}
+
+.moon-wrap {
+    top: 300px;
+}
+.moon {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: 25px -25px;
+    position: absolute;
+    margin: 0 100px;
+    animation: moonmove 3s infinite linear;
+    animation-direction: alternate;
+}
+
+@keyframes moonmove {
+    0% {
+        box-shadow: 25px -25px #f5a693;
+        transform: translateX(-25px) translateY(25px);
+    }
+
+    100% {
+        box-shadow: -25px 25px #f5a693;
+        transform: translateX(25px) translateY(-25px);
+    }
+}
+
+body {
+    background-color: $myLight;
+}
+
+.bgMountainRow {
+    overflow: hidden;
+}
+
+.bgMountain {
+    left: 0;
+    top: 240px;
+    width: 100%;
+}
+
+.bgMountain img {
+    width: 100%;
+}
+
+/*======== 共同class ==================*/
+
+.fitContent {
+    width: fit-content;
+}
+
+/*========= 共同class ==================*/
+/*=========== 字型 =======================*/
+
+.scTitle { 
+    /* 桌機版標題 */
+    font-family: 'Noto Sans TC', serif;
+    font-size: 20px;
+    font-weight: bold;
+    @include sizeLg{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    @include sizeSm{
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+.titleDivider {
+    /* 桌機版標題橫線 */
+    padding-bottom: 8px;
+    border-bottom: 1px solid $myLineGray;
+}
+.sc-inputLabel { 
+    /* 欄位名稱 */
+    font-family: 'Noto Sans TC', serif;
+    font-size: 20px;
+    font-weight: medium;
+}
+.sc-contentFont {
+    /* bar標題、內文 */
+    font-family: 'Noto Sans TC', serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: $myDark;
+}
+.sc-contentFont.sc-conFontTitle {
+    /* 超商標題 */
+    font-weight: medium;
+}
+.sc-contentFont.sc-conFont {
+    /* 超商內文 */
+    color: $myGray;
+
+}
+.sc-describeFont {
+    /* 訂單商品描述、 */
+    font-family: 'Noto Sans TC', serif;
+    font-size: 20px;
+    font-weight: normal;
+    color: $myDark; 
+}
+.sc-describeFont scspan{
+    font-family: 'Montserrat', sans-serif; 
+}
+.sc-describePriceFont {
+    /* 訂單商品下拉金額 */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: $myDark;
+    color: $myRed;
+}
+.sc-nameFont {
+    /* 商品名稱、訂單編號 */
+    font-family: 'Noto Sans TC', serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: $myDark;
+}
+.sc-qtyFont {
+    /* 商品數量 */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: $myDark;
+}
+
+.sc-priceFont {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    color: $myDark;
+
+}
+
+.sc-formTitle {
+    font-family: 'Noto Sans TC', serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: $myGray;
+    background-color: $myWhite;
+    text-align: center;
+}
+.firstTitle {
+    margin-left: 97px;
+}
+
+.totalQtyFont {
+    /* 總數量 */
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: $myDark;
+    letter-spacing: 3px;
+}
+.totalQtyFont scspan {
+    color: $myRed;
+    font-weight: medium;
+}
+
+.totalPriceFont { 
+    /* 總金額 */
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: normal;
+    color: $myDark;
+    letter-spacing: 3px;
+}
+.totalPriceFont-med {
+    text-align: right;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: medium;
+    color: $myDark;
+    letter-spacing: 3px;
+}
+.totalPriceFont-med scspan {
+    color: $myRed;
+}
+.stepFont {
+    /* 購物車流程 */
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: $stepFont;
+    font-weight: bold;
+    margin-left: -$stepFont;
+    color: $myDark;
+    @include sizeLg{
+        font-size: $stepFont-lg;
+        font-weight: bold;
+        margin-left: -$stepFont-lg;
+    }
+    @include sizeSm{
+        font-size: $stepFont-sm;
+        font-weight: bold;
+        margin-left: -$stepFont-sm;  
+    }
+    
+}
+
+/*================= 字型 end =======================*/
+/*================= 購物車流程 =======================*/
+.scStepRow {
+    margin-top: 120px;
+}
+.stepCircle {
+    width: 2*$stepFont;
+    height: 2*$stepFont;
+    background-color: $myPink;
+    border-radius: 50%;
+    margin: 0 5px;
+    @include sizeLg{
+        width: 2*$stepFont-lg;
+        height: 2*$stepFont-lg;
+    }
+    @include sizeSm{
+        width: 2*$stepFont-sm;
+        height: 2*$stepFont-sm;
+    }
+}
+.stepActive {
+    background-color: $myRed;
+}
+.stepLine {
+    width: 6*$stepFont;
+    height: 1px;
+    background-color: $myDark;
+    @include sizeLg{
+        width: 6*$stepFont-lg;
+    }
+    @include sizeSm{
+        width: 6*$stepFont-sm;
+    }
+
+}
+.stepArrow {
+    border: solid $myDark;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 7px;
+}
+.stepArrow.right {
+    margin-left: -16px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+/*================= 購物車流程end =======================*/
+        
+.icon15px {
+    width: 15px;
+    height: 15px;
+}
+
+.icon18px {
+    width: 18px;
+    height: 18px;
+}
+
+.icon20px {
+    width: 20px;
+    height: 20px;
+}
+
+.hotTag {
+    width: 82px;
+    left: 50px;
+    top: -42px;
+}
+.hotTagTitle {
+    z-index: 90;
+    color: $myWhite;
+    margin-right: -50px;
+    margin-bottom: 3px;
+}
+
+
+/*======== cart item ================*/
+.select-bar {
+    width: 100%;
+    height: 50px;
+    background-color: $myPink;
+}
+/*================= Radio Checkbox =======================*/
+
+.myCheckbox, .myRadio {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $myWhite;
+    border: 1px solid $myGray;
+}
+.myCheckbox:hover, .myRadio:hover {
+    background-color: $myRed;
+    border: none;
+    cursor: pointer;
+}
+.myCheckbox.checked, .myRadio.checked {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: $myRed;
+    border: none;
+}
+
+/*================= Radio Checkbox end ===================*/
+.itemRow {
+    width: 100%;
+    padding:40px 0;
+    background-color: $myWhite;
+}
+.itemRow:hover {
+    background-color: $bg-hover;
+}
+.bdTop {
+    /* 上方分隔線*/
+    border-top: 1px solid $myLineGray;
+}
+.bdBottom {
+    /* 上方分隔線*/
+    border-bottom: 1px solid $myLineGray;
+}
+.itemRow.selected {
+    /* 商品被勾選的時候背景色*/
+    background-color: $myPinkOpa;
+}
+
+.itemPic {
+    width: 195px;
+    height: 130px;
+    background-color: #ccc;
+    //  margin-left: 3vw; 
+    // @include sizeLg {
+    //     display: none;
+    // }
+}
+.itemPic-sm {
+    width: 78px;
+    height: 54px;
+    background-color: #ccc;
+}
+.itemName {
+    margin-left: 2vw; 
+
+}
+
+/* @media screen and (max-width: 992px) {
+    .itemPic {
+        display: none;
+    }
+} */
+.oneClickBtn{
+    width: 200px;
+    height: 42px;
+    border-radius: 20px;
+    background-color: #fff;
+    border: 1px solid #383844;
+    font-family: "Montserrat", sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+}
+.oneClickBtn:hover {
+    transition: 0.3s;
+    background-color: #383844;
+    color: #f7f7ee;
+  }
+.delOne {
+    /* X按鈕 */
+    top: 0;
+    right: 0;
+    padding: 8px 12px;
+}
+.scBtn:hover {
+    /* 所有按鈕的效果 */
+    background-color: $myRed;
+    color: $myWhite;
+    cursor: pointer;
+}
+.priceRow {
+    /* 總金額列 */
+    background-color: $myWhite;
+}
+
+.sc-adRow {
+    background-color: $myWhite;
+    width: 100%;
+    height: 260px;
+}
+.btnRow {
+    /* 按鈕列 */
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-bottom: 100px;
+}
+
+.sc-Wrap {
+    width: 100%;
+    background-color: $myWhite;
+    padding: 50px 100px;
+    @include sizeLg{
+        padding: 30px;
+    }
+}
+.sc-priceListRow {
+    border-top: 1px solid $myLineGray;
+    border-bottom: 1px solid $myLineGray;
+    margin-top: 120px;
+    padding: 20px 0;
+}
+.dropdownIcon {
+    margin-right: -35px;
+}
+
+/* =============label區塊============== */
+$labelSquareW: 134px;
+$labelSquareH: 50px;
+$labelTriW: 36px;
+$labelTriH: $labelSquareH;
+$labelName: 20px;
+
+.myLabelGroup {
+    padding: 0 $labelTriW;
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.labelSquare {
+    position: relative;
+    width: $labelSquareW;
+    height: $labelSquareH;
+    background-color: $myPink;
+    margin: 0 $labelTriW 0 0;
+    @include sizeLg{
+        width: 0.8*$labelSquareW;
+        height: 0.8*$labelSquareH;
+        margin: 0 0.8*$labelTriW 0 0;
+
+    }
+}
+.labelSquare.bgWhite {
+    background-color: $myWhite;
+}
+
+.labelTriangle {
+    position: absolute;
+    left: -$labelTriW;
+    border-color: transparent $myPink transparent transparent;
+    border-style: solid solid solid solid;
+    /* 設定邊框大小可拼湊出任意形狀的三角形 */
+    border-width: $labelTriH $labelTriW 0px 0px;
+    @include sizeLg{
+        left: -0.8*$labelTriW;
+        border-width: 0.8*$labelTriH 0.8*$labelTriW 0px 0px;
+    }
+
+}
+
+.labelTriangleWhite {
+    position: absolute;
+    left: -$labelTriW;
+    border-color: transparent $myWhite transparent transparent;
+    border-style: solid solid solid solid;
+    /* 設定邊框大小可拼湊出任意形狀的三角形 */
+    border-width: $labelTriH $labelTriW 0px 0px;
+    @include sizeLg{
+        left: -0.8*$labelTriW;
+        border-width: 0.8*$labelTriH 0.8*$labelTriW 0px 0px;
+    }
+}
+
+.lableName {
+    position: absolute;
+    left: $labelTriW;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: $labelName;
+    font-weight: bold;
+    line-height: $labelSquareH;
+    @include sizeLg{
+        left: 0.8*$labelTriW;
+        font-size: 0.8*$labelName;
+        line-height: 0.8*$labelSquareH;
+
+    }
+}
+
+/* =============label區塊 end============== */
+/* =============商品下拉區塊============== */
+.dropdownBtnPanel {
+    cursor: pointer;
+}
+.dropdownItem {
+    cursor: pointer;
+}
+.dropdownItem:nth-of-type(even) {
+    /* 商品偶數加背景色 */
+    background-color: rgba(205,205,210,0.35);
+}
+.dropdownItem:hover {
+    background-color: $bg-hover;
+}
+.dropdownItemsPanel.hidden {
+    display: none;
+}
+.dropdownItemsTitle .sc-formTitle.hidden {
+    display: none;
+}
+#dropdownBtn.down {
+    transform: rotate(180deg);
+}
+
+/* =============商品下拉區塊end============== */
+/* =============map區塊============== */
+.mapSquare {
+    width: 150px;
+    height: 150px;
+    background-color: $myDark;
+    margin-left: 150px;
+}
+/* =============map區塊end============== */
+
+.ad-arrow {
+    width: 16.3px;
+    margin: 0 auto;
+}
+
+.creditCard {
+    width: 100%;
+    height: 280px;
+    background-color: $myDark;
+    border-radius: 10px;
+}
+
+/* Order相關 *//* Order相關 *//* Order相關 *//* Order相關 */
+.scOrderItem>.bd2:nth-of-type(even) {
+    background-color: rgba(205,205,210,0.35);
+}
+.scInput[type=radio] {
+    width: 25px;
+    height: 25px;
+}
+.scSelect, .scInput[type=text] {
+  width: 12.5vw;
+  height: 45px;
+  border-radius: 10px;
+  margin-right: 20px;
+  padding: 0 0 0 20px;
+}
+// input[type=text]:focus {
+    
+// }
+.scInput {
+  border: #707070 0.5px solid;
+}
