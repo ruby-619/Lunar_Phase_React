@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="105" viewBox="0 0 255 105">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f7f7e7;
+      }
+
+      .cls-2 {
+        opacity: 0.1;
+      }
+
+      .cls-3 {
+        filter: url(#Rectangle_79);
+      }
+
+      .cls-4 {
+        filter: url(#Rectangle_78);
+      }
+    </style>
+    <filter id="Rectangle_78" x="0" y="0" width="245" height="95" filterUnits="userSpaceOnUse">
+      <feOffset dx="-5" dy="-5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-color="#fff" flood-opacity="0.502"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_79" x="10" y="10" width="245" height="95" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur-2"/>
+      <feFlood flood-color="#383844"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_332" data-name="Group 332" transform="translate(-1108.305 -421.5)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, 1108.3, 421.5)">
+      <rect id="Rectangle_78-2" data-name="Rectangle 78" class="cls-1" width="200" height="50" rx="25" transform="translate(27.5 27.5)"/>
+    </g>
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, 1108.3, 421.5)">
+      <rect id="Rectangle_79-2" data-name="Rectangle 79" class="cls-2" width="200" height="50" rx="25" transform="translate(27.5 27.5)"/>
+    </g>
+  </g>
+</svg>

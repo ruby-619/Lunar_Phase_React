@@ -1,0 +1,27 @@
+ 
+ 
+
+// 下面分類文章card hover
+.col-4{
+    position: relative;
+
+}
+.article-card-hover:hover{
+    transform: scale(1.02);
+    background-color: #F7F7EE;
+    opacity: 0.5;
+    // display: none;
+}
+
+
+.title{
+    background: #F7F7EE;
+    color: #383844 !important;
+    margin: 50px;
+    padding: 20px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    h3{
+        line-height: 1.4;
+    }
+}

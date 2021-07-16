@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="310.5" height="155.749" viewBox="0 0 310.5 155.749">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #383844;
+        font-size: 22px;
+        font-family: Montserrat-Regular, Montserrat;
+        letter-spacing: 0.04em;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #383844;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.773" y2="0.64" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f7f7e7"/>
+      <stop offset="1" stop-color="#fdd2bb"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_953" data-name="Group 953" transform="translate(-592.75 -1690.216)">
+    <path id="Path_540" data-name="Path 540" class="cls-1" d="M-31.251-42.981c39.544-22.5,179.224-1.634,218.769,20.866s10.609,80.8-28.936,103.3S68.885,112.5,29.341,90-70.8-20.481-31.251-42.981Z" transform="translate(636.87 1742.867)"/>
+    <g id="Group_291" data-name="Group 291" transform="translate(-775.49 -4617.362)">
+      <text id="MORE" class="cls-2" transform="translate(1559.24 6378.953)"><tspan x="0" y="0">MORE</tspan></text>
+      <line id="Line_26" data-name="Line 26" class="cls-3" x2="120" transform="translate(1558.74 6385.453)"/>
+    </g>
+  </g>
+</svg>

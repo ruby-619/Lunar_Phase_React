@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom'
 import React, { useState } from 'react'
 
 // Ruby
@@ -19,6 +19,13 @@ import ProductDetail from './pages/Product/ProductDetail'
 import CartItem from './pages/Cart/CartItem'
 import CartEv from './pages/Cart/CartEv'
 
+// 晴
+import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
+import ArticleIndex2 from "./pages/article/ArticleIndex2.js";
+import ArticleIndex3 from "./pages/article/ArticleIndex3.js";
+import ArticleHealth from "./pages/article/ArticleHealth.js";
+import ArticleDetail from "./pages/article/ArticleDetail.js";
+import PeriodRecord from "./pages/article/PeriodRecord.js";
 
 const _ = require('lodash');
 
@@ -105,6 +112,29 @@ function App() {
             <Home />
           </Route> */}
           {/* Tanya Route */}
+
+          {/* 晴 */}
+          <Route path="/article/health">
+            <ArticleHealth />
+          </Route>
+
+          <Route path="/article/detail/:id?">
+            <ArticleDetail />
+          </Route>
+          <Route path="/periodrecord">
+            <PeriodRecord />
+          </Route>
+
+          <Route path="/article1">
+            <ArticleIndex1 />
+          </Route>
+          <Route path="/article2">
+            <ArticleIndex2 />
+          </Route>
+          <Route path="/article3">
+            <ArticleIndex3 />
+          </Route>
+          {/* 晴 */}
           </ScrollToTop>
         </Switch>
       </>

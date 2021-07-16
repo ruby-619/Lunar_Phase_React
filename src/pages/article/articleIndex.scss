@@ -1,0 +1,154 @@
+// @import '~bootstrap/scss/bootstrap.scss';
+// @import '../../styles/global.scss';
+
+
+
+/* 第一區開始，進入頁面第一區的畫面 */
+/* 右邊的svg */
+/* 輪播牆 */
+/* 輪播牆上的文章標題 */
+/* 文章標題 */
+/* 第一區結束 */
+/* 第二區開始 */
+/* 最新文章的按鈕 */
+/* 最新文章字 */
+/* 最新文章下面標語 */
+/* 標語下面的紅色線條 */
+/* 文章標題 */
+/* 作者及日期 */
+/* 看更多svg（第二區及第三區） */
+/* 第二區結束 */
+/* 第三區分類文章開始 */
+.first-section {
+	width: 100%;
+	height: 500px;
+	position: relative;
+}
+.bg-icon-1 {
+	img {
+		width: 600px;
+		position: absolute;
+		top: 100px;
+		left: 500px;
+		margin: 250px 0 0 0;
+		z-index: -1;
+	}
+}
+
+.new {
+	width: fit-content;
+	margin-top: -100px;
+	margin-left: auto;
+	margin-right: auto;
+	
+	h3 {
+		letter-spacing: 2px;
+		text-align: center;
+		// padding-bottom: 40px;
+	}
+	small {
+		letter-spacing: 1px;
+	}
+}
+
+.card-body {
+	h5 {
+		line-height: 1.5;
+	}
+}
+.author-date-index {
+	justify-content: space-between;
+	vertical-align: text-bottom;
+}
+.more {
+	width:200px;
+margin-top: -30px;
+	margin-left:  1000px;;
+	margin-bottom: 80px;
+	img{
+		width:280px;
+	}
+}
+.category {
+	width: fit-content;
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 50px;
+	h6 {
+		// background-image: url(./bg-svg/btn-click.svg);
+		box-shadow: 3px 3px 5px 3px lightgray;
+		box-shadow: -3px -3px 5px 3px white;
+		border-radius: 20px;
+		margin: 30px;
+		padding: 10px 30px;
+		letter-spacing: 1px;
+	}
+}
+
+/* ---article--- */
+
+  .index-article-header {
+	border-bottom: 2px solid #383844;
+  }
+  .index-article-tags {
+	margin-right: 0;
+	margin-top: auto;
+	padding-bottom: 15px;
+  }
+  .index-article-topic {
+	margin: 0;
+	padding: 20px 0 20px 0;
+	border-bottom: 1px solid #383844;
+  }
+  /* .index-article-topic-img {
+	  width: 290px;
+	  height: 180px;
+	  overflow: hidden;
+	} */
+  .index-article-topic-img img {
+	width: 100%;
+	height: 100%;
+  }
+  .index-article-topic-content button {
+	margin-right: 0;
+  }
+  .index-article-date {
+	font-family: 'DM Serif Display', serif;
+	font-size: 14px;
+  }
+  .index-article-unit-wrap {
+	margin: 0;
+	padding: 20px 0 20px 0;
+	border-bottom: 2px solid #383844;
+  }
+  .index-article-unit {
+	  
+  }
+  
+  .border-right-1 {
+	border-right: 1px solid #383844;
+  }
+  .border-right-2 {
+	border-right: 1px solid #383844;
+  }
+  @media (max-width: 768px) {
+	.index-article-unit {
+	}
+	.border-right-1 {
+	  border-right: none;
+	}
+  }
+  @media (max-width: 992px) {
+	.border-right-2 {
+	  border-right: none;
+	}
+  }
+  
+  /* .index-article-unit-img {
+	  width: 260px;
+	} */
+  .index-article-unit-img img {
+	width: 100%;
+	height: 100%;
+  }
+  
