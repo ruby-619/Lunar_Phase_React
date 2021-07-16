@@ -90,7 +90,6 @@ const ArticleDetail = (props) => {
 
   return (
     <>
-      <div>
         <LunarPhaseNavbar />
         <ProgressBar height="15px" bgcolor="#FDD2BB" />
         <div className="title-svg">
@@ -168,7 +167,6 @@ const ArticleDetail = (props) => {
           </div>
           <ArticleCard />
         </div>
-      </div>
 
       <div className="container">
         <TodoApp />

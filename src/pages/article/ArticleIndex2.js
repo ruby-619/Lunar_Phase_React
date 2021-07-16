@@ -15,7 +15,9 @@ import Footer from "../../components/Footer";
 const ArticleIndex2 = () => {
   return (
     <>
-      <LunarPhaseNavbar />
+    <LunarPhaseNavbar />
+      
+    <div className="body-article">
       <div className="index ">
         <ArticleCarousel />
         <img
@@ -170,9 +172,10 @@ const ArticleIndex2 = () => {
         </div>
         {/* 第二頁最新文章區塊結束 */}
       </div>
+    </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
 export default ArticleIndex2;

@@ -95,7 +95,7 @@ const EventDetailCard = (props) => {
   return (
     <>
       <div className="container-fluid">
-        <div className="item row justify-content-between">
+        <div className="item-row row justify-content-between">
           <div className="item-pic-wrap d-flex col-12 col-md-6">
             <div className="item-pic-select col-2 mx-2 p-0 ">
               <button
@@ -157,17 +157,18 @@ const EventDetailCard = (props) => {
             </div>
             <div className="item-style d-flex justify-content-between">
               <h6>規格</h6>
+              <div></div>
               {/* <div className="item-style-tag">
                 <p className="btn-option p-1 m-0">{optionName}</p>
               </div> */}
             </div>
             <div className="item-qty d-flex justify-content-between">
-              <h6 className>數量</h6>
-              <div className="qty-input input-group">
+              <h6>數量</h6>
+              <div className="item-qty-input input-group">
                 <div className="input-group-btn">
                   <button
                     onClick={() => setQty(qty - 1)}
-                    className="btn "
+                    className="btn"
                     type="button"
                     id="qty-sub"
                   >
@@ -187,7 +188,7 @@ const EventDetailCard = (props) => {
                 </div>
               </div>
             </div>
-            <div className="add-cart col-12 pl-5">
+            <div className="add-cart col-12 pl-md-5">
               <button
                 onClick={() => {
                   updateCartToLocalStorage({

@@ -20,12 +20,12 @@ import CartItem from './pages/Cart/CartItem'
 import CartEv from './pages/Cart/CartEv'
 
 // 晴
-// import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
-// import ArticleIndex2 from "./pages/article/ArticleIndex2.js";
-// import ArticleIndex3 from "./pages/article/ArticleIndex3.js";
-// import ArticleHealth from "./pages/article/ArticleHealth.js";
-// import ArticleDetail from "./pages/article/ArticleDetail.js";
-// import PeriodRecord from "./pages/article/PeriodRecord.js";
+import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
+import ArticleIndex2 from "./pages/article/ArticleIndex2.js";
+import ArticleIndex3 from "./pages/article/ArticleIndex3.js";
+import ArticleHealth from "./pages/article/ArticleHealth.js";
+import ArticleDetail from "./pages/article/ArticleDetail.js";
+import PeriodRecord from "./pages/article/PeriodRecord.js";
 
 // Apple
 import KitIndex from './pages/Kit/KitIndex'
@@ -123,7 +123,7 @@ function App() {
           {/* Tanya Route */}
 
           {/* 晴 */}
-          {/* <Route path="/article/health">
+          <Route path="/article/health">
             <ArticleHealth />
           </Route>
 
@@ -142,7 +142,7 @@ function App() {
           </Route>
           <Route path="/article3">
             <ArticleIndex3 />
-          </Route> */}
+          </Route>
           {/* 晴 */}
 
           {/* Apple */}

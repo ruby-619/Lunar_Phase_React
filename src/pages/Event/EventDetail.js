@@ -10,10 +10,10 @@ const EventDetail = (props) => {
   return (
     <div>
       <LunarPhaseNavbar cartQty={cartQty}/>
-      <body className="bg2">
+      
         <EventDetailCard />
         <LunarPhaseFooter />
-      </body>
+      
     </div>
   )
 }

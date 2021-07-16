@@ -78,7 +78,7 @@ function PdDetailBlock(props) {
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid"> 
         <div className="item-row row justify-content-between">
           <div className="item-pic-wrap d-flex col-12 col-md-6">
             <div className="item-pic-select col-2 mx-2 p-0 ">

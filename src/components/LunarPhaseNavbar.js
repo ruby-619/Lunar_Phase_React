@@ -30,8 +30,8 @@ function LunarPhaseNavbar(props) {
   }, [])
   return (
     <>
-      <nav id="navbar">
-        <div className={sticky ? 'nav-bar sticky' : 'nav-bar'}>
+      <nav id="navbar" className={sticky ? 'sticky' : ''}>
+        <div className="nav-bar">
           <div className="nav-bar-top d-flex">
             <div className="col-4" />
             <div className="col-4 d-flex justify-content-center">
@@ -62,7 +62,7 @@ function LunarPhaseNavbar(props) {
                 <p className="small mx-0 mb-1">(0)</p>
               </div>
               <div className="ml-2 mt-2">
-                <Link to="/" className="mx-0">
+                <Link to="/cart/item" className="mx-0">
                   <FaShoppingCart />
                 </Link>
                 <p className="small mx-0 mb-1">(0)</p>
@@ -76,10 +76,10 @@ function LunarPhaseNavbar(props) {
                 <Link to="/product">PRODUCT</Link>
               </li>
               <li>
-                <Link to="/article">ARTICLE</Link>
+                <Link to="/article1">ARTICLE</Link>
               </li>
               <li>
-                <Link to="/kit">KIT</Link>
+                <Link to="/kitindex">KIT</Link>
               </li>
               <li>
                 <Link to="/event">EVENT</Link>
@@ -90,11 +90,11 @@ function LunarPhaseNavbar(props) {
             </ul>
           </div>
         </div>
-        <div>
+        <div className="nav-bar-mobile">
           <Navbar
             bg="bg-nav-bar-mobile"
             expand="lg"
-            className="nav-bar-mobile bg-nav-bar-mobile"
+            className="bg-nav-bar-mobile"
           >
             <Container fluid>
               <Navbar.Brand href="#home">
