@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom'
 // import CategoryNav from './CategoryNav'
 import LunarPhaseFooter from '../../../components/LunarPhaseFooter'
 import LunarPhaseNavbar from '../../../components/LunarPhaseNavbar'
+const _ = require('lodash');
 
 const EventCategoryCard = (props) => {
   const{cartQty}=props
@@ -71,8 +72,8 @@ const EventCategoryCard = (props) => {
       <body className="bg2">
         {/* <CategoryNav/> */}
         <div class="container">
-        <div>{event.eventCategory}</div>
-          {event?.map((v, i) => {
+        <div>{!_.isEmpty(event) &&event[0].eventCategory}</div>
+          {!_.isEmpty(event) &&event?.map((v, i) => {
             return (
               <div>
                 <div class="ecard2 mt-5 d-flex ">
