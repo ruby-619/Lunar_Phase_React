@@ -24,7 +24,7 @@ function ScStepRow(props) {
             <div className="d-flex align-items-center">
               <i className={`stepCircle ${step === 1 ? 'stepActive' : ''}`} />
               <i className="stepLine" />
-              <i className="stepArrow right" />
+              <i className="stepArrow scright" />
             </div>
             <div className="stepFont">
               <Link
@@ -41,7 +41,7 @@ function ScStepRow(props) {
             <div className="d-flex align-items-center">
               <i className={`stepCircle ${step === 2 ? 'stepActive' : ''}`} />
               <i className="stepLine" />
-              <i className="stepArrow right" />
+              <i className="stepArrow scright" />
             </div>
             <div className="stepFont">
               <Link
@@ -58,7 +58,7 @@ function ScStepRow(props) {
             <div className="d-flex align-items-center">
               <i className={`stepCircle ${step === 3 ? 'stepActive' : ''}`} />
               <i className="stepLine" />
-              <i className="stepArrow right" />
+              <i className="stepArrow scright" />
             </div>
             <div className="stepFont">
               <Link

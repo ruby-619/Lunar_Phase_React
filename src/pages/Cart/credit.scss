@@ -23,7 +23,7 @@ $rccs-stripe-bg-color: #2a1d16 !default;
 $rccs-signature-background: repeating-linear-gradient(0.1deg, #fff 20%, #fff 40%, #fea 40%, #fea 44%, #fff 44%) !default;
 
 $rccs-default-background: linear-gradient(25deg, #939393, #717171) !default;
-$rccs-unknown-background: linear-gradient(25deg, #999, #999) !default;
+$rccs-unknown-background: linear-gradient(25deg, rgb(192, 93, 93), #999) !default;
 $rccs-background-transition: all 0.5s ease-out !default;
 
 $rccs-animate-background: true;

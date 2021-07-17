@@ -1,5 +1,6 @@
 import React from 'react'
 import Cards from 'react-credit-cards'
+import '../../../credit.scss'
 
 export default class Credit extends React.Component {
   state = {
