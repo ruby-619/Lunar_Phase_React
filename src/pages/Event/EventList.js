@@ -17,7 +17,6 @@ const EventList = (props) => {
       <LunarPhaseNavbar cartQty={cartQty}/>
 
       {/* <body className="bg2 mt-5"> */}
-      <h2 className="mb-5 TextAlignCenter">Event</h2>
       <EventNAV />
       {/* <Input /> */}
       <EventListCard />

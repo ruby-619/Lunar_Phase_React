@@ -7,23 +7,24 @@ const EventNAV = (props) => {
   return (
     <div class="container">
       <div class="row">
-        <div class="Enav">
-          <ul class="d-flex justify-content-center">
+      <h2 className="m-auto EventListHead">EVENT</h2>
+        <div class="Enav mt-3">
+          <ul class="d-flex justify-content-around">
             <li>
               {/* <Link to={`${url}/1`}>戶外</Link> */}
-              <Link to="/category/1">戶外</Link>
+              <Link to="/category/1" className="EventNavLink">戶外</Link>
             </li>
             <li>
-              <Link to="/category/2">藝文</Link>
+              <Link to="/category/2" className="EventNavLink">藝文</Link>
             </li>
             <li>
-              <Link to="/category/3">講座</Link>
+              <Link to="/category/3" className="EventNavLink">講座</Link>
             </li>
             <li>
-              <Link to="/category/4">手作</Link>
+              <Link to="/category/4" className="EventNavLink">手作</Link>
             </li>
             <li>
-              <Link to="/category/5">品味</Link>
+              <Link to="/category/5" className="EventNavLink">品味</Link>
             </li>
           </ul>
         </div>

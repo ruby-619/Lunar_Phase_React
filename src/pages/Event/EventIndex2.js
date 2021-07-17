@@ -32,13 +32,13 @@ const EventIndex2 = (props) => {
           <EventCard />
           <h2 className="TextAlignCenter">分類找活動</h2>
           <div className="CategoryIcons">
-            <div className="d-flex justify-content-center ">
+            <div className="d-flex justify-content-center ToHover">
               <Link to="category/1">
                 <div className="box box-bottom">
                   <GiCampingTent
                     color={color}
                     size="100px"
-                    style={{ transform: `translate(${0}px, ${25}px)` }}
+                    style={{ transform: `translate(${25}px, ${25}px)` }}
                     onMouseOver={() => {
                       setcolor('#E64B4B')
                     }}
@@ -46,16 +46,17 @@ const EventIndex2 = (props) => {
                       setcolor('#FDD2BB')
                     }}
                   />
+                  <p class="EventIcons">戶外</p>
                 </div>
               </Link>
             </div>
             <Link to="category/2">
-              <div className="d-flex justify-content-center ">
+              <div className="justify-content-center ">
                 <div className="box box-middle-left">
                   <FaPaintBrush
                     color={color2}
                     size="70px"
-                    style={{ transform: `translate(${0}px, ${40}px)` }}
+                    style={{ transform: `translate(${40}px, ${40}px)` }}
                     onMouseOver={() => {
                       setcolor2('#E64B4B')
                     }}
@@ -64,6 +65,7 @@ const EventIndex2 = (props) => {
                     }}
                   />
                 </div>
+                  <p class="EventIcons EventIconsArt">藝文</p>
               </div>
             </Link>
             <Link to="/event-list">
@@ -72,14 +74,14 @@ const EventIndex2 = (props) => {
                   <GiHamburgerMenu
                     color={color3}
                     size="90px"
-                    style={{ transform: `translate(${0}px, ${30}px)` }}
+                    style={{ transform: `translate(${30}px, ${30}px)` }}
                     onMouseOver={() => {
                       setcolor3('#E64B4B')
                     }}
                     onMouseLeave={() => {
                       setcolor3('#FDD2BB')
                     }}
-                  />
+                  /><p class="EventIcons">總覽</p>
                 </div>
               </div>
             </Link>
@@ -89,14 +91,14 @@ const EventIndex2 = (props) => {
                   <FaHandPaper
                     color={color4}
                     size="90px"
-                    style={{ transform: `translate(${-5}px, ${30}px)` }}
+                    style={{ transform: `translate(${24}px, ${30}px)` }}
                     onMouseOver={() => {
                       setcolor4('#E64B4B')
                     }}
                     onMouseLeave={() => {
                       setcolor4('#FDD2BB')
                     }}
-                  />
+                  /><p class="EventIcons">手作</p>
                 </div>
               </div>
             </Link>
@@ -106,14 +108,14 @@ const EventIndex2 = (props) => {
                   <GiBookCover
                     color={color5}
                     size="90px"
-                    style={{ transform: `translate(${0}px, ${30}px)` }}
+                    style={{ transform: `translate(${30}px, ${35}px)` }}
                     onMouseOver={() => {
                       setcolor5('#E64B4B')
                     }}
                     onMouseLeave={() => {
                       setcolor5('#FDD2BB')
                     }}
-                  />
+                  /><p class="EventIcons">講座</p>
                 </div>
               </div>
             </Link>

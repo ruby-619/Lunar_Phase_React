@@ -179,24 +179,25 @@ const EventListCard = (props) => {
     <div>
       <body className="bg2">
         <div class="container">
-          {/* <div class="row"> */}
           <div class="row">
+          {/* <div class="row"> */}
             <div className="d-flex">
-              <DateSearch
+              {/* <DateSearch
                 dateSearch={dateSearch}
                 setdateSearch={setdateSearch}
-              />
+              /> */}
               <Location
                 seletedLocation={seletedLocation}
                 setseletedLocation={setseletedLocation}
               />
+              <Sort sortBy={sortBy} setSortBy={setSortBy} />
               <SearchBar
                 searchWord={searchWord}
                 setSearchWord={setSearchWord}
+                className=""
               />
-              <Sort sortBy={sortBy} setSortBy={setSortBy} />
             </div>
-          </div>
+          {/* </div> */}
 
           {displayEvent.map((v, i) => {
             return (
@@ -274,7 +275,7 @@ const EventListCard = (props) => {
             <Pagination>{items}</Pagination>
           </div>
         </div>
-        {/* </div> */}
+        </div>
       </body>
     </div>
     

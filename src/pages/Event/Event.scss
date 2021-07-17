@@ -12,7 +12,7 @@
 // 大圖
 .eventCarousal {
   width: 100%;
-  height: 55vh;
+  height: 460px;
 }
 .eventCarousal img {
   object-fit: cover;
@@ -125,6 +125,18 @@ div.carousel-root {
   height: 300px;
 }
 
+
+
+.box>.EventIcons{
+  text-align: center;
+  transform: translate(10px,60px);
+  opacity: 0;
+}
+.box>.EventIcons:hover{
+  opacity:1;
+}
+
+
 // 改名
 .WaveBackground {
   width: 100%;
@@ -165,13 +177,18 @@ div.carousel-root {
   }
 }
 
-.bg-pink {
-  background-color: #fdd2bb;
+// .bg-pink {
+//   background-color: #fdd2bb;
+// }
+.EventNavLink{
+  font-weight: bold;
 }
-
+.EventListHead{
+  letter-spacing: 2px;
+}
 .photo2 {
   width: 27vw;
-  height: 37vh;
+  height: 40vh;
   margin: 6vh;
 }
 .photo2 img {
@@ -202,16 +219,16 @@ div.carousel-root {
 .eSearch {
   margin-top: 3.5vh;
 }
-.fs-36 {
-  font-size: 36px;
-  text-align: center;
-  padding-top: 120px;
-  margin-bottom: 25px;
-}
+// .fs-36 {
+//   font-size: 36px;
+//   text-align: center;
+//   padding-top: 120px;
+//   margin-bottom: 25px;
+// }
 .Enav > ul > li > a {
   position: relative;
   display: block;
-  padding: 15px 30px 5px 30px;
+  padding: 15px 50px 2px 40px;
   font-size: 18px;
   font-family: 'Noto Sans TC', sans-serif;
 }
@@ -244,6 +261,7 @@ div.carousel-root {
   width: 100%;
   border-top: #383844 1px solid;
   border-bottom: #383844 1px solid;
+  
 }
 // select option
 .eSELECT,
@@ -361,6 +379,9 @@ div.carousel-root {
   width: 150px;
   background-color: #fff;
   border-radius: 50%;
+}
+.EventIconsArt{
+  transform: translate(-14px, 80px);
 }
 .box-middle-right {
   transform: translate(25px, 80px);

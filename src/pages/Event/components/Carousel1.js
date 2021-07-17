@@ -22,8 +22,8 @@ const Carousel1 = () => {
             </div>
           </Link>
           <Carousel.Caption>
-            <div className="h4-tc TextAlignRight">女孩的第一座百岳</div>
-            <p className="TextAlignRight">2021-08-22(日) 07:00</p>
+            <h3>女孩的第一座百岳</h3>
+            <p >2021-08-22(日) 07:00</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={1500}>
@@ -38,8 +38,8 @@ const Carousel1 = () => {
           </Link>
 
           <Carousel.Caption>
-            <div className="h4-tc TextAlignRight">森林系手繪</div>
-            <p className="TextAlignRight">2021-09-01 14:00</p>
+            <h3>森林系手繪</h3>
+            <p>2021-09-01 14:00</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={1500}>

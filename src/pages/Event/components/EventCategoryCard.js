@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import { BsBookmark } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
@@ -35,8 +36,11 @@ const EventCategoryCard = (props) => {
     const data = await response.json()
 
     console.log(data)
+    console.log(data[0].eventCategory)
+
     // 設定資料
     setEvent(data)
+  
   }
   useEffect(() => {
     getEventFromServer()
@@ -48,8 +52,9 @@ const EventCategoryCard = (props) => {
       setDataLoading(false)
     }, 1000)
   }, [event])
-
-  const loading = (
+  console.log(event)
+  // console.log(event[0].eventCategory)
+  const display = (
     <>
       <div className="d-flex justify-content-center">
         <div className="spinner-border" role="status">
@@ -58,44 +63,15 @@ const EventCategoryCard = (props) => {
       </div>
     </>
   )
+  
   return (
     <div>
+
       <LunarPhaseNavbar cartQty={cartQty}/>
       <body className="bg2">
         {/* <CategoryNav/> */}
         <div class="container">
-          {/* <div class="row"> */}
-          {/* 首張卡 */}
-          {/* <div class="ecard2 mt-5 d-flex">
-              <div class="photo2">
-                <img src="https://picsum.photos/392/339/?random=1" />
-              </div>
-              <div class="text">
-                <h4>品調香體驗 淡香水手作</h4>
-
-                <div class="line1 d-flex justify-content-between align-items-center mt-3 border-bottom">
-                  <h3>$ 990</h3>
-                  <div className="d-flex align-items-center">
-                    <div>
-                      <BsBookmark size="22px" />
-                    </div>
-                    <div className="add">加入收藏</div>
-                  </div>
-                </div>
-                <div class="line2 d-flex justify-content-between align-items-center border-bottom pb-3 pt-3">
-                  <div className="h6-tc">台北市</div>
-                  <h6>尚有名額</h6>
-                </div>
-                <div class="line3 d-flex mt-3">
-                  <div className="pr-3">手作 </div>
-                  <div>|</div>
-                  <div className="pl-3">一人成團</div>
-                </div>
-                <div className="more">
-                  <a href="#">MORE</a>
-                </div>
-              </div>
-            </div> */}
+        <div>{event.eventCategory}</div>
           {event?.map((v, i) => {
             return (
               <div>
@@ -129,12 +105,12 @@ const EventCategoryCard = (props) => {
                         <div>
                           <GoLocation size="25px" />
                         </div>
-                        {v.eventLocation}
+                        {v.eventLocation}{v.eventAddress}
                       </div>
                       <h6>尚有名額</h6>
                     </div>
                     <div class="line3 d-flex mt-3">
-                      <div className="pr-3">{v.eventCategory} </div>
+                      <div className="pr-3">{v.eventCategory}</div>
                       <div>|</div>
                       <div className="pl-3">一人成團</div>
                     </div>
