@@ -1,66 +1,64 @@
-// @import '~bootstrap/scss/bootstrap.scss';
-// @import '../../styles/global.scss';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '../../styles/global.scss';
 
-.body-article {
-  .title-svg {
-    h3 {
-      border-bottom: #fdd2bb 5px solid;
-      border-top: #fdd2bb 5px solid;
-      width: 80%;
-      margin: auto;
-      margin-bottom: 50px;
-      padding-bottom: 30px;
-      padding-top: 30px;
-      line-height: 1.8;
-    }
-    img {
-      width: 100%;
+.article-detail-title{
+    .article-detail-title-h3{
+    border-bottom: #FDD2BB 5px solid;
+    border-top: #FDD2BB 5px solid;
+    width: 80%;
+    margin: auto;
+margin-bottom: 50px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    line-height: 1.8;
 
-      object-fit: cover;
-    }
-  }
-  .author-date {
-    // margin: auto;
-    width: fit-content;
-    // position: absolute;
-    background-color: #f7f7ee;
-    // bottom: 0px;
-    // right: 500px;
-    padding: 15px 30px;
-  }
-
-  .content {
-    p {
-      padding: 20px;
-      text-align: left;
-      /* letter-spacing: 1.5px; */
-      line-height: 28px;
-      /* font-size: 20px; */
-    }
-    .line {
-      position: absolute;
-      left: 0;
-      width: 500px;
-    }
-    .line2 {
-      position: absolute;
-      right: 0;
-      width: 300px;
-      z-index: -1;
-    }
-  }
-
-  .content .highlight {
-    position: relative;
-    img {
-      width: 800px;
-      height: 250px;
-    }
-    p {
-      position: absolute;
-      width: 600px;
-      top: 70px;
-      right: 250px;
-    }
-  }
 }
+.article-detail-title-img{
+    width: 100%;
+}
+}
+        .article-detail-author-date {
+            // margin: auto;
+            width:fit-content;
+            // position: absolute;
+            background-color: #F7F7EE;
+            // bottom: 0px;
+            // right: 500px;
+            padding: 15px 30px;
+        }
+
+        .article-detail-content{
+            
+            .article-detail-content-p {
+            padding: 20px;
+            text-align: left;
+            /* letter-spacing: 1.5px; */
+            line-height: 28px;
+            /* font-size: 20px; */
+        }
+        .aritcle-detail-line{
+            position: absolute;
+            left: 0;
+            width: 500px;
+        }
+        .aritcle-detail-line2{
+            position: absolute;
+            right: 0;
+            width: 300px;
+            z-index: -1;
+        }
+        } 
+
+        .article-detail-highlight {
+            position: relative;
+            .article-detail-highlight-img{
+                width: 800px;
+                height: 250px;
+            }
+            .article-detail-highlight-p {
+                position: absolute;
+                width: 600px;
+                top: 70px;
+                right: 250px;
+            }
+        }

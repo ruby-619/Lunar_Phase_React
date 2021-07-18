@@ -1,80 +1,80 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 // Styles
-import { Card } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Link } from "react-router-dom";
+import { Card } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from 'react-router-dom'
 
 function User(props) {
-  const [article, setArticle] = useState([]);
-  const [dataLoading, setDataLoading] = useState(false);
-  const [displayArticle, setDisplayArticle] = useState([]); //篩過之後的資料
+  const [article, setArticle] = useState([])
+  const [dataLoading, setDataLoading] = useState(false)
+  const [displayArticle, setDisplayArticle] = useState([]) //篩過之後的資料
 
   async function getArticleFromServer() {
     // 開啟載入指示
-    setDataLoading(true);
+    setDataLoading(true)
 
     // 連接的伺服器資料網址
-    const url = `http://localhost:4567/article?orderBy=created_at-desc`;
+    const url = `http://localhost:4567/article?orderBy=created_at-desc`
 
     // 注意header資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
-      method: "GET",
+      method: 'GET',
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
-    });
+    })
 
-    const response = await fetch(request);
-    const data = await response.json();
-    console.log(data);
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data)
     // 設定資料
-    setArticle(data.data);
-    setDisplayArticle(data.data);
+    setArticle(data.data)
+    setDisplayArticle(data.data)
   }
 
   async function deleteArticleFromServer(id) {
     // 開啟載入指示
-    setDataLoading(true);
+    setDataLoading(true)
 
     // 連接的伺服器資料網址
-    const url = "http://localhost:6005/article/" + id;
+    const url = 'http://localhost:6005/article/' + id
 
     // 注意header資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
-      method: "DELETE",
+      method: 'DELETE',
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
-    });
+    })
 
-    const response = await fetch(request);
-    const data = await response.json();
-    console.log(data);
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data)
 
     // 設定資料
     if (!data.id) {
       const newArticle = article.filter((value, index) => {
-        return value.id !== id;
-      });
+        return value.id !== id
+      })
 
-      setArticle(newArticle);
-      alert("刪除完成");
+      setArticle(newArticle)
+      alert('刪除完成')
     }
   }
 
   // 一開始就會開始載入資料
   useEffect(() => {
-    getArticleFromServer();
-  }, []);
+    getArticleFromServer()
+  }, [])
 
   // 每次users資料有變動就會X秒後關掉載入指示
   useEffect(() => {
     setTimeout(() => {
-      setDataLoading(false);
-    }, 1000);
-  }, []);
+      setDataLoading(false)
+    }, 1000)
+  }, [])
 
   const loading = (
     <>
@@ -84,15 +84,15 @@ function User(props) {
         </div>
       </div>
     </>
-  );
+  )
 
   return (
     <>
       <Card className="m-3">
-        <Link to="/article/detail/46" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/46" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2015/05/11058746_10205532198238492_3669878460724262130_n.jpg"
           />
@@ -109,10 +109,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail47" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail47" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://as.chdev.tw/web/article/a/7/4/afab2dec-7523-44d5-982f-3e0c51fcc9c11582016361.jpg"
           />
@@ -129,10 +129,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/45" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/45" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2017/10/xwx3uzps377ntjlm9q84wugvzunxjh.jpg"
           />
@@ -149,10 +149,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/44" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/44" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2014/06/P1220386.jpg"
           />
@@ -169,10 +169,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/2" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/2" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2018/7/8pmoxoeljbhi38bc0yti3eh0hns3mm.jpg"
           />
@@ -189,10 +189,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/42" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/42" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://bnextmedia.s3.hicloud.net.tw/image/album/2021-02/img-1612334375-76986@900.jpg"
           />
@@ -210,10 +210,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/41" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/41" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://images.pexels.com/photos/6590828/pexels-photo-6590828.jpeg"
           />
@@ -230,10 +230,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/40" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/40" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2018/11/plsasr8h3vtdxno4wrtl7hpalbqsg1.jpg"
           />
@@ -250,10 +250,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/39" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/39" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2021/2/1hqsbc1l7jhhuid6vaq4igmc6tws00.jpg"
           />
@@ -270,10 +270,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/38" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/38" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2020/6/uvttq0p5yjmdz4n52b4llsev1gih0j.jpg"
           />
@@ -290,10 +290,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/37" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/37" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://castle.womany.net/images/content/pictures/64694/womany_mian_tiao_5_1506576980-9990-9576.jpg"
           />
@@ -310,10 +310,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/36" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/36" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://castle.womany.net/images/content/pictures/64697/womany_mian_tiao_4_1506578832-5569-2391.jpg"
           />
@@ -330,10 +330,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/35" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/35" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://images.pexels.com/photos/3958518/pexels-photo-3958518.jpeg"
           />
@@ -350,10 +350,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/34" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/34" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://castle.womany.net/images/content/pictures/123009/womany_monika_kozub_bzv_zCAXgeg_unsplash_1621275110-1282110-0033-4616.jpg"
           />
@@ -370,10 +370,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/33" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/33" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2021/4/4or39j6jg5qnihue305zhg66h0pwf8.jpg"
           />
@@ -390,10 +390,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/48" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/48" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://images.unsplash.com/photo-1445384763658-0400939829cd"
           />
@@ -410,10 +410,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/28" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/28" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://pbs.twimg.com/media/EnoBjg2W8AU_U47?format=jpg&name=large"
           />
@@ -431,10 +431,10 @@ function User(props) {
       </Card>
 
       <Card className="m-3">
-        <Link to="/article/detail/26" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/26" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2019/10/mlrw5bx12lnz5c3ufu632hj815l3ua.jpeg"
           />
@@ -451,10 +451,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/25" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/25" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://castle.womany.net/images/content/pictures/123008/womany_inciclo_rYgnsKoimT8_unsplash_1621275108-1321841-0002-8431.jpg"
           />
@@ -471,10 +471,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/24" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/24" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://images.unsplash.com/photo-1607185073253-44296286cd82"
           />
@@ -491,10 +491,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/23" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/23" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://image1.thenewslens.com/2018/8/m9x9znxgim7vi2zgai8e9oe4smjnwq.jpg"
           />
@@ -511,10 +511,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/2" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/2" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://images.pexels.com/photos/4239010/pexels-photo-4239010.jpeg"
           />
@@ -531,10 +531,10 @@ function User(props) {
         </Link>
       </Card>
       <Card className="m-3">
-        <Link to="/article/detail/32" style={{ textDecoration: "none" }}>
+        <Link to="/article/detail/32" style={{ textDecoration: 'none' }}>
           <Card.Img
             className="w-100 "
-            style={{ height: "200px", objectFit: "cover" }}
+            style={{ height: '200px', objectFit: 'cover' }}
             // src={article.articleImg}
             src="https://c1.staticflickr.com/5/4183/34238230142_a2a6fdb581_b.jpg"
           />
@@ -551,7 +551,7 @@ function User(props) {
         </Link>
       </Card>
     </>
-  );
+  )
 }
 
-export default User;
+export default User

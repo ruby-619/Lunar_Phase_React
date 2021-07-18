@@ -1,15 +1,15 @@
-import React from "react";
-import { render } from "react-dom";
-import InfiniteScroll from "react-infinite-scroll-component";
-import "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import React from 'react'
+import { render } from 'react-dom'
+import InfiniteScroll from 'react-infinite-scroll-component'
+import 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // 以下為瀑布流套件的內容
 
 class App extends React.Component {
   state = {
     items: Array.from({ length: 4 }),
-  };
+  }
 
   fetchMoreData = () => {
     // a fake async api call like which sends
@@ -17,16 +17,16 @@ class App extends React.Component {
     setTimeout(() => {
       this.setState({
         items: this.state.items.concat(Array.from({ length: 4 })),
-      });
-    }, 1500);
-  };
+      })
+    }, 1500)
+  }
 
   render() {
     return (
-      <div style={{ width: "1200px" }} className="container">
+      <div style={{ width: '1200px' }} className="container">
         <div
           id="scrollableDiv"
-          style={{ width: 1200, height: 200, overflow: "auto" }}
+          style={{ width: 1200, height: 200, overflow: 'auto' }}
           className="mx-auto"
         >
           <InfiniteScroll
@@ -40,19 +40,19 @@ class App extends React.Component {
             <>
               <div
                 style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  marginLeft: "-48px",
-                  marginRight: "78px",
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  marginLeft: '-48px',
+                  marginRight: '78px',
                 }}
               >
                 {this.state.items.map((i, index) => (
                   <div
                     style={{
-                      width: "40%",
+                      width: '40%',
                       height: 200,
-                      border: "1px solid green",
-                      margin: "auto",
+                      border: '1px solid green',
+                      margin: 'auto',
                     }}
                     key={index}
                   >
@@ -67,10 +67,10 @@ class App extends React.Component {
           </InfiniteScroll>
         </div>
       </div>
-    );
+    )
   }
 }
 
-render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById('root'))
 
-export default App;
+export default App

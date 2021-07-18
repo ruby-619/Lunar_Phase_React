@@ -2,9 +2,8 @@
  
 
 // 下面分類文章card hover
-.col-4{
+.article-card-col-4{
     position: relative;
-
 }
 .article-card-hover:hover{
     transform: scale(1.02);
@@ -14,14 +13,28 @@
 }
 
 
-.title{
+
+    .article-card-col-4 {
+        border-right: 1px solid black;
+        // border-top: 1px solid black;
+        // border-bottom: 1px solid black;
+        @media screen and (max-width:991px) {
+
+            border: none;
+            border-bottom: 1px solid black;
+
+    }
+  }
+
+// 下面是caruosel
+.article-caruosel-title{
     background: #F7F7EE;
     color: #383844 !important;
     margin: 50px;
     padding: 20px;
     border-radius: 5px;
     letter-spacing: 1px;
-    h3{
+    .article-caruosel-title-h3{
         line-height: 1.4;
     }
 }

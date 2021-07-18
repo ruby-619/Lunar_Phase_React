@@ -1,61 +1,61 @@
-import React, { useState, useEffect } from "react";
-import $ from "jquery";
-import { AiOutlineFontColors } from "react-icons/ai";
+import React, { useState, useEffect } from 'react'
+import $ from 'jquery'
+import { AiOutlineFontColors } from 'react-icons/ai'
 
 function ArticleDetailJquery() {
-  const [data] = useState(123);
-  const [didMount, setDidMount] = useState(false);
+  const [data] = useState(123)
+  const [didMount, setDidMount] = useState(false)
 
   // const buttonRef = useRef()
 
   // componentDidMount
   useEffect(() => {
-    $(".jq-large").on("click", () => {
+    $('.jq-large').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $("p").css("font-size", "20px").css("line-height", "40px");
-    });
+      $('p').css('font-size', '20px').css('line-height', '40px')
+    })
 
-    $(".jq-medium").on("click", () => {
+    $('.jq-medium').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $("p").css("font-size", "18px");
-    });
+      $('p').css('font-size', '18px')
+    })
 
-    $(".jq-small").on("click", () => {
+    $('.jq-small').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $("p").css("font-size", "16px");
-    });
+      $('p').css('font-size', '16px')
+    })
 
-    setDidMount(true);
-  }, []);
+    setDidMount(true)
+  }, [])
 
   // componentDidUpdate
   useEffect(() => {
     // 第一次不執行
-    if (!didMount) return;
+    if (!didMount) return
 
     // jquery程式碼寫在這裡, 確保dom已經出現在網頁
     // 使用id
     // 移除事件監聽
-    $(".jq-large").off("click");
-    $(".jq-medium").off("click");
-    $(".jq-small ").off("click");
+    $('.jq-large').off('click')
+    $('.jq-medium').off('click')
+    $('.jq-small ').off('click')
 
     // 加入新的事件監聽
-    $(".jq-large").on("click", () => {
+    $('.jq-large').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $("p").css("font-size", "20px").css("line-height", "40px");
-    });
+      $('p').css('font-size', '20px').css('line-height', '40px')
+    })
 
-    $(".jq-medium").on("click", () => {
+    $('.jq-medium').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $("p").css("font-size", "18px");
-    });
+      $('p').css('font-size', '18px')
+    })
 
-    $(".jq-small").on("click", () => {
+    $('.jq-small').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $("p").css("font-size", "16px");
-    });
-  }, [data, didMount]);
+      $('p').css('font-size', '16px')
+    })
+  }, [data, didMount])
 
   return (
     <>
@@ -68,11 +68,20 @@ function ArticleDetailJquery() {
             <AiOutlineFontSize className="font jq-small h5"/>
 <hr /> */}
 
-      <AiOutlineFontColors className="font jq-large h1 mr-4" />
-      <AiOutlineFontColors className="font jq-medium h3 mr-4" />
-      <AiOutlineFontColors className="font jq-small h5" />
+      <AiOutlineFontColors
+        className="font jq-large h1 mr-4"
+        style={{ cursor: 'pointer' }}
+      />
+      <AiOutlineFontColors
+        className="font jq-medium h3 mr-4"
+        style={{ cursor: 'pointer' }}
+      />
+      <AiOutlineFontColors
+        className="font jq-small h5"
+        style={{ cursor: 'pointer' }}
+      />
     </>
-  );
+  )
 }
 
-export default ArticleDetailJquery;
+export default ArticleDetailJquery

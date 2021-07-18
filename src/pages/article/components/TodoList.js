@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import TodoItem from "./TodoItem";
-import TodoItemEditForm from "./TodoItemEditForm";
-import { withRouter } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import TodoItem from './TodoItem'
+import TodoItemEditForm from './TodoItemEditForm'
+import { withRouter } from 'react-router-dom'
 
 function TodoList(props) {
   const {
@@ -10,55 +10,55 @@ function TodoList(props) {
     handleDelete,
     handleEdited,
     handleEditedSave,
-  } = props;
+  } = props
 
-  console.log(props);
+  console.log(props)
   // var moment = require("moment");
 
   const [articlecomment, setArticlecomment] = useState({
     id: null,
-    articleId: "",
-    member_acoount: "",
-    comment: "",
-    comment_like: "",
-    created_at: "1970-01-01",
-    updated_at: "1970-01-01",
-  });
+    articleId: '',
+    member_acoount: '',
+    comment: '',
+    comment_like: '',
+    created_at: '1970-01-01',
+    updated_at: '1970-01-01',
+  })
 
-  const [dataLoading, setDataLoading] = useState(false);
+  const [dataLoading, setDataLoading] = useState(false)
 
   async function getArticlecommentFromServer() {
     // 開啟載入指示
     // setDataLoading(true)
 
     // 連接的伺服器資料網址
-    const id = props.match.params.id;
-    const url = "http://localhost:4567/articlecomment/" + id;
+    const id = props.match.params.id
+    const url = 'http://localhost:4567/articlecomment/' + id
     // const url = "http://localhost:6005/article/:id?";
 
     // 注意header資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
-      method: "GET",
+      method: 'GET',
       headers: new Headers({
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       }),
-    });
-    const response = await fetch(request);
-    const data = await response.json();
-    console.log(data);
+    })
+    const response = await fetch(request)
+    const data = await response.json()
+    console.log(data)
     // 設定資料
-    setArticlecomment(data);
-    console.log();
+    setArticlecomment(data)
+    console.log()
   }
 
   useEffect(() => {
-    getArticlecommentFromServer();
+    getArticlecommentFromServer()
     // const newevent = event.find((v, i) => {
     //   return props.match.params.id === v.id
     // })
     // setEvent(newevent)
-  }, []);
+  }, [])
 
   // 每次users資料有變動就會X秒後關掉載入指示
   // useEffect(() => {
@@ -75,7 +75,7 @@ function TodoList(props) {
         </div>
       </div>
     </>
-  );
+  )
 
   return (
     <>
@@ -96,11 +96,11 @@ function TodoList(props) {
               handleDelete={handleDelete}
               handleEdited={handleEdited}
             />
-          );
+          )
         })}
       </ul>
     </>
-  );
+  )
 }
 
-export default withRouter(TodoList);
+export default withRouter(TodoList)

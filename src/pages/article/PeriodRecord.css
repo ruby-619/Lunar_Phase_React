@@ -1,16 +1,13 @@
-.app {
-  /* width: 50%; */
-  /* padding: 20px; */
-  /* border: 1px solid #000; */
+.period-record {
   box-sizing: border-box;
 }
 
-input {
+.period-record-input {
   width: 100%;
   height: 30px;
 }
 
-.add {
+.period-record-add {
   margin-top: 20px;
   background-color: #000;
   color: #fff;
@@ -20,11 +17,11 @@ input {
   padding: 15px;
 }
 
-.list {
+.period-record-list {
   padding-top: 20px;
 }
 
-.item {
+.period-record-item {
   width: 100%;
   border-bottom: 1px solid #000;
   margin-bottom: 10px;
@@ -34,7 +31,7 @@ input {
   align-items: center;
 }
 
-.remove {
+.period-record-remove {
   border: 0;
   background-color: rgb(212, 101, 101);
   color: #fff;
