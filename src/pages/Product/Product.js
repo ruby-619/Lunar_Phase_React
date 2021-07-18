@@ -167,7 +167,7 @@ function Product(props) {
             </Link>
           </div>
           <div className="product-order-link col-12 col-md-6">
-            <Link to="/kit">
+            <Link to="/kitTest1">
               <div className="product-order-link-box">
                 <img src="/img/Product/items003.jpg" alt="" />
                 <div className="product-order-link-info">
