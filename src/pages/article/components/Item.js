@@ -1,6 +1,6 @@
 import React from 'react'
 import 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Item = ({ id, dateS, dateE, note, deleteData, submittingStatus }) => {
   function deleteItem() {

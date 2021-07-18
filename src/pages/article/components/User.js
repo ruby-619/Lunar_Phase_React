@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 // Styles
 import { Card } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom'
 
 function User(props) {

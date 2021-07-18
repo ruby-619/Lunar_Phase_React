@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 
 // 以下為瀑布流套件的內容
 

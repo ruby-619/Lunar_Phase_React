@@ -4,7 +4,7 @@ import List from '../article/components/List.js'
 import Edit from '../article/components/Edit.js'
 import './PeriodRecord.css'
 import 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 

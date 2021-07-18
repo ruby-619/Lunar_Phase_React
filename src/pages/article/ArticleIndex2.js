@@ -1,7 +1,7 @@
 import React from 'react'
 import './articleIndex.scss'
 import 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom'
 import App from './components/App.js'
 import ArticleCarousel from './components/ArticleCarousel.js'
