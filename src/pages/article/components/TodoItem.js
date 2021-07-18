@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import "react-bootstrap";
-import { BiEdit } from "react-icons/bi";
-import { AiOutlineDelete } from "react-icons/ai";
-import { FcLike } from "react-icons/fc";
+import React, { useState } from 'react'
+import 'react-bootstrap'
+import { BiEdit } from 'react-icons/bi'
+import { AiOutlineDelete } from 'react-icons/ai'
+import { FcLike } from 'react-icons/fc'
+import Swal from 'sweetalert2'
 
 function TodoItem(props) {
   const {
@@ -11,9 +12,21 @@ function TodoItem(props) {
     // handleCompleted,
     handleDelete,
     handleEdited,
-  } = props;
+  } = props
 
-  const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0)
+
+  const alertCheck = () => {
+    Swal.fire({
+      position: 'center',
+      // icon: 'question',
+      width: '30%',
+      imageUrl: 'http://localhost:3333/img/Article/1103-confetti-outline.gif',
+      text: '刪除成功！',
+      showConfirmButton: false,
+      timer: 1500,
+    })
+  }
 
   return (
     <>
@@ -47,13 +60,14 @@ function TodoItem(props) {
             <BiEdit
               className="mr-3 h3"
               onClick={() => {
-                handleEdited(todoItem.id);
+                handleEdited(todoItem.id)
               }}
             />
             <AiOutlineDelete
               className="h3"
               onClick={() => {
-                handleDelete(todoItem.id);
+                handleDelete(todoItem.id)
+                alertCheck()
               }}
             />
           </div>
@@ -62,14 +76,14 @@ function TodoItem(props) {
           <FcLike
             className="h5 ml-5 mr-4"
             onClick={() => {
-              setTotal(total + 1);
+              setTotal(total + 1)
             }}
           />
           <p>{total}</p>
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default TodoItem;
+export default TodoItem

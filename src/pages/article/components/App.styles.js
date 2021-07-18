@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Content = styled.div`
   display: grid;
@@ -7,10 +7,10 @@ export const Content = styled.div`
   height: 500px;
   margin: 0 auto;
   overflow: auto;
-`;
+`
 
 export const Loading = styled.div`
   width: 200px;
   margin: 20px auto;
   text-align: center;
-`;
+`
