@@ -75,7 +75,12 @@ function PdItemsAll(props) {
     <>
       <div className="row product-content flex-column">
         <div className="product-category-sec text-center mx-auto">
-          <div className="d-flex mx-auto justify-content-between py-3 mb-3">
+          <div
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="100"
+            className="d-flex mx-auto justify-content-between py-3 mb-3"
+          >
             <h6 className="my-auto py-0">{cateNames[products.catePa]}系列</h6>
             <p className="my-auto ml-4 py-0">共 {products.total} 項商品</p>
 
@@ -91,8 +96,13 @@ function PdItemsAll(props) {
             </DropdownButton> */}
           </div>
         </div>
-        <div className="row product-unit-wrap">
-          {products.perPage &&
+        <div
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="200"
+          className="row product-unit-wrap"
+        >
+          {products.perPage > 0 &&
             products.data.map((value, index) => {
               return (
                 <>

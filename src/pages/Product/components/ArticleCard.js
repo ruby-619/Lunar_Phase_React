@@ -4,7 +4,7 @@ import { CardDeck, Card } from 'react-bootstrap'
 const ArticleCard = () => {
   return (
     <>
-      <div className="row py-3">
+      <div className="row item-row py-3">
         <CardDeck className="m-auto">
           <Card className="col-12 col-lg-4">
             <a

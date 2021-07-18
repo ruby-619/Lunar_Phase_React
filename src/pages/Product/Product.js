@@ -12,46 +12,70 @@ import PdLineHeart from './components/PdLineHeart'
 import PdTopPick from './components/PdTopPick'
 import PdItemsAll from './components/PdItemsAll'
 
+// AOS
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 function Product(props) {
-  const {cartQty}=props
+  const { cartQty } = props
   const [cateId, setCateId] = useState(0)
 
+  // nav sticky
+  const [sticky, setSticky] = useState(false)
   // drawing animate
-  // const [drawing, setDrawing] = useState(false)
+  const [drawing, setDrawing] = useState(false)
 
-  // useEffect(() => {
-  //   window.onscroll = function () {
-  //     drawing()
-  //   }
-  //   const block = document.getElementById('naturally-bolck')
-  //   const drawMe = block.offsetTop
+  useEffect(() => {
+    // AOS
+    AOS.init({ offset: 120, duration: 800 })
 
-  //   function drawing() {
-  //     if (window.pageYOffset >= drawMe) {
-  //       setDrawing(true)
-  //     } else {
-  //       setDrawing(false)
-  //     }
-  //   }
-  // }, [])
+    const navbar = document.getElementById('navbar')
+    const sticky = navbar.offsetTop
+    function navbarSticky() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add('sticky')
+        setSticky(true)
+      } else {
+        navbar.classList.remove('sticky')
+      }
+    }
 
-  // const displayDraw = (
-  //   <>
-  //     <PdLineHeart />
-  //   </>
-  // )
+    const block = document.getElementById('naturally-bolck')
+    const drawMe = block.offsetTop
+
+    function drawing() {
+      if (window.pageYOffset >= drawMe) {
+        setDrawing(true)
+      } else {
+        setDrawing(false)
+      }
+    }
+    window.onscroll = function () {
+      drawing()
+      navbarSticky()
+    }
+  }, [])
+
+  const displayDraw = (
+    <>
+      <PdLineHeart />
+    </>
+  )
 
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty}/>
+      <LunarPhaseNavbar cartQty={cartQty} />
       {/* breadcrumb */}
       {/* ----- carousel ----- */}
       <PdSlider />
       {/* ----- item category ----- */}
       <div className="container-fluid">
         <div className="row product-cate-top flex-column">
-          <h4>PRODUCT</h4>
-          <div className="product-category d-flex flex-column flex-sm-row justify-content-between py-0 px-0 px-lg-5">
+          <h4 data-aos="fade-down">PRODUCT</h4>
+          <div
+            data-aos="fade-down"
+            className="product-category d-flex flex-column flex-sm-row justify-content-between py-0 px-0 px-lg-5"
+          >
             <button onClick={() => setCateId(0)} className="pd-category-btn">
               全部商品
             </button>
@@ -99,9 +123,9 @@ function Product(props) {
       {/* ----- top pick ----- */}
       <PdTopPick />
       {/* ----- info & link ----- */}
-      <div id="naturally-bolck" className="naturally container-fluid">
-        {/* {drawing ? displayDraw : ''} */}
-        <PdLineHeart />
+      <div id="naturally-bolck" className="naturally container-fluid px-0">
+        {drawing ? displayDraw : ''}
+        {/* <PdLineHeart /> */}
         <div className="row flex-column">
           <h4>Naturally Powerful</h4>
           <h6>安心保證</h6>

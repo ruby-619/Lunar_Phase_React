@@ -90,11 +90,14 @@ function PdTopPick() {
   const display = (
     <>
       <div className="row pick-unit-wrap">
-        {picks.length &&
+        {picks.length > 0 &&
           picks.map((value, index) => {
             return (
               <>
-                <div className=" flex-column pick-unit col-12 col-md-6 col-lg-4 mb-5 mb-lg-0">
+                <div
+                  data-aos="fade-down"
+                  className=" flex-column pick-unit col-12 col-md-6 col-lg-4 mb-5 mb-lg-0"
+                >
                   <div className="pick-unit-img">
                     <Link to={`/product-detail/${value.itemId}`}>
                       <img src={`/img/Product/${value.itemCoverImg}`} alt="" />
@@ -115,6 +118,7 @@ function PdTopPick() {
                         name: `${value.itemName}`,
                         amount: 1, //傳Qty
                         price: `${value.itemPrice}`,
+                        image: `/img/Product/${value.itemCoverImg}`,
                       })
                       alertCheck()
                     }}
@@ -133,8 +137,10 @@ function PdTopPick() {
     <>
       <div className="top-pick container-fluid">
         <div className="row flex-column">
-          <h4>Top Pick</h4>
-          <h6 className="h6-tc">熱門推薦</h6>
+          <h4 data-aos="fade-down">Top Pick</h4>
+          <h6 data-aos="fade-down" className="h6-tc">
+            熱門推薦
+          </h6>
           {/* {display} */}
           {dataLoading ? loading : display}
         </div>
