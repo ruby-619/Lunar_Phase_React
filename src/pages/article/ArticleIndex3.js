@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Link } from 'react-router-dom'
 import App from './components/App.js'
 import ArticleCarousel from './components/ArticleCarousel.js'
-import '../../styles/global.scss'
+// import '../../styles/global.scss'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 
