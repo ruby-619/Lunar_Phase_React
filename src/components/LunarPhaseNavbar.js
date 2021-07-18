@@ -9,7 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import { FaShoppingCart, FaUser, FaBookmark } from 'react-icons/fa'
 
 function LunarPhaseNavbar(props) {
-  const {cartQty} = props
+  const { cartQty } = props
   const [sticky, setSticky] = useState(false)
 
   useEffect(() => {
@@ -115,19 +115,13 @@ function LunarPhaseNavbar(props) {
                   <Nav.Link href="/event">EVENT</Nav.Link>
                   <Nav.Link href="/login">JOIN US</Nav.Link>
                   <NavDropdown title="會員中心" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">
-                      會員資料
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">
-                      我的收藏
-                    </NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">
+                    <NavDropdown.Item href="/">會員資料</NavDropdown.Item>
+                    <NavDropdown.Item href="/">我的收藏</NavDropdown.Item>
+                    <NavDropdown.Item href="/cart/item">
                       購物車
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">
-                      登入 / 登出
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/">登入 / 登出</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
               </Navbar.Collapse>
