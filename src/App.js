@@ -7,6 +7,9 @@ import EventDetail from './pages/Event/EventDetail'
 import EventIndex2 from './pages/Event/EventIndex2'
 // import Home from './pages/Home'
 import EventCategoryCard from './pages/Event/components/EventCategoryCard'
+import  Calendar  from './pages/Event/Calendar1'
+import  CalendarChild  from './pages/Event/CalendarChild'
+
 
 // Tanya
 import ScrollToTop from './components/ScrollToTop'
@@ -35,6 +38,8 @@ import KitTest3 from './pages/Kit/KitTest3'
 import KitTest4 from './pages/Kit/KitTest4'
 import KitSetList from './pages/Kit/KitSetList'
 import KitShoppingList from './pages/Kit/KitShoppingList'
+import Calendar1 from './pages/Event/Calendar1'
+import CalendarChild2 from './pages/Event/CalendarChild2'
 
 const _ = require('lodash');
 
@@ -91,6 +96,15 @@ function App() {
           <Route path="/event">
             <EventIndex2 renderItem cartQty={cartQty}/>
           </Route>
+          <Route exact path="/calendar">
+              <Calendar1 />
+            </Route>
+            <Route exact path="/calendar-child">
+              <CalendarChild />
+            </Route>
+            <Route exact path="/calendar-child2">
+              <CalendarChild2/>
+            </Route>
 
           {/* J */}
           <Route path="/cart/event">
