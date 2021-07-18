@@ -106,7 +106,9 @@ function ScKitItem(props) {
           >
             <div className="col-6 d-flex align-items-center">
               {/* <div className="myCheckbox selectOne ml-4" /> */}
-              <div className="itemPic ml-5" />
+              <div className="itemPic ml-5">
+                <img className="w-100" src={item.image} alt=""/>
+              </div>
               <div className="sc-nameFont itemName">
                 <div className="mb-0">{item.name}</div>
               </div>
