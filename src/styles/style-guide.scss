@@ -6,8 +6,8 @@
 }
 body {
   box-sizing: border-box;
-  background: #f7f7ee !important;
-  color: #383844 !important;
+  background: #f7f7ee;
+  color: #383844;
 }
 
 ul {
@@ -17,12 +17,12 @@ ul {
 }
 
 a {
-  color: #383844 !important;
+  color: #383844;
   font-family: 'Montserrat', sans-serif;
 }
 a:hover {
-  color: #383844 !important;
-  text-decoration: none !important;
+  color: #383844;
+  text-decoration: none;
   transition: 0.3s;
 }
 
@@ -32,8 +32,8 @@ a:hover {
 
 /* ----- page set ----- */
 .row {
-  text-align: center !important;
-  margin: 60px 140px !important;
+  text-align: center;
+  margin: 60px 140px;
 }
 @media (max-width: 576px) {
   .row {
