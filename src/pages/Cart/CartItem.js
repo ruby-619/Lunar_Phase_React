@@ -138,11 +138,11 @@ function CartItem(props) {
     }
     if (!_.isEmpty(orderItemsStr) && newErrors.length === 0) {
       // 購物車內有商品 且 填寫資料無遺漏
-      setStep(4);
       HandleAlert();
       addOrderToSever();
       localStorage.removeItem('cart');
       updateQty()
+      setStep(4);
     }
     if (_.isEmpty(orderItemsStr)) {
       // 如果購物車內沒有商品的話

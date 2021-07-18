@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { FaTimes } from 'react-icons/fa'
 
-function ScEvItem(props) {
+function ScKitItem(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
   function getCartFromLocalStorage() {
-    const newCart = localStorage.getItem('evcart') || '[]'
+    const newCart = localStorage.getItem('kitcart') || '[]'
 
     console.log(JSON.parse(newCart))
     setMycart(JSON.parse(newCart))
@@ -42,7 +42,7 @@ function ScEvItem(props) {
   // 更新購物車中的商品數量
   const updateCartToLocalStorage = (item, isAdded = true) => {
     console.log(item, isAdded)
-    const currentCart = JSON.parse(localStorage.getItem('evcart')) || []
+    const currentCart = JSON.parse(localStorage.getItem('kitcart')) || []
 
     // find if the product in the localstorage with its id
     const index = currentCart.findIndex((v) => v.id === item.id)
@@ -53,7 +53,7 @@ function ScEvItem(props) {
       isAdded ? currentCart[index].amount++ : currentCart[index].amount--
     }
 
-    localStorage.setItem('evcart', JSON.stringify(currentCart))
+    localStorage.setItem('kitcart', JSON.stringify(currentCart))
 
     // 設定資料
     setMycart(currentCart)
@@ -63,7 +63,7 @@ function ScEvItem(props) {
   // 製作按下X按鈕執行delItem函式刪除localStorage單筆資料
   const delItem = (item) => {
     // 先複製原有的購物車內容
-    const currentCart = JSON.parse(localStorage.getItem('evcart')) || []
+    const currentCart = JSON.parse(localStorage.getItem('kitcart')) || []
 
     // 找尋是否有此筆item.id的對應資料
     const index = currentCart.findIndex((v) => v.id === item.id)
@@ -72,7 +72,7 @@ function ScEvItem(props) {
       // 找到的話就透過splice來移除array中的那個物件
       // 再更新至localStorage cart之中並且更新Mycart
       currentCart.splice(index, 1)
-      localStorage.setItem('evcart', JSON.stringify(currentCart))
+      localStorage.setItem('kitcart', JSON.stringify(currentCart))
       setMycart(currentCart)
     }
   }
@@ -86,8 +86,8 @@ function ScEvItem(props) {
     return total
   }
 
-   // 計算總商品數量的函式
-   const amountSum = (items) => {
+  // 計算總商品數量的函式
+  const amountSum = (items) => {
     let totalAmount = 0
     for (let i = 0; i < items.length; i++) {
       totalAmount += items[i].amount
@@ -164,7 +164,6 @@ function ScEvItem(props) {
     </>
   )
 
-
   return (
     <>
       {/* {dataLoading ? loading : displayItems} */}
@@ -174,4 +173,4 @@ function ScEvItem(props) {
   )
 }
 
-export default ScEvItem
+export default ScKitItem

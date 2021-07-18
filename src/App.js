@@ -21,6 +21,7 @@ import ProductDetail from './pages/Product/ProductDetail'
 // 小J
 import CartItem from './pages/Cart/CartItem'
 import CartEv from './pages/Cart/CartEv'
+import CartKit from './pages/Cart/CartKit'
 
 // 晴
 import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
@@ -109,6 +110,10 @@ function App() {
           {/* J */}
           <Route path="/cart/event">
             <CartEv 
+            />
+          </Route>
+          <Route path="/cart/kit">
+            <CartKit 
             />
           </Route>
           
