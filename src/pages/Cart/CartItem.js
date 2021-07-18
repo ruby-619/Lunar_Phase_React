@@ -5,6 +5,7 @@ import CartItemStep2 from './CartItemStep2'
 import CartItemStep3 from './CartItemStep3'
 import { countries, townships, postcodes } from '../../data/townships'
 import CartItemOrder from './CartItemOrder'
+import { isEmpty } from 'lodash'
 const _ = require('lodash');
 const Swal = require('sweetalert2')
 
@@ -30,6 +31,14 @@ function CartItem(props) {
       // icon: 'success',
       imageUrl: '/img/Cart/412-gift-outline.gif',
       title: '成功加入訂單',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+  function HandleAlertBuy() {
+    Swal.fire({
+      imageUrl: '/img/Cart/69-eye-outline.gif',
+      title: '請先加入商品',
       showConfirmButton: false,
       timer: 1500
     })
@@ -127,12 +136,18 @@ function CartItem(props) {
         setErrors(newErrors)
       }
     }
-    if (newErrors.length === 0) {
+    if (!_.isEmpty(orderItemsStr) && newErrors.length === 0) {
+      // 購物車內有商品 且 填寫資料無遺漏
       setStep(4);
       HandleAlert();
       addOrderToSever();
       localStorage.removeItem('cart');
       updateQty()
+    }
+    if (_.isEmpty(orderItemsStr)) {
+      // 如果購物車內沒有商品的話
+      HandleAlertBuy()
+      setStep(1)
     }
   }
 
@@ -334,38 +349,6 @@ function CartItem(props) {
          scOrderId={scOrderId}
          setStep={setStep}
        />
-      //  case 4:
-      // return <CartItemStep4 
-      //   cartQty={cartQty}
-      //   setStep={setStep}
-      //   inputs={inputs}
-      //   setInputs={setInputs}
-      //   onChangeForField={onChangeForField}
-      //   handleSubmit={handleSubmit}
-      //   // handleChange={handleChange}
-      //   handleInvalid={handleInvalid}
-      //   // fieldErrors={fieldErrors}
-
-      //   isCon={isCon}
-      //   setIsCon={setIsCon}
-      //   shipPrice={shipPrice}
-      //   setShipPrice={setShipPrice}
-      //   shipType={shipType}
-      //   setShipType={setShipType}
-      //   paymentWay={paymentWay}
-      //   setPaymentWay={setPaymentWay}
-      //   country={country}
-      //   setCountry={setCountry}
-      //   township={township}
-      //   setTownship={setTownship}
-      //   selectedConAddress={selectedConAddress}
-      //   setSeletedConAddress={setSeletedConAddress}
-      //   sum={sum}
-      //   amountSum={amountSum}
-      //   addOrderToSever={addOrderToSever}
-      //   orderItemsStr={orderItemsStr}
-      //   scOrderId={scOrderId}
-      // />
        
        default:
        return ""
