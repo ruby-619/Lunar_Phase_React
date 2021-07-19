@@ -86,8 +86,8 @@ function LunarPhaseNavbar(props) {
                 <Link to="/bookmark" className="mx-0">
                   <FaBookmark />
                 </Link>
-                {/* <p className="small mx-0 mb-1">(0)</p> */}
-                <p className="small mx-0 mb-1">({bmQty.totalQty})</p>
+                <p className="small mx-0 mb-1">(0)</p>
+                {/* <p className="small mx-0 mb-1">({bmQty.totalQty})</p> */}
                 {/* <NavBookmark /> */}
               </div>
               <div className="ml-2 mt-2">

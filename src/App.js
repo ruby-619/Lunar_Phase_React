@@ -184,7 +184,7 @@ function App() {
           </Route>
 
           <Route path="/article/detail/:id?">
-            <ArticleDetail />
+            <ArticleDetail updateBmQty={updateBmQty}/>
           </Route>
           <Route path="/periodrecord">
             <PeriodRecord />
