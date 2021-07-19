@@ -245,6 +245,10 @@
   margin: 5px 0;
   padding: 0;
 }
+.product-unit-page > .btn-group > button:hover {
+  color: #e64b4b;
+  transition: 0.3s;
+}
 
 /* ----- top-pick ----- */
 .top-pick {
