@@ -99,7 +99,7 @@ const ArticleDetail = (props) => {
             <h3 className="article-detail-title-h3">{article.articleName}</h3>
           </div>
           <ProgressBar
-            height="130px"
+            height="120px"
             bgcolor="#FDD2BB"
             style={{ marginTop: '300px' }}
           />
