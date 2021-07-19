@@ -4,8 +4,8 @@ function PdInfoPad() {
   return (
     <>
       <div className="item-content-top container-fluid">
-        <div className="row item-row item-content-point text-left justify-content-around align-item-center">
-          <div className="pad-img col-12 col-md-6 ">
+        <div className="row item-content-point text-left justify-content-around align-item-center">
+          <div data-aos="zoom-in" className="pad-img col-12 col-md-6 ">
             <img src="/img/Product/pd-i-00.png" alt="" />
           </div>
           <div className="col-12 col-md-6 my-auto pl-5">
@@ -34,7 +34,7 @@ function PdInfoPad() {
         </div>
       </div>
       <div className="item-content-sec container-fluid">
-        <div className="row item-row flex-column text-left">
+        <div className="row flex-column text-left">
           <h4>Naturally Powerful</h4>
           <h6 className="h6-tc">100% 有機棉</h6>
           <p>
@@ -45,7 +45,7 @@ function PdInfoPad() {
         </div>
       </div>
       <div className="item-content container-fluid">
-        <div className="row item-row justify-content-between text-left ">
+        <div className="row justify-content-between text-left ">
           <div className="col-12 col-md-6">
             <h4>New Ultra Thin</h4>
             <h6 className="h6-tc">安心吸收保證</h6>
@@ -59,16 +59,16 @@ function PdInfoPad() {
               防漏屏障提供持久保護。
             </p>
           </div>
-          <div className="thin-img col-12 col-md-6">
+          <div data-aos="fade-left" className="thin-img col-12 col-md-6">
             <img src="/img/Product/pd-i-01.jpg" alt="" />
           </div>
         </div>
-        <div className="row item-row naked-truth justify-content-between text-left">
+        <div className="row naked-truth justify-content-between text-left">
           <div className="col-12 col-md-6">
-            <div className="coner-img1">
+            <div data-aos="fade-right" className="coner-img1">
               <img src="/img/Product/pd-i-03.jpg" alt="" />
             </div>
-            <div className="coner-img2">
+            <div data-aos="fade-right" className="coner-img2">
               <img src="/img/Product/pd-i-02.jpg" alt="" />
             </div>
           </div>

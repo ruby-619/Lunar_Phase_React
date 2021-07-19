@@ -7,7 +7,7 @@ function PdLinkArticle() {
       <div className="container-fluid py-5 my-5">
         <div className="row product-article my-auto py-3">
           <div className="product-article-img col-12 col-md-4 mb-3 mb-md-0 p-3">
-            <Link to="/kit">
+            <Link to="/article1">
               <img src="/img/Product/items001.jpg" alt="" />
             </Link>
           </div>
