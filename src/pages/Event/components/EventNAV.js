@@ -1,5 +1,9 @@
 // import React, { useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
+import { GiCampingTent, GiBookCover, GiHamburgerMenu } from 'react-icons/gi'
+import { FaPaintBrush, FaHandPaper } from 'react-icons/fa'
+import {IoIosWine} from 'react-icons/io'
+
 
 const EventNAV = (props) => {
   // const url = props.match.url
@@ -12,19 +16,19 @@ const EventNAV = (props) => {
           <ul class="d-flex justify-content-around">
             <li>
               {/* <Link to={`${url}/1`}>戶外</Link> */}
-              <Link to="/category/1" className="EventNavLink">戶外</Link>
+              <Link to="/category/1" className="EventNavLink"><GiCampingTent/> 戶外</Link>
             </li>
             <li>
-              <Link to="/category/2" className="EventNavLink">藝文</Link>
+              <Link to="/category/2" className="EventNavLink"><FaPaintBrush/> 藝文</Link>
             </li>
             <li>
-              <Link to="/category/3" className="EventNavLink">講座</Link>
+              <Link to="/category/3" className="EventNavLink"><GiBookCover/> 講座</Link>
             </li>
             <li>
-              <Link to="/category/4" className="EventNavLink">手作</Link>
+              <Link to="/category/4" className="EventNavLink"><FaHandPaper/> 手作</Link>
             </li>
             <li>
-              <Link to="/category/5" className="EventNavLink">品味</Link>
+              <Link to="/category/5" className="EventNavLink"><IoIosWine size="22px"/>品味</Link>
             </li>
           </ul>
         </div>

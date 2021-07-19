@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import Footer from '../../components/Footer'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import EventListCard from './components/EventListCard'
 // import { BsBookmark } from 'react-icons/bs'
@@ -21,6 +22,7 @@ const EventList = (props) => {
       {/* <Input /> */}
       <EventListCard />
       {/* </body> */}
+      <Footer/>
     </div>
   )
 }

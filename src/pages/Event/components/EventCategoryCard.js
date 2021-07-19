@@ -7,6 +7,7 @@ import { withRouter } from 'react-router-dom'
 // import CategoryNav from './CategoryNav'
 import LunarPhaseFooter from '../../../components/LunarPhaseFooter'
 import LunarPhaseNavbar from '../../../components/LunarPhaseNavbar'
+import CategoryNav from './CategoryNav'
 const _ = require('lodash');
 
 const EventCategoryCard = (props) => {
@@ -67,12 +68,11 @@ const EventCategoryCard = (props) => {
   
   return (
     <div>
-
       <LunarPhaseNavbar cartQty={cartQty}/>
       <body className="bg2">
         {/* <CategoryNav/> */}
         <div class="container">
-        <div>{!_.isEmpty(event) &&event[0].eventCategory}</div>
+        <h6 className="CategoryTitle mt-3">目前所在分類：{!_.isEmpty(event) &&event[0].eventCategory}</h6>
           {!_.isEmpty(event) &&event?.map((v, i) => {
             return (
               <div>
@@ -89,7 +89,7 @@ const EventCategoryCard = (props) => {
                         </div>
                         活動日期：
                         {moment(v.eventDate).format('YYYY-MM-DD')}
-                        <span>({moment(v.eventDate).format('dddd')})</span>
+                        ({moment(v.eventDate).format('dddd')})
                       </div>
                     </div>
                     <div class="line1 d-flex justify-content-between align-items-center mt-3 border-bottom">
