@@ -12,7 +12,7 @@ import { FaShoppingCart, FaUser, FaBookmark } from 'react-icons/fa'
 import NavBookmark from './NavBookmark'
 
 function LunarPhaseNavbar(props) {
-  const { cartQty } = props
+  const { cartQty, bmQty } = props
 
   const [sticky, setSticky] = useState(false)
 
@@ -83,19 +83,19 @@ function LunarPhaseNavbar(props) {
                 <div />
               </div>
               <div className="ml-2 mt-2">
-                <Link to="/" className="mx-0">
+                <Link to="/bookmark" className="mx-0">
                   <FaBookmark />
                 </Link>
                 {/* <p className="small mx-0 mb-1">(0)</p> */}
-                {/* <p className="small mx-0 mb-1">({localBookmarkNum})</p> */}
-                <NavBookmark />
+                <p className="small mx-0 mb-1">({bmQty})</p>
+                {/* <NavBookmark /> */}
               </div>
               <div className="ml-2 mt-2">
                 <Link to="/cart/item" className="mx-0">
                   <FaShoppingCart />
                 </Link>
-                {/* <p className="small mx-0 mb-1">(0)</p> */}
-                <p className="small mx-0 mb-1">({cartQty.totalQty})</p>
+                <p className="small mx-0 mb-1">(0)</p>
+                {/* <p className="small mx-0 mb-1">({cartQty.totalQty})</p> */}
               </div>
             </div>
           </div>

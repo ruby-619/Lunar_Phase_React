@@ -7,6 +7,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { FaBookmark } from 'react-icons/fa'
 
 function PdItemBlock(props) {
+  const { updateBmQty } = props
   // By CART
   const [mycart, setMycart] = useState([])
   const [productName, setProductName] = useState('') // 加入購物車會跳出的訊息，不使用可省略
@@ -107,6 +108,7 @@ function PdItemBlock(props) {
                 image: `/img/Product/${itemCoverImg}`,
               })
               alertMark()
+              updateBmQty()
             }}
             class={bookmark ? 'product-add product-added' : 'product-add'}
           >
