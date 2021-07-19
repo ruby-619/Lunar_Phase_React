@@ -24,6 +24,10 @@ function ArticleDetailJquery() {
       // event.preventDefault(); //取消預設行為
       $('p').css('font-size', '16px')
     })
+    $('.bookmarkfill').on('click', () => {
+      // event.preventDefault(); //取消預設行為
+      $('.bookmarkfill').css('fill', '#E64B4B')
+    })
 
     setDidMount(true)
   }, [])
@@ -38,22 +42,29 @@ function ArticleDetailJquery() {
     // 移除事件監聽
     $('.jq-large').off('click')
     $('.jq-medium').off('click')
-    $('.jq-small ').off('click')
+    $('.jq-small').off('click')
+    $('.bookmarkfill').off('click')
 
     // 加入新的事件監聽
     $('.jq-large').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $('p').css('font-size', '20px').css('line-height', '40px')
+      $('.article-detail-content-p')
+        .css('font-size', '20px')
+        .css('line-height', '40px')
     })
 
     $('.jq-medium').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $('p').css('font-size', '18px')
+      $('.article-detail-content-p').css('font-size', '18px')
     })
 
     $('.jq-small').on('click', () => {
       // event.preventDefault(); //取消預設行為
-      $('p').css('font-size', '16px')
+      $('.article-detail-content-p').css('font-size', '16px')
+    })
+    $('.bookmarkfill').on('click', () => {
+      // event.preventDefault(); //取消預設行為
+      $('.bookmarkfill').css('fill', '#E64B4B')
     })
   }, [data, didMount])
 
@@ -69,15 +80,15 @@ function ArticleDetailJquery() {
 <hr /> */}
 
       <AiOutlineFontColors
-        className="font jq-large h1 mr-4"
+        className="aricle-detail-btn-hover font jq-large h1 mr-4"
         style={{ cursor: 'pointer' }}
       />
       <AiOutlineFontColors
-        className="font jq-medium h3 mr-4"
+        className="aricle-detail-btn-hover font jq-medium h3 mr-4"
         style={{ cursor: 'pointer' }}
       />
       <AiOutlineFontColors
-        className="font jq-small h5"
+        className="aricle-detail-btn-hover font jq-small h5"
         style={{ cursor: 'pointer' }}
       />
     </>

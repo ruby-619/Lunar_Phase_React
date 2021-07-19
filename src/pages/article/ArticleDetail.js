@@ -185,26 +185,25 @@ const ArticleDetail = (props) => {
             </div>
             <div className="mr-4">
               <RiBookmarkFill
-                className="h4 mr-4"
+                className="bookmarkfill aricle-detail-btn-hover h4 mr-4"
                 style={{ cursor: 'pointer' }}
-                onClick={()=>{
+                onClick={() => {
                   updateMarkToLocalStorage({
                     id: article.articleId, //傳Id
                     name: article.articleName,
                     author: article.articleAuthor,
                     image: article.articleImg,
-                    
                   })
                   alertMark()
                   updateBmQty()
                 }}
               />
               <TiSocialFacebook
-                className="h3 mr-4"
+                className="aricle-detail-btn-hover h3 mr-4"
                 style={{ cursor: 'pointer' }}
               />
               <AiOutlineInstagram
-                className="h3 mr-4"
+                className="aricle-detail-btn-hover h3 mr-4"
                 style={{ cursor: 'pointer' }}
               />
             </div>
