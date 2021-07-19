@@ -7,6 +7,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { FaBookmark } from 'react-icons/fa'
 
 function PdItemBlock(props) {
+  const { updateBmQty } = props
   // By CART
   const [mycart, setMycart] = useState([])
   const [productName, setProductName] = useState('') // 加入購物車會跳出的訊息，不使用可省略
@@ -31,8 +32,28 @@ function PdItemBlock(props) {
     setProductName('產品：' + item.name + '已成功加入購物車')
   }
 
-  //
+  // BOOKMARK
   const [bookmark, setBookmark] = useState(false)
+  const [myBookmark, setMyBookmark] = useState(false)
+  const updateMarkToLocalStorage = (item) => {
+    const currentMark = JSON.parse(localStorage.getItem('bookmark')) || []
+    const index = currentMark.findIndex((v) => v.id === item.id)
+
+    if (index > -1) {
+      //currentCart[index].amount++
+      setProductName('這個商品已經加過了')
+
+      return
+    } else {
+      currentMark.push(item)
+    }
+
+    localStorage.setItem('bookmark', JSON.stringify(currentMark))
+
+    // 設定資料
+    setMyBookmark(currentMark)
+    setProductName('產品：' + item.name + '已成功加入收藏')
+  }
 
   // alert
   const alertCheck = () => {
@@ -80,7 +101,14 @@ function PdItemBlock(props) {
           <button
             onClick={() => {
               setBookmark(!bookmark)
+              updateMarkToLocalStorage({
+                id: itemId, //傳itemId
+                name: itemName,
+                price: itemPrice,
+                image: `/img/Product/${itemCoverImg}`,
+              })
               alertMark()
+              updateBmQty()
             }}
             class={bookmark ? 'product-add product-added' : 'product-add'}
           >

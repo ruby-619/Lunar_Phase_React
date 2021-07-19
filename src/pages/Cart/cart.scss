@@ -80,6 +80,20 @@ body {
     width: 100%;
 }
 
+.bmbgMountainRow {
+    overflow: hidden;
+}
+
+.bmbgMountain {
+    left: 0;
+    top: 180px;
+    width: 100%;
+}
+
+.bmbgMountain img {
+    width: 100%;
+}
+
 /*======== 共同class ==================*/
 
 .fitContent {
@@ -321,6 +335,11 @@ body {
     height: 50px;
     background-color: $myPink;
 }
+.bmbar {
+    width: 100%;
+    height: 30px;
+    background-color: $myPink;
+}
 /*================= Radio Checkbox =======================*/
 
 .myCheckbox, .myRadio {
@@ -348,6 +367,25 @@ body {
     width: 100%;
     padding:40px 0;
     background-color: $myWhite;
+}
+.bmRow {
+    width: 100%;
+    padding:20px;
+    background-color: $myWhite;
+    flex-wrap: wrap;
+}
+.bmRow .col-6:hover {
+    background-color: $bg-hover;
+    .bmdelOne{
+        display: block;
+    }
+}
+.bmdelOne {
+    /* X按鈕 */
+    display: none;
+    top: 0;
+    right: 0;
+    padding: 8px 12px;
 }
 .itemRow:hover {
     background-color: $bg-hover;
@@ -472,8 +510,14 @@ $labelName: 20px;
     margin-top: 100px;
     margin-left: 20px;
 }
+.myBmLabelGroup {
+    padding: 0 $labelTriW;
+    margin-top: 170px;
+    margin-left: 20px;
+}
 
 .labelSquare {
+    cursor: pointer;
     position: relative;
     width: $labelSquareW;
     height: $labelSquareH;

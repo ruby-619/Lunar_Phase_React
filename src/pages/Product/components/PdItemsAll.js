@@ -4,7 +4,7 @@ import PdItemBlock from './PdItemBlock'
 // import Dropdown from 'react-bootstrap/Dropdown'
 
 function PdItemsAll(props) {
-  const { cateIdPa } = props
+  const { cateIdPa, updateBmQty } = props
   const catePa = cateIdPa
   const [products, setProducts] = useState([])
   // const [cateName, setCateName] = useState('')
@@ -107,6 +107,7 @@ function PdItemsAll(props) {
               return (
                 <>
                   <PdItemBlock
+                    updateBmQty={updateBmQty}
                     itemId={value.itemId}
                     itemSize={value.itemSize}
                     itemCoverImg={value.itemCoverImg}
