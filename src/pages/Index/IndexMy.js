@@ -272,7 +272,7 @@ function IndexMy(props) {
             <div className="index-article-topic-content text-left col-12 col-md-6 col-lg-8 ml-0 pl-0 pr-0 pr-md-3">
               <div className="">
                 <p className="index-article-date mb-1">2021.07.26</p>
-                <Link to="/article">
+                <Link to="/article/detail/48">
                   <h4 className="index-article-h4 h4-tc">
                     新種月事用品　溫柔對待你的「好朋友」
                   </h4>
@@ -320,7 +320,7 @@ function IndexMy(props) {
                     />
                   </Link>
                 </div>
-                <Link to="/article">
+                <Link to="/article/detail/39">
                   <h5 className="index-article-h5 h5-tc my-2">
                     瑞典學校性平教育將強化認知「合意文化」，不把性騷擾「正常化」
                   </h5>
@@ -345,7 +345,7 @@ function IndexMy(props) {
                     <img src="/img/Index/article003.jpg" alt="" />
                   </Link>
                 </div>
-                <Link to="/article">
+                <Link to="/article/detail/2">
                   <h5 className="index-article-h5 h5-tc my-2">
                     40萬人連署後，印度將衛生棉從「奢侈品」降級成免稅的「必需品」
                   </h5>
@@ -370,7 +370,7 @@ function IndexMy(props) {
                     <img src="/img/Index/article004.jpg" alt="" />
                   </Link>
                 </div>
-                <Link to="/article">
+                <Link to="/article/detail/38">
                   <h5 className="index-article-h5 h5-tc my-2">
                     世界很亂，該和女兒談談性：做不到這點，就不可能打開通往性教育的門
                   </h5>
@@ -395,7 +395,7 @@ function IndexMy(props) {
                     <img src="/img/Index/article005.jpg" alt="" />
                   </Link>
                 </div>
-                <Link to="/article">
+                <Link to="/article/detail/23">
                   <h5 className="index-article-h5 h5-tc my-2">
                     從意外到等待：台灣不同世代女性的初經經驗
                   </h5>
@@ -517,7 +517,7 @@ function IndexMy(props) {
                       alt=""
                     />
                   </Link>
-                  <Link to="/event">
+                  <Link to="/event-detail/1">
                     <h5 className="index-event-h5 h5-tc mt-3">
                       少女印象盆花課程
                     </h5>
@@ -535,7 +535,7 @@ function IndexMy(props) {
                       alt=""
                     />
                   </Link>
-                  <Link to="/event">
+                  <Link to="/event-detail/5">
                     <h5 className="index-event-h5 h5-tc mt-3">
                       給女孩的人生關鍵字
                     </h5>
@@ -553,7 +553,7 @@ function IndexMy(props) {
                       alt=""
                     />
                   </Link>
-                  <Link to="/event">
+                  <Link to="/event-detail/4">
                     <h5 className="index-event-h5 h5-tc mt-3">女神盃</h5>
                   </Link>
                   <p className="p-tc mx-auto">Girls Surf Boardriders Taiwan</p>

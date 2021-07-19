@@ -94,6 +94,7 @@ function PdItemBlock(props) {
                 name: itemName,
                 amount: 1, //傳Qty
                 price: itemPrice,
+                image: `/img/Product/${itemCoverImg}`,
               })
               alertCheck()
             }}
