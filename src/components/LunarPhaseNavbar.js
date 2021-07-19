@@ -63,7 +63,7 @@ function LunarPhaseNavbar(props) {
             <div className="col-4" />
             <div className="col-4 d-flex justify-content-center">
               <Link to="/">
-                <h1>
+                <h1 className="my-0">
                   <img
                     className="nav-logo"
                     src="/img/Index/logo-s-dark.svg"
@@ -86,7 +86,7 @@ function LunarPhaseNavbar(props) {
                 <Link to="/bookmark" className="mx-0">
                   <FaBookmark />
                 </Link>
-                <p className="small mx-0 mb-1">(0)</p>
+                <p className="small m-0">(0)</p>
                 {/* <p className="small mx-0 mb-1">({bmQty.totalQty})</p> */}
                 {/* <NavBookmark /> */}
               </div>
@@ -94,13 +94,13 @@ function LunarPhaseNavbar(props) {
                 <Link to="/cart/item" className="mx-0">
                   <FaShoppingCart />
                 </Link>
-                <p className="small mx-0 mb-1">(0)</p>
+                <p className="small m-0">(0)</p>
                 {/* <p className="small mx-0 mb-1">({cartQty.totalQty})</p> */}
               </div>
             </div>
           </div>
           <div className="nav-bar-bottom">
-            <ul className="d-flex justify-content-around col-11 mx-auto mt-1">
+            <ul className="d-flex justify-content-around col-11 mx-auto">
               <li>
                 <Link to="/product">PRODUCT</Link>
               </li>

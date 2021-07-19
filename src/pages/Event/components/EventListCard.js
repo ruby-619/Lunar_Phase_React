@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link ,withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { Pagination } from 'react-bootstrap'
 import DateSearch from './Filter/DateSearch'
 import Location from './Filter/Location'
@@ -9,12 +9,14 @@ import { BsBookmark } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 import { IoMdCalendar } from 'react-icons/io'
 import { FcBookmark } from 'react-icons/fc'
-
+import Swal from 'sweetalert2'
 
 // import { NetworkAuthenticationRequire } from 'http-errors'
 // import { data } from 'jquery'
 
 const EventListCard = (props) => {
+  const {updateBmQty} = props
+  const [myBookmark, setMyBookmark] = useState(false) //收藏
   const [collection, setcollection] = useState([1, 1, 1, 1, 1, 1])
   const [event, setEvent] = useState([]) //初始資料
   const [data, setdata] = useState([]) //初始資料
@@ -50,6 +52,33 @@ const EventListCard = (props) => {
   }
 
   console.log('我是page', page)
+
+  const updateMarkToLocalStorage = (item) => {
+    const currentMark = JSON.parse(localStorage.getItem('evbookmark')) || []
+    const index = currentMark.findIndex((v) => v.id === item.id)
+
+    if (index > -1) {
+      return
+    } else {
+      currentMark.push(item)
+    }
+
+    localStorage.setItem('evbookmark', JSON.stringify(currentMark))
+
+    // 設定資料
+    setMyBookmark(currentMark)
+  }
+  const alertMark = () => {
+    Swal.fire({
+      position: 'center',
+      // icon: 'question',
+      width: '30%',
+      imageUrl: '/img/svg/43-music-note-outline.gif',
+      title: '已加入收藏',
+      showConfirmButton: false,
+      timer: 1500,
+    })
+  }
 
   // 初始化資料
   async function getEventFromServer() {
@@ -182,7 +211,7 @@ const EventListCard = (props) => {
       <body className="bg2">
         <div class="container">
           <div class="row">
-          {/* <div class="row"> */}
+            {/* <div class="row"> */}
             <div className="d-flex">
               {/* <DateSearch
                 dateSearch={dateSearch}
@@ -199,19 +228,24 @@ const EventListCard = (props) => {
                 className=""
               />
             </div>
-          {/* </div> */}
+            {/* </div> */}
 
-          {displayEvent.map((v, i) => {
-            return (
-             
+            {displayEvent.map((v, i) => {
+              return (
                 <div class="ecard2 mt-5 d-flex">
                   <div class="photo2">
                     <img src={`/img/Event/${v.eventImg}`} />
                   </div>
                   <div class="text">
-                  
-                    <h4 onClick={()=>{props.history.push(`/event-detail/${v.id}`)} }className="TextAlignLeft">{v.eventName}</h4>
-                
+                    <h4
+                      onClick={() => {
+                        props.history.push(`/event-detail/${v.id}`)
+                      }}
+                      className="TextAlignLeft"
+                    >
+                      {v.eventName}
+                    </h4>
+
                     <div class="line2 d-flex justify-content-between align-items-center border-bottom pb-3 pt-3">
                       <div className="h6-tc d-flex align-items-center">
                         <div>
@@ -234,6 +268,14 @@ const EventListCard = (props) => {
                                 newCollection[i] =
                                   newCollection[i] === 1 ? 0 : 1
                                 setcollection(newCollection)
+                                updateMarkToLocalStorage({
+                                  id: v.id, //傳Id
+                                  name: v.eventName,
+                                  date: v.eventDate,
+                                  image: `/img/Event/${v.eventImg}`,
+                                })
+                                alertMark()
+                                updateBmQty()
                               }}
                             />
                           ) : (
@@ -270,16 +312,13 @@ const EventListCard = (props) => {
                     </div>
                   </div>
                 </div>
-            )
-          })}
-          <div>
-            {/* <Pagination>{items}</Pagination> */}
+              )
+            })}
+            <div>{/* <Pagination>{items}</Pagination> */}</div>
           </div>
-        </div>
         </div>
       </body>
     </div>
-    
   )
 }
 

@@ -49,10 +49,10 @@ function IndexMy(props) {
                 <Link to="/product">PRODUCT</Link>
               </li>
               <li className="col">
-                <Link to="/article">ARTICLE</Link>
+                <Link to="/article1">ARTICLE</Link>
               </li>
               <li className="col">
-                <Link to="/kit">KIT</Link>
+                <Link to="/kitindex">KIT</Link>
               </li>
               <li className="col">
                 <Link to="/order">EVENT</Link>
@@ -253,7 +253,7 @@ function IndexMy(props) {
       <div id="article" className="index-article container-fluid">
         <div className="index-row">
           <div className="index-article-header d-flex flex-wrap justify-content-between col-12 mx-0 px-0">
-            <Link to="/article">
+            <Link to="/article1">
               <h2 className="col-12 col-sm-4 px-0">ARTICLE</h2>
             </Link>
             <div className="index-article-tags col-12 col-sm-8 px-0">
@@ -284,21 +284,18 @@ function IndexMy(props) {
               </div>
               <div className="index-article-unit-under  d-flex justify-content-between">
                 <div className="btn-read text-center">
-                  <Link>read</Link>
+                  <Link to="/article/detail/48">read</Link>
                 </div>
                 <div>
-                  <Link to="/article" className="btn-tag mr-0">
+                  <Link to="/article1" className="btn-tag mr-0">
                     #衛教資訊
                   </Link>
                 </div>
               </div>
             </div>
             <div className="index-article-topic-img col-12 col-md-6 col-lg-4 p-0 my-4 my-md-auto">
-              <Link to="/article">
-                <img
-                  src="https://images.unsplash.com/photo-1445384763658-0400939829cd"
-                  alt=""
-                />
+              <Link to="/article/detail/48">
+                <img src="/img/Index/article001.jpg" alt="" />
               </Link>
             </div>
           </div>
@@ -313,11 +310,8 @@ function IndexMy(props) {
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.07.19</p>
                 <div className="index-article-unit-img col-12 p-0">
-                  <Link to="/article">
-                    <img
-                      src="https://image1.thenewslens.com/2021/2/1hqsbc1l7jhhuid6vaq4igmc6tws00.jpg"
-                      alt=""
-                    />
+                  <Link to="/article/detail/39">
+                    <img src="/img/Index/article002.jpg" alt="" />
                   </Link>
                 </div>
                 <Link to="/article/detail/39">
@@ -328,10 +322,10 @@ function IndexMy(props) {
               </div>
               <div className="index-article-unit-under  d-flex justify-content-between">
                 <div className="btn-read text-center">
-                  <Link to="/article">read</Link>
+                  <Link to="/article/detail/39">read</Link>
                 </div>
                 <div className="text-right">
-                  <Link to="/article" className="btn-tag ml-2">
+                  <Link to="/article2" className="btn-tag ml-2">
                     #性教育
                   </Link>
                 </div>
@@ -341,7 +335,7 @@ function IndexMy(props) {
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.07.12</p>
                 <div className="index-article-unit-img col-12 p-0">
-                  <Link to="/article">
+                  <Link to="/article/detail/2">
                     <img src="/img/Index/article003.jpg" alt="" />
                   </Link>
                 </div>
@@ -353,10 +347,10 @@ function IndexMy(props) {
               </div>
               <div className="index-article-unit-under  d-flex justify-content-between">
                 <div className="btn-read text-center">
-                  <Link to="/article">read</Link>
+                  <Link to="/article/detail/2">read</Link>
                 </div>
                 <div className="text-right">
-                  <Link to="/article" className="btn-tag ml-2">
+                  <Link to="/article3" className="btn-tag ml-2">
                     #性別故事
                   </Link>
                 </div>
@@ -366,7 +360,7 @@ function IndexMy(props) {
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.07.05</p>
                 <div className="index-article-unit-img col-12 p-0">
-                  <Link to="/article">
+                  <Link to="/article/detail/38">
                     <img src="/img/Index/article004.jpg" alt="" />
                   </Link>
                 </div>
@@ -378,10 +372,10 @@ function IndexMy(props) {
               </div>
               <div className="index-article-unit-under  d-flex justify-content-between">
                 <div className="btn-read text-center">
-                  <Link to="/article">read</Link>
+                  <Link to="/article/detail/38">read</Link>
                 </div>
                 <div className="text-right">
-                  <Link to="/article" className="btn-tag ml-2">
+                  <Link to="/article2" className="btn-tag ml-2">
                     #性教育
                   </Link>
                 </div>
@@ -391,7 +385,7 @@ function IndexMy(props) {
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.06.28</p>
                 <div className="index-article-unit-img p-0">
-                  <Link to="/article">
+                  <Link to="/article/detail/23">
                     <img src="/img/Index/article005.jpg" alt="" />
                   </Link>
                 </div>
@@ -403,10 +397,10 @@ function IndexMy(props) {
               </div>
               <div className="index-article-unit-under  d-flex justify-content-between">
                 <div className="btn-read text-center">
-                  <Link to="/article">read</Link>
+                  <Link to="/article/detail/23">read</Link>
                 </div>
                 <div className="text-right">
-                  <Link to="/article" className="btn-tag ml-2">
+                  <Link to="/article3" className="btn-tag ml-2">
                     #性別故事
                   </Link>
                 </div>
@@ -422,7 +416,7 @@ function IndexMy(props) {
                 <i className="fas fa-chevron-right" />
               </Link> */}
             </div>
-            <Link to="/article" className="btn-more">
+            <Link to="/article1" className="btn-more">
               more
             </Link>
           </div>
@@ -464,6 +458,7 @@ function IndexMy(props) {
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="2400"
+            data-aos-duration="3000"
             className="index-kit-content-r col-12 col-md-8"
           >
             <h5 className="h5-tc">月訂專區 - 生理期採購新提案</h5>
@@ -503,12 +498,13 @@ function IndexMy(props) {
             <VscChevronLeft />
           </button> */}
           <div className="index-event-content row m-0 justify-content-between">
-            <div
-              data-aos="fade-up"
-              className="index-event-unit-wrap d-flex justify-content-between"
-            >
+            <div className="index-event-unit-wrap d-flex justify-content-between">
               <div className="index-event-unit row">
-                <div className="col-12 col-lg-4 mb-5">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                  className="col-12 col-lg-4 mb-5"
+                >
                   <p className="index-article-date mb-2 mx-auto">2021.08.14</p>
                   <Link to="/event">
                     <img
@@ -526,7 +522,11 @@ function IndexMy(props) {
                   <div className="underline" />
                   <p className="mt-2 mx-auto">報名中</p>
                 </div>
-                <div className="col-12 col-lg-4 mb-5">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="600"
+                  className="col-12 col-lg-4 mb-5"
+                >
                   <p className="index-article-date mb-2 mx-auto">2021.08.21</p>
                   <Link to="/event">
                     <img
@@ -544,7 +544,11 @@ function IndexMy(props) {
                   <div className="underline" />
                   <p className="mt-2 mx-auto">報名中</p>
                 </div>
-                <div className="col-12 col-lg-4 mb-5">
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay="900"
+                  className="col-12 col-lg-4 mb-5"
+                >
                   <p className="index-article-date mb-2 mx-auto">2020.09.5</p>
                   <Link to="/event">
                     <img

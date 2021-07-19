@@ -11,7 +11,7 @@ import './Event.scss'
 // import OneOfCategory from './components/OneOfCategory'
 
 const EventList = (props) => {
-  const{cartQty}=props
+  const{cartQty, updateBmQty}=props
   console.log(props)
   return (
     <div>
@@ -20,7 +20,7 @@ const EventList = (props) => {
       {/* <body className="bg2 mt-5"> */}
       <EventNAV />
       {/* <Input /> */}
-      <EventListCard />
+      <EventListCard updateBmQty={updateBmQty}/>
       {/* </body> */}
       <Footer/>
     </div>

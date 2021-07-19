@@ -406,17 +406,14 @@ body {
 .itemPic {
     width: 195px;
     height: 130px;
+    overflow: hidden;
     background-color: #ccc;
-    //  margin-left: 3vw; 
-    // @include sizeLg {
-    //     display: none;
-    // }
 }
 .itemEvPic {
     width: 195px;
-    height: 220px;
+    height: 130px;
     background-color: #ccc;
-    object-fit: cover;
+    // object-fit: cover;
     overflow: hidden;
     object-position: center bottom;
 }
