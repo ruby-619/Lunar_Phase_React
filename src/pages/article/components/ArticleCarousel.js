@@ -9,8 +9,8 @@ function ArticleCarousel() {
   return (
     <>
       {/* <div className="container"> */}
-      <Carousel>
-        <Carousel.Item>
+      <Carousel className="article-caruosel">
+        <Carousel.Item className="article-caruosel-item">
           <Link to="/article/detail/2">
             <img
               className="d-block w-100"

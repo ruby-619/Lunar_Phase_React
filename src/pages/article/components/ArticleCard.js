@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const ArticleCard = () => {
   return (
     <>
-      <div className="container row d-flex m-auto">
+      <div className="container d-flex m-auto">
         <div className="article-card-col-4 col-12 col-md-6 col-lg-4  mt-3">
           <Link
             to="/article/detail/35"
