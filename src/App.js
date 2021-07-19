@@ -43,6 +43,13 @@ import KitShoppingList from './pages/Kit/KitShoppingList'
 import Calendar1 from './pages/Event/Calendar1'
 import CalendarChild2 from './pages/Event/CalendarChild2'
 
+// Moana
+import Login from './pages/Member/Login/Login'
+import Account from './pages/Member/Account/Account'
+import Profile from './pages/Member/Profile/Profile'
+import OrderList from './pages/Member/OrderList/OrderList'
+
+
 const _ = require('lodash');
 
 
@@ -84,7 +91,9 @@ function App() {
       console.log('bmQty',bmQty)
       setBmQty(newBmQty)
     }
-  
+    
+    // Moana
+    const [parendUser, setParendUser] = useState({})
 
 
 
@@ -204,6 +213,23 @@ function App() {
             {/* <KitShoppingList /> */}
           </Route>
           {/* Apple */}
+
+        {/* moana */}
+         
+          <Route path="/member/orderList">
+            <OrderList parendUser={parendUser} />
+          </Route>
+          <Route path="/member/profile">
+            <Profile parendUser={parendUser} />
+          </Route>
+          <Route path="/member/account">
+            <Account parendUser={parendUser} />
+          </Route>
+          <Route path="/login">
+            <Login setParendUser={setParendUser} />
+          </Route>
+          
+          {/* moana */}
           </ScrollToTop>
         </Switch>
       </>

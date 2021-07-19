@@ -9,7 +9,11 @@
 
 @import './styles/style-guide.scss';
 
+// Apple
 @import './styles/kit-index.scss';
 @import './styles/kit-setList.sass';
 @import './styles/kit-shoppingList.scss';
 @import './styles/kit-test.scss';
+
+// Moana
+@import './styles/member.scss'

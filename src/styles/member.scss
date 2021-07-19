@@ -1,0 +1,432 @@
+/* -------------Member-Style--------------- */
+/* ------------Font------------ */
+.f_tc_22 {
+  font-family: "Noto Sans TC", serif;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.f_tc_20 {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.f_mon_22 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.f_mon_20 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.f_mon_16 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.f_dm_20 {
+  font-family: "DM Serif Display", serif;
+  font-size: 20px;
+}
+
+/* ------------Color------------ */
+.c {
+  color: #e64b4b;
+}
+
+a {
+  color: #383844;
+}
+
+/* ------------Other------------ */
+// h2 {
+//     text-align: center;
+// }註解byRuby
+
+.btn_pink_moana {
+    background-color: #FDD2BB;
+}
+
+.btn_white_moana  {
+    background-color: #FFFFFF;
+}
+
+
+/* -------------Component--------------- */
+
+/* -----------Button------------- */
+/* ---------Import-style-guide----------- */
+.btn-soft-pink, .btn-soft-green {
+  width: 429px;
+}
+/* ---------pagination-style-guide----------- */
+.luna-pagination {
+  display: flex;
+  justify-content: center;
+  color: #383844;
+}
+
+.luna-pagination > ul {
+  font-size: 0;
+}
+
+.luna-pagination li {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.luna-pagination a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.luna-pagination a:hover {
+  color: #e64b4b;
+}
+
+.luna-pagination svg:hover {
+  fill: #e64b4b;
+}
+/* ---------Import-Moana----------- */
+.button_import_moana, .button_import_moana::before, .button_import_moana::after {
+    width: 429px;
+    height: 50px;
+    padding: 10px;
+    border-radius: 30px;
+}
+.button_import_moana {
+    border: 0;
+    color: #383844;
+    
+    position: relative;
+    z-index: 1;
+}
+
+.button_import_moana::before {
+    box-shadow: -2px -2px 4px 3px #FFFFFF;
+}
+
+.button_import_moana::after {
+    box-shadow: 4px 4px 10px 1px #5c5c5c;
+}
+
+.button_import_moana::before, .button_import_moana::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    top: 0;
+    bottom: 0px;
+    left: 0;
+    z-index: -1;
+}
+
+/* ---------File----------- */
+.btn-file {
+  position: relative;
+}
+
+.btn-file label::after{
+  content: '上傳圖片';
+  display: block;
+  position: absolute;
+  left: 65px;
+  color: #383844;
+}
+
+.btn-file label:hover::after {
+  color: #FFFFFF;
+}
+
+.btn-file input {
+  display: none;
+}
+
+/* -----------Input------------- */
+// 所有input的規格
+.input_field_moana {
+    height: 55px;
+    padding: 5px 30px;
+    border-radius: 10px;
+    // border-radius: 0 10px 10px 0;
+    // border-left: 0;
+}
+
+.inner-icons svg {
+    fill: #5c5c5c43;
+    height: 55px;
+    bottom: 3px;
+    left: 50px;
+    position: relative;
+}
+
+input::placeholder { 
+    color: #747474d1;
+    position: absolute;
+    transform: translateY(50%);
+    left: 70px;
+    // background-image: url('');
+}
+
+.input_select_moana {
+    width: 80px;
+  }
+
+.input_radio_moana {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.input_select_moana {
+  margin-right: 15px;
+}
+
+.input_radio_group_moana {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: 55px;
+}
+
+
+/* -----------Other------------- */
+.member h2 ,.member input ,.member select ,.member button {
+  margin-bottom: 25px;
+}
+
+
+/* -------------Member-Layout--------------- */
+/* -----------All Layout------------- */
+body {
+background-color: #F7F7EE;
+}
+
+.layout_wrap {
+  width: 1160px;
+  margin: 151px auto 151px auto;
+}
+
+.layout_container_moana {
+  display: flex;
+  position: relative;
+}
+
+.login_col_moana input {
+  width: 80%;
+}
+
+.regist_col_moana input, .account_col_moana input{
+  width: 429px;
+}
+
+/* -----------Login and Regist------------- */
+.login_col_moana, .regist_col_moana {
+  width: 581px;
+  height: 598px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+.login_regist_links_moana {
+    display: flex;
+    justify-content: space-around;
+}
+
+.ad_col_moana {
+    width: 50%;
+    height: 598px;
+    background: #FDD2BB;
+    line-height: 60px;
+
+    flex-direction: column;
+    
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.ad_col_moana, .account_col_moana {
+  text-align: center;
+}
+
+
+.login_col_moana h2, .login_col_moana .inner-icons, .login_col_moana button, .login_col_moana .login_regist_links_moana {
+  margin-bottom: 50px;
+}
+
+.regist_col_moana h2, .regist_col_moana .inner-icons, .regist_col_moana button {
+  margin-bottom: 50px;
+}
+
+.ad_col_moana > h3, .ad_col_moana > p, .ad_col_moana > button {
+  margin-bottom: 60px;
+}
+/* -----------Member-profile------------- */
+.user_nav_moana {
+    width: 324px;
+    padding-top: 41px;
+    margin: 0 20px 0 0;
+    background-color: #FFFFFF;
+}
+
+.user_data_moana {
+    width: 801px; 
+    background-color: #FFFFFF;
+}
+
+.profile_form_moana .btn-soft-green{
+  margin-left: 100px
+}
+
+.profile_upload_img {
+  display: flex;
+  align-items: flex-end;
+}
+
+.user_text {
+  padding-left: 80px;
+}
+
+.username_moana {
+  text-decoration: underline;
+  text-decoration-thickness: 6px;
+  text-decoration-color: #FDD2BB;           
+}
+
+.user_form_title {
+  text-align: left;
+  padding: 50px 0 50px 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid;
+}
+
+.user_img_circle_moana {
+  border-radius: 50%;
+  margin: auto;
+}
+
+.user_img_sm_circle_moana {
+  width: 141px;
+  height: 141px;
+  overflow: hidden;
+}
+
+.user_img_moana {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user_img_big_circle_moana {
+  width: 151px;
+  height: 151px;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+.user_list_moana > li {
+  padding: 30px 0;
+}
+
+.user_list_moana > li > a {
+  display: block;
+  display: flex;
+  justify-content: space-around;
+}
+
+.user_list_moana li > svg {
+  margin-right: 70px;
+}
+
+.user_list_moana li:hover {
+  background-color: #FDD2BB;
+}
+
+.user_data_moana form {
+  padding: 0 121px;
+}
+
+.user_data_moana form label {
+  display: flex;
+}
+
+/* -----------Member-orderList------------- */
+.order_list_lists {
+  padding-top: 50px;
+}
+.order_list {
+  width: 653px;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+}
+
+.order_list_img_bg {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.order_list_info {
+  width: 100%;
+  padding: 0 30px;
+  margin: auto;
+}
+
+.order_list_detail {
+  float: right;
+}
+
+.order_list_items {
+  width: 653px;
+  margin: auto;
+}
+
+.order_list_img_sm {
+  width: 54px;
+  height: 54px;
+}
+
+.order_list_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order_items_price {
+  border-top: 1px solid #CDCDD2;
+  border-bottom: 1px solid #CDCDD2;
+}
+
+.total, .order_list_bottom {
+  float: right;
+}
+
+.order_list_card::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.order_list_bottom {
+  margin-top: 20px;
+}
+
