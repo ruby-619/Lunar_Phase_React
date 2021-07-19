@@ -22,6 +22,7 @@ import ProductDetail from './pages/Product/ProductDetail'
 import CartItem from './pages/Cart/CartItem'
 import CartEv from './pages/Cart/CartEv'
 import CartKit from './pages/Cart/CartKit'
+import DisplayBookMark from './pages/Cart/DisplayBookMark'
 
 // 晴
 import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
@@ -55,6 +56,8 @@ function App() {
       kitsQty: 0,
       totalQty: 0,
     })
+
+  const [bmQty, setBmQty] = useState(0)
   
     function updateQty (){
       const orderItems = localStorage.getItem('cart') || 0
@@ -71,6 +74,15 @@ function App() {
         totalQty: _.sumBy(orderItemsArr, function(o){return o.amount})+_.sumBy(orderEventsArr, function(o){return o.amount})+_.sumBy(orderKitsArr, function(o){return o.amount}),
       }
       setCartQty(newItemsQty)
+    }
+
+    
+    function updateBmQty (){
+      const localBookmark = localStorage.getItem('bookmark') || 0
+      const localBookmarkArr = JSON.parse(localBookmark)
+      const newBmQty =  _.size(localBookmarkArr)
+      console.log('bmQty',bmQty)
+      setBmQty(newBmQty)
     }
   
 
@@ -108,6 +120,11 @@ function App() {
             </Route>
 
           {/* J */}
+          <Route path="/bookmark">
+            <DisplayBookMark
+              cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty}
+            />
+          </Route>
           <Route path="/cart/event">
             <CartEv 
             />
@@ -128,7 +145,7 @@ function App() {
 
           {/* Tanya Route */}
           <Route path="/product">
-              <Product cartQty={cartQty}/>
+              <Product cartQty={cartQty} updateBmQty={updateBmQty} bmQty={bmQty} />
             </Route>
             <Route path="/product-detail/:itemId">
               <ProductDetail cartQty={cartQty}/>

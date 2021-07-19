@@ -17,7 +17,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 function Product(props) {
-  const { cartQty } = props
+  const { cartQty, updateBmQty, bmQty } = props
   const [cateId, setCateId] = useState(0)
 
   // nav sticky
@@ -54,6 +54,7 @@ function Product(props) {
       drawing()
       navbarSticky()
     }
+    updateBmQty()
   }, [])
 
   const displayDraw = (
@@ -64,7 +65,7 @@ function Product(props) {
 
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty} />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       {/* breadcrumb */}
       {/* ----- carousel ----- */}
       <PdSlider />
@@ -113,12 +114,12 @@ function Product(props) {
           )} */}
         </div>
         {/* ----- item List ----- */}
-        {cateId === 0 && <PdItemsAll cateIdPa={cateId} />}
-        {cateId === 1 && <PdItemsAll cateIdPa={cateId} />}
-        {cateId === 2 && <PdItemsAll cateIdPa={cateId} />}
-        {cateId === 3 && <PdItemsAll cateIdPa={cateId} />}
-        {cateId === 4 && <PdItemsAll cateIdPa={cateId} />}
-        {cateId === 5 && <PdItemsAll cateIdPa={cateId} />}
+        {cateId === 0 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
+        {cateId === 1 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
+        {cateId === 2 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
+        {cateId === 3 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
+        {cateId === 4 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
+        {cateId === 5 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
       </div>
       {/* ----- top pick ----- */}
       <PdTopPick />
