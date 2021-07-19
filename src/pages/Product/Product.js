@@ -131,21 +131,29 @@ function Product(props) {
           <h4>Naturally Powerful</h4>
           <h6>安心保證</h6>
           <div className="row naturally-wrap d-flex justify-content-between">
-            <div className="naturally-unit text-center mb-4 mx-auto">
+            <div
+              data-aos="zoom-in-up"
+              data-aos-delay="300"
+              className="naturally-unit text-center mb-4 mx-auto"
+            >
               <div className="naturally-unit-img m-3 mx-auto">
                 <img src="/img/svg/feather-simple.svg" alt="" />
               </div>
               <h3 className="text-center">COMFORT</h3>
               <p className="mx-0">抗過敏 不濕悶</p>
             </div>
-            <div className="naturally-unit mb-4 mx-auto">
+            <div data-aos="zoom-in-up" className="naturally-unit mb-4 mx-auto">
               <div className="naturally-unit-img mx-auto m-3">
                 <img src="/img/svg/organic-cotton.svg" alt="" />
               </div>
               <h3>ORGANIC</h3>
               <p className="mx-0">選用有機素材</p>
             </div>
-            <div className="naturally-unit mb-4 mx-auto">
+            <div
+              data-aos="zoom-in-up"
+              data-aos-delay="300"
+              className="naturally-unit mb-4 mx-auto"
+            >
               <div className="naturally-unit-img mx-auto m-3">
                 <img src="/img/svg/leaf.svg" alt="" />
               </div>
@@ -155,7 +163,7 @@ function Product(props) {
           </div>
         </div>
 
-        <div className="row justify-content-between">
+        <div className="row justify-content-between mt-5">
           <div className="product-order-link col-12 col-md-6">
             <Link to="/kit">
               <div className="product-order-link-box">

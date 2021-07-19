@@ -12,8 +12,10 @@ import { withRouter } from 'react-router-dom'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const ArticleDetail = (props) => {
+  const { updateBmQty } = props
   console.log(props)
   var moment = require('moment')
 
@@ -37,6 +39,33 @@ const ArticleDetail = (props) => {
   })
 
   // const [dataLoading, setDataLoading] = useState(false);
+  const [myBookmark, setMyBookmark] = useState(false)
+  const updateMarkToLocalStorage = (item) => {
+    const currentMark = JSON.parse(localStorage.getItem('arbookmark')) || []
+    const index = currentMark.findIndex((v) => v.id === item.id)
+
+    if (index > -1) {
+      return
+    } else {
+      currentMark.push(item)
+    }
+
+    localStorage.setItem('arbookmark', JSON.stringify(currentMark))
+
+    // 設定資料
+    setMyBookmark(currentMark)
+  }
+  const alertMark = () => {
+    Swal.fire({
+      position: 'center',
+      // icon: 'question',
+      width: '30%',
+      imageUrl: '/img/svg/43-music-note-outline.gif',
+      title: '已加入收藏',
+      showConfirmButton: false,
+      timer: 1500,
+    })
+  }
 
   async function getArticleFromServer() {
     // 開啟載入指示
@@ -99,7 +128,7 @@ const ArticleDetail = (props) => {
             <h3 className="article-detail-title-h3">{article.articleName}</h3>
           </div>
           <ProgressBar
-            height="130px"
+            height="120px"
             bgcolor="#FDD2BB"
             style={{ marginTop: '300px' }}
           />
@@ -156,15 +185,25 @@ const ArticleDetail = (props) => {
             </div>
             <div className="mr-4">
               <RiBookmarkFill
-                className="h4 mr-4"
+                className="bookmarkfill aricle-detail-btn-hover h4 mr-4"
                 style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  updateMarkToLocalStorage({
+                    id: article.articleId, //傳Id
+                    name: article.articleName,
+                    author: article.articleAuthor,
+                    image: article.articleImg,
+                  })
+                  alertMark()
+                  updateBmQty()
+                }}
               />
               <TiSocialFacebook
-                className="h3 mr-4"
+                className="aricle-detail-btn-hover h3 mr-4"
                 style={{ cursor: 'pointer' }}
               />
               <AiOutlineInstagram
-                className="h3 mr-4"
+                className="aricle-detail-btn-hover h3 mr-4"
                 style={{ cursor: 'pointer' }}
               />
             </div>

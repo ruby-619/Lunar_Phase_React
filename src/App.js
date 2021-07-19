@@ -64,7 +64,13 @@ function App() {
       totalQty: 0,
     })
 
-  const [bmQty, setBmQty] = useState(0)
+    const [bmQty, setBmQty] = useState(
+    {
+      itemsQty: 0,
+      eventsQty: 0,
+      kitsQty: 0,
+      totalQty: 0,
+    })
   
     function updateQty (){
       const orderItems = localStorage.getItem('cart') || 0
@@ -85,9 +91,23 @@ function App() {
 
     
     function updateBmQty (){
-      const localBookmark = localStorage.getItem('bookmark') || 0
-      const localBookmarkArr = JSON.parse(localBookmark)
-      const newBmQty =  _.size(localBookmarkArr)
+      const localPdBookmark = localStorage.getItem('bookmark') || 0
+      const localPdBookmarkArr = JSON.parse(localPdBookmark)
+      const localEvBookmark = localStorage.getItem('evbookmark') || 0
+      const localEvBookmarkArr = JSON.parse(localEvBookmark)
+      const localArBookmark = localStorage.getItem('arbookmark') || 0
+      const localArBookmarkArr = JSON.parse(localArBookmark)
+
+      const newBmQty = {...bmQty,
+        itemsQty: _.size(localPdBookmarkArr),
+        eventsQty: _.size(localEvBookmarkArr),
+        kitsQty: _.size(localArBookmarkArr),
+        totalQty: _.size(localPdBookmarkArr)+_.size(localEvBookmarkArr)+_.size(localArBookmarkArr),
+      }
+
+      console.log('_.size(localPdBookmarkArr)',_.size(localPdBookmarkArr))
+      console.log('_.size(localEvBookmarkArr)',_.size(localEvBookmarkArr))
+      console.log('_.size(localArBookmarkArr)',_.size(localArBookmarkArr))
       console.log('bmQty',bmQty)
       setBmQty(newBmQty)
     }
@@ -110,7 +130,7 @@ function App() {
             <EventCategoryCard cartQty={cartQty}/>
           </Route>
           <Route path="/event-list">
-            <EventList cartQty={cartQty}/>
+            <EventList cartQty={cartQty} updateBmQty={updateBmQty} />
           </Route>
           <Route path="/event-detail/:id?">
             <EventDetail cartQty={cartQty}/>
@@ -173,7 +193,7 @@ function App() {
           </Route>
 
           <Route path="/article/detail/:id?">
-            <ArticleDetail />
+            <ArticleDetail updateBmQty={updateBmQty}/>
           </Route>
           <Route path="/periodrecord">
             <PeriodRecord />
