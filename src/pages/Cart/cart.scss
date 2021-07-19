@@ -335,6 +335,11 @@ body {
     height: 50px;
     background-color: $myPink;
 }
+.bmbar {
+    width: 100%;
+    height: 30px;
+    background-color: $myPink;
+}
 /*================= Radio Checkbox =======================*/
 
 .myCheckbox, .myRadio {
@@ -512,6 +517,7 @@ $labelName: 20px;
 }
 
 .labelSquare {
+    cursor: pointer;
     position: relative;
     width: $labelSquareW;
     height: $labelSquareH;

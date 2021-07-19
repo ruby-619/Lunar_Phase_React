@@ -7,36 +7,42 @@ import { FaTimes } from 'react-icons/fa'
 
 function DisplayBookMark(props) {
   const { cartQty, bmQty, updateBmQty } = props
-  const [myBsDisplay, setBsDisplay] = useState([])
+  const [bmPdDisplay, setBmPdDisplay] = useState([]) //1
+  const [bmArDisplay, setBmArDisplay] = useState([]) //2
+  const [bmEvDisplay, setBmEvDisplay] = useState([]) //3
+  const [showBm, setShowBm] = useState(1)
 
-  function getBsFromLocalStorage() {
-    const newCart = localStorage.getItem('bookmark') || '[]'
+  function getBmFromLocalStorage() {
+    const newCart1 = localStorage.getItem('bookmark') || '[]'
+    const newCart2 = localStorage.getItem('evbookmark') || '[]'
+    const newCart3 = localStorage.getItem('arbookmark') || '[]'
 
     updateBmQty()
 
-    console.log(JSON.parse(newCart))
-    setBsDisplay(JSON.parse(newCart))
+    console.log('cart1',JSON.parse(newCart1))
+    console.log('cart2',JSON.parse(newCart2))
+    console.log('cart3',JSON.parse(newCart3))
+    setBmPdDisplay(JSON.parse(newCart1))
+    setBmEvDisplay(JSON.parse(newCart2))
+    setBmArDisplay(JSON.parse(newCart3))
   }
   useEffect(() => {
-    getBsFromLocalStorage()
+    getBmFromLocalStorage()
   }, [])
   const ScBar = (
     <>
-      {/* 全選bar */}
-      <div className="d-flex select-bar align-items-center bdBottom">
-        {/* <input class="myCheckbox ml-3" type="radio" name="selectAll" id=""> */}
-        {/* <div id="selectAll" className="myCheckbox selectAll ml-4 mr-5" /> */}
+      {/* bar */}
+      <div className="d-flex bmbar align-items-center bdBottom">
         <div className="sc-contentFont ml-3"></div>
-        {/* <i className="fas fa-trash ml-auto p-3 scBtn" /> */}
       </div>
     </>
   )
 
-  const displayBmItems = (
-    // 商品列
+  const displayBmItems1 = (
+    // 商品收藏列
     <>
       <div className="bmRow d-flex bdBottom align-items-center position-relative">
-        {myBsDisplay.map((item, index) => {
+        {bmPdDisplay.map((item, index) => {
           return (
             <div key={item.id} className="col-6 d-flex align-items-center py-2">
               <div className="itemPic ml-5">
@@ -59,17 +65,13 @@ function DisplayBookMark(props) {
       </div>
     </>
   )
-  const displayItems = (
-    // 商品列
+  const displayBmItems2 = (
+    // 文章收藏列
     <>
-      {myBsDisplay.map((item, index) => {
-        return (
-          <div
-            key={item.id}
-            className="bmRow d-flex bdBottom align-items-center position-relative"
-          >
-            <div className="col-6 d-flex align-items-center py-2">
-              {/* <div className="myCheckbox selectOne ml-4" /> */}
+      <div className="bmRow d-flex bdBottom align-items-center position-relative">
+        {bmArDisplay.map((item, index) => {
+          return (
+            <div key={item.id} className="col-6 d-flex align-items-center py-2">
               <div className="itemPic ml-5">
                 <img className="w-100" src={item.image} alt="" />
               </div>
@@ -85,28 +87,39 @@ function DisplayBookMark(props) {
                 <FaTimes />
               </div>
             </div>
-            <div className="col-6 d-flex align-items-center py-2">
-              {/* <div className="myCheckbox selectOne ml-4" /> */}
-              <div className="itemPic ml-5">
-                <img className="w-100" src={item.image} alt="" />
-              </div>
-              <div className="sc-nameFont itemName">
-                <div className="mb-0">{item.name}</div>
-              </div>
-              <div
-                className="bmdelOne position-absolute scBtn"
-                onClick={() => {
-                  // delItem(item)
-                }}
-              >
-                <FaTimes />
-              </div>
-            </div>
-          </div>
-        )
-      })}
+          )
+        })}
+      </div>
     </>
   )
+  const displayBmItems3 = (
+    // 文章收藏列
+    <>
+      <div className="bmRow d-flex bdBottom align-items-center position-relative">
+        {bmEvDisplay.map((item, index) => {
+          return (
+            <div key={item.id} className="col-6 d-flex align-items-center py-2">
+              <div className="itemPic ml-5">
+                <img className="w-100" src={item.image} alt="" />
+              </div>
+              <div className="sc-nameFont itemName">
+                <div className="mb-0">{item.name}</div>
+              </div>
+              <div
+                className="bmdelOne position-absolute scBtn"
+                onClick={() => {
+                  // delItem(item)
+                }}
+              >
+                <FaTimes />
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </>
+  )
+ 
 
   return (
     <>
@@ -118,11 +131,13 @@ function DisplayBookMark(props) {
           <img src="/img/Cart/bgMountain.svg" alt="" />
         </div>
       </div>
-      <BmPdLabel />
+      <BmPdLabel showBm={showBm} setShowBm={setShowBm} />
       <div className="container-fluid">
         <div className="col-10 mx-auto px-0 shadow-sm ">
           {ScBar}
-          {displayBmItems}
+          {showBm===1 ? displayBmItems1 : ''}
+          {showBm===2 ? displayBmItems2 : ''}
+          {showBm===3 ? displayBmItems3 : ''}
         </div>
       </div>
       <Footer />
