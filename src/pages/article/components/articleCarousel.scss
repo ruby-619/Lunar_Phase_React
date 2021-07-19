@@ -13,28 +13,36 @@
 }
 
 
-
-    .article-card-col-4 {
-        border-right: 1px solid black;
-        // border-top: 1px solid black;
-        // border-bottom: 1px solid black;
-        @media screen and (max-width:991px) {
-
-            border: none;
-            border-bottom: 1px solid black;
-
-    }
-  }
-
 // 下面是caruosel
-.article-caruosel-title{
-    background: #F7F7EE;
-    color: #383844 !important;
-    margin: 50px;
+// .article-caruosel-title{
+//     position: relative;
+
+//     .article-caruosel-title-h3{
+//         line-height: 1.4;
+//         position: absolute !important;
+//         bottom: 0 !important;
+//         right: 0 !important;
+//     background: #fcfce2;
+//     padding: 20px;
+//     border-radius: 5px;
+//     color: #383844 !important;
+// z-index: 100000 !important;
+//     letter-spacing: 1px;
+
+//     }
+// }
+
+.article-caruosel{
+    position: relative;
+    .article-caruosel-title-h3{
+       width: 1000px; 
+        position: absolute;
+        bottom: 30px;
+        right: calc(50% - 500px);
+            background: #f7f7ee;
     padding: 20px;
     border-radius: 5px;
+    color: #383844 !important;
     letter-spacing: 1px;
-    .article-caruosel-title-h3{
-        line-height: 1.4;
     }
 }

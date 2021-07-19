@@ -9,6 +9,8 @@ import { BsBookmark } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 import { IoMdCalendar } from 'react-icons/io'
 import { FcBookmark } from 'react-icons/fc'
+
+
 // import { NetworkAuthenticationRequire } from 'http-errors'
 // import { data } from 'jquery'
 
@@ -268,11 +270,10 @@ const EventListCard = (props) => {
                     </div>
                   </div>
                 </div>
-                
             )
           })}
           <div>
-            <Pagination>{items}</Pagination>
+            {/* <Pagination>{items}</Pagination> */}
           </div>
         </div>
         </div>

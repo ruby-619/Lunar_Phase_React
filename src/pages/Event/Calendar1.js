@@ -31,7 +31,7 @@ function Calendar1() {
             <div>
               <h4>預計下一次月經開始日期：{newdate +28 >=31 ?value.getMonth()+2:value.getMonth()+1}月{newdate +28 <=31 ? newdate+28: newdate+28-31}日</h4>
             </div>
-            <Link to="./calendar-child"><button className="btn-soft-green">下一步</button></Link>
+            <Link to="./calendar-child2"><button className="btn-soft-green">下一步</button></Link>
           
           {/* {newdate +28 >30 ? newdate-30: newdate} */}
               

@@ -231,7 +231,7 @@ const EventDetailCard = (props) => {
         </div>
       </div>
       <div className="fluidPhoto">
-        <img src={event.eventImg} />
+      <img src={`/img/Event/${event.eventImg}`} alt="" />
         {/* {console.log(event.eventImg)} */}
       </div>
       <div className="container">

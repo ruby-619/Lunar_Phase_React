@@ -48,8 +48,8 @@ const ArticleHealth = () => {
             </div>
           </div>
           {/* <ArticleCard /> */}
-          <div className="container row d-flex mx-auto mt-3">
-            <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+          <div className="container article-row row d-flex mx-auto mt-3">
+            <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
               <Link
                 to="/article/detail/35"
                 style={{ textDecoration: 'none', color: 'black' }}
@@ -73,7 +73,7 @@ const ArticleHealth = () => {
                 </div>
               </Link>
             </div>
-            <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+            <div className="border-right border-dark  article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
               <Link
                 to="/article/detail/24"
                 style={{ textDecoration: 'none', color: 'black' }}
@@ -121,7 +121,7 @@ const ArticleHealth = () => {
                 </div>
               </Link>
             </div>
-            <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+            <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
               <Link
                 to="/article/detail/37"
                 style={{ textDecoration: 'none', color: 'black' }}
@@ -145,7 +145,7 @@ const ArticleHealth = () => {
                 </div>
               </Link>
             </div>
-            <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+            <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
               <Link
                 to="/article/detail/36"
                 style={{ textDecoration: 'none', color: 'black' }}

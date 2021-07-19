@@ -15,6 +15,9 @@
  
 }
 
+.article-row{
+  margin:auto !important; 
+}
 
 .article-category-selected-btn{
 	font-family: 'Noto Sans TC', sans-serif;
@@ -43,12 +46,12 @@ margin: auto;
 
 
 .article-card-col-4 {
-  border-right: 1px solid black;
-  // border-top: 1px solid black;
-  // border-bottom: 1px solid black;
+
   @media screen and (max-width:991px) {
 
-border: none;
+border-top: none !important;
+border-right: none !important;
+border-left: none !important;
 border-bottom: 1px solid black;
 
 

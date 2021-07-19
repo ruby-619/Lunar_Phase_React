@@ -8,7 +8,6 @@ import LunarPhaseFooter from '../../components/LunarPhaseFooter'
 import EventCard from './components/HomePageCard'
 import Carousel1 from './components/Carousel1'
 import { GiCampingTent, GiBookCover, GiHamburgerMenu } from 'react-icons/gi'
-
 import { FaPaintBrush, FaHandPaper } from 'react-icons/fa'
 // FaWineGlass
 import './Event.scss'
@@ -65,7 +64,7 @@ const EventIndex2 = (props) => {
                     }}
                   />
                 </div>
-                  <p class="EventIcons EventIconsArt">藝文</p>
+                  {/* <p class="EventIcons EventIconsArt">藝文</p> */}
               </div>
             </Link>
             <Link to="/event-list">
