@@ -1,37 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { FaTimes } from 'react-icons/fa'
-const _ = require('lodash');
 
 function ScItem(props) {
   const { updateQty } = props
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
-  // function updateQty (){
-  //   const orderItems = localStorage.getItem('cart') || 0
-  //   const orderItemsArr = JSON.parse(orderItems)
-  //   const orderEvents = localStorage.getItem('evcart') || 0
-  //   const orderEventsArr = JSON.parse(orderEvents)
-  //   const orderKits = localStorage.getItem('kitcart') || 0
-  //   const orderKitsArr = JSON.parse(orderKits)
-
-  //   // _.sumBy(orderItemsArr, function(o){return o.amount})
-  //   // _.sumBy(orderEventsArr, function(o){return o.amount})
-  //   // _.sumBy(orderKitsArr, function(o){return o.amount})
-  //   // const newItemsQty = {...cartQty,
-  //   //   itemsQty: amountSum(orderItemsArr),
-  //   //   eventsQty: amountSum(orderEventsArr),
-  //   //   kitsQty: amountSum(orderKitsArr),
-  //   //   totalQty: amountSum(orderItemsArr)+amountSum(orderEventsArr)+amountSum(orderKitsArr),
-  //   // }
-  //   const newItemsQty = {...cartQty,
-  //     itemsQty: _.sumBy(orderItemsArr, function(o){return o.amount}),
-  //     eventsQty: _.sumBy(orderEventsArr, function(o){return o.amount}),
-  //     kitsQty: _.sumBy(orderKitsArr, function(o){return o.amount}),
-  //     totalQty: _.sumBy(orderItemsArr, function(o){return o.amount})+_.sumBy(orderEventsArr, function(o){return o.amount})+_.sumBy(orderKitsArr, function(o){return o.amount}),
-  //   }
-  //   setCartQty(newItemsQty)
-  // }
 
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'

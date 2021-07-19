@@ -5,13 +5,13 @@ function PdLinkArticle() {
   return (
     <>
       <div className="container-fluid py-5 my-5">
-        <div className="row shop-article my-auto py-3">
-          <div className="article-img col-12 col-md-4 mb-3 mb-md-0 p-3">
+        <div className="row product-article my-auto py-3">
+          <div className="product-article-img col-12 col-md-4 mb-3 mb-md-0 p-3">
             <Link to="/kit">
               <img src="/img/Product/items001.jpg" alt="" />
             </Link>
           </div>
-          <div className="article-info col-12 col-md-8 text-left pl-3 pl-md-4 py-3">
+          <div className="product-article-info col-12 col-md-8 text-left pl-3 pl-md-4 py-3">
             <div>
               <h5 className="h5-tc">初學者指南</h5>
               <p>

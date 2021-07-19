@@ -43,6 +43,14 @@ function CartItem(props) {
       timer: 1500
     })
   }
+  function HandleAlertData() {
+    Swal.fire({
+      imageUrl: '/img/Cart/69-eye-outline.gif',
+      title: '有資料沒填好喔',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 
   // function updateQty (){
   //   const orderItems = localStorage.getItem('cart') || 0
@@ -136,13 +144,16 @@ function CartItem(props) {
         setErrors(newErrors)
       }
     }
+    if(newErrors.length !== 0){
+      HandleAlertData()
+    }
     if (!_.isEmpty(orderItemsStr) && newErrors.length === 0) {
       // 購物車內有商品 且 填寫資料無遺漏
-      setStep(4);
       HandleAlert();
       addOrderToSever();
       localStorage.removeItem('cart');
       updateQty()
+      setTimeout(()=>{setStep(4);},1000)
     }
     if (_.isEmpty(orderItemsStr)) {
       // 如果購物車內沒有商品的話

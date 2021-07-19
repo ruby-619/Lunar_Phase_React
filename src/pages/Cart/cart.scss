@@ -374,6 +374,14 @@ body {
     //     display: none;
     // }
 }
+.itemEvPic {
+    width: 195px;
+    height: 220px;
+    background-color: #ccc;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center bottom;
+}
 .itemPic-sm {
     width: 78px;
     height: 54px;

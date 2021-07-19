@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { FaTimes } from 'react-icons/fa'
 
 function ScEvItem(props) {
   const [mycart, setMycart] = useState([])
@@ -105,7 +106,9 @@ function ScEvItem(props) {
           >
             <div className="col-6 d-flex align-items-center">
               {/* <div className="myCheckbox selectOne ml-4" /> */}
-              <div className="itemPic ml-5" />
+              <div className="itemEvPic ml-5">
+                <img className="w-100" src={`/img/Event/${item.image}`} alt=""/>
+              </div>
               <div className="sc-nameFont itemName">
                 <div className="mb-0">{item.name}</div>
               </div>
@@ -131,12 +134,12 @@ function ScEvItem(props) {
             <div className="sc-priceFont col-2">{item.price}</div>
             <div className="sc-priceFont col-2">{item.amount * item.price}</div>
             <div
-              className="delOne position-absolute"
+              className="delOne position-absolute scBtn"
               onClick={() => {
                 delItem(item)
               }}
             >
-              <i className="fas fa-times p-3 scBtn " />
+              <FaTimes/>
             </div>
           </div>
         )

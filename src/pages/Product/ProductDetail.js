@@ -12,6 +12,10 @@ import ArticleCard from './components/ArticleCard'
 import PdAlsoLove from './components/PdAlsoLove'
 import PdLinkKit from './components/PdLinkKit'
 
+// AOS
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 function ProductDetail(props) {
   const { cartQty } = props
   const { itemId } = useParams()
@@ -53,6 +57,9 @@ function ProductDetail(props) {
         setItemIda(itemId)
       }
     }, 100)
+
+    // AOS
+    AOS.init({ offset: 120, duration: 800 })
   }, [itemId])
 
   const display = (
@@ -79,20 +86,14 @@ function ProductDetail(props) {
 
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty}/>
+      <LunarPhaseNavbar cartQty={cartQty} />
       {/* items */}
       {display}
       {/* <PdDetailBlock /> */}
       <PdInfoPad />
       <PdLinkKit />
+      <PdAlsoLove />
 
-      <div className="top-pick you-love container-fluid">
-        <div className="row flex-column">
-          <h4>You’ll also Love</h4>
-          <h6 className="h6-tc">專屬推薦</h6>
-          <PdAlsoLove />
-        </div>
-      </div>
       <div className="container-fluid">
         <div className="row flex-column">
           <h4>Learn More</h4>

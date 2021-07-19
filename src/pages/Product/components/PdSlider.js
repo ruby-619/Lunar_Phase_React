@@ -4,7 +4,7 @@ import Carousel from 'react-bootstrap/Carousel'
 function Product() {
   return (
     <>
-      <div className="product-carousel container-fluid ">
+      <div className="product-carousel container-fluid px-0">
         <Carousel fade>
           <Carousel.Item>
             <img
