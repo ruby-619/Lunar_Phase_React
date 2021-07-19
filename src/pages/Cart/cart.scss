@@ -406,6 +406,7 @@ body {
 .itemPic {
     width: 195px;
     height: 130px;
+    overflow: hidden;
     background-color: #ccc;
     //  margin-left: 3vw; 
     // @include sizeLg {

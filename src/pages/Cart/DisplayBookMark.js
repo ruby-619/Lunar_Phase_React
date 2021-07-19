@@ -4,6 +4,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import BmPdLabel from './components/BmPdLabel'
 import Footer from '../../components/Footer'
 import { FaTimes } from 'react-icons/fa'
+var moment = require('moment') //日期格式化需要引入
 
 function DisplayBookMark(props) {
   const { cartQty, bmQty, updateBmQty } = props
@@ -76,7 +77,8 @@ function DisplayBookMark(props) {
                 <img className="w-100" src={item.image} alt="" />
               </div>
               <div className="sc-nameFont itemName">
-                <div className="mb-0">{item.name}</div>
+                <div className="mb-1">{item.name}</div>
+                <div className="mb-0 text-info">作者：{item.author}</div>
               </div>
               <div
                 className="bmdelOne position-absolute scBtn"
@@ -93,7 +95,7 @@ function DisplayBookMark(props) {
     </>
   )
   const displayBmItems3 = (
-    // 文章收藏列
+    // 活動收藏列
     <>
       <div className="bmRow d-flex bdBottom align-items-center position-relative">
         {bmEvDisplay.map((item, index) => {
@@ -104,6 +106,7 @@ function DisplayBookMark(props) {
               </div>
               <div className="sc-nameFont itemName">
                 <div className="mb-0">{item.name}</div>
+                <div className="mb-0 text-info">{moment(item.date).format('YYYY-MM-DD')}</div>
               </div>
               <div
                 className="bmdelOne position-absolute scBtn"
