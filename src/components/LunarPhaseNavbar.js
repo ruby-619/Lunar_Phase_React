@@ -8,8 +8,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 // react-icon
 import { FaShoppingCart, FaUser, FaBookmark } from 'react-icons/fa'
 
+// component
+import NavBookmark from './NavBookmark'
+
 function LunarPhaseNavbar(props) {
   const { cartQty } = props
+
   const [sticky, setSticky] = useState(false)
 
   useEffect(() => {
@@ -28,6 +32,29 @@ function LunarPhaseNavbar(props) {
       navbarSticky()
     }
   }, [])
+
+  //  ------ 進行中！
+  //  找出 LocalStorage 的收藏數量
+  // function checkLocalStorage() {
+  //   const localBookmark = localStorage.getItem('bookmark') || 0
+  //   const localBookmarkArr = JSON.parse(localBookmark)
+  //   const localBookmarkCount = localBookmarkArr.length
+  //   console.log(localBookmarkCount)
+  // }
+  // 用 useEffect或 useInterval 刷新？
+
+  // 失敗的作法，用props傳值的方式也沒有觸發刷新
+  // if (!localStorage.getItem('bookmark')) {
+  //   console.log(localStorage.getItem('bookmark'))
+  //   const localBookmark = JSON.parse(localStorage.getItem('bookmark'))
+  //   const localBookmarkNum = localBookmark.length
+  //   console.log(localBookmark.length)
+  // }
+
+  // const localBookmark = JSON.parse(localStorage.getItem('bookmark'))
+  // const localBookmarkNum = localBookmark.length
+  // console.log(localBookmark.length)
+
   return (
     <>
       <nav id="navbar" className={sticky ? 'sticky' : ''}>
@@ -59,14 +86,16 @@ function LunarPhaseNavbar(props) {
                 <Link to="/" className="mx-0">
                   <FaBookmark />
                 </Link>
-                <p className="small mx-0 mb-1">(0)</p>
+                {/* <p className="small mx-0 mb-1">(0)</p> */}
+                {/* <p className="small mx-0 mb-1">({localBookmarkNum})</p> */}
+                <NavBookmark />
               </div>
               <div className="ml-2 mt-2">
                 <Link to="/cart/item" className="mx-0">
                   <FaShoppingCart />
                 </Link>
-                <p className="small mx-0 mb-1">(0)</p>
-                {/* <p className="small mx-0 mb-1">({cartQty.totalQty})</p> */}
+                {/* <p className="small mx-0 mb-1">(0)</p> */}
+                <p className="small mx-0 mb-1">({cartQty.totalQty})</p>
               </div>
             </div>
           </div>
