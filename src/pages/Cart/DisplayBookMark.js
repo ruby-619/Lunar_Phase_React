@@ -15,8 +15,8 @@ function DisplayBookMark(props) {
 
   function getBmFromLocalStorage() {
     const newCart1 = localStorage.getItem('bookmark') || '[]'
-    const newCart2 = localStorage.getItem('evbookmark') || '[]'
-    const newCart3 = localStorage.getItem('arbookmark') || '[]'
+    const newCart2 = localStorage.getItem('arbookmark') || '[]'
+    const newCart3 = localStorage.getItem('evbookmark') || '[]'
 
     updateBmQty()
 
@@ -24,12 +24,46 @@ function DisplayBookMark(props) {
     console.log('cart2',JSON.parse(newCart2))
     console.log('cart3',JSON.parse(newCart3))
     setBmPdDisplay(JSON.parse(newCart1))
-    setBmEvDisplay(JSON.parse(newCart2))
-    setBmArDisplay(JSON.parse(newCart3))
+    setBmArDisplay(JSON.parse(newCart2))
+    setBmEvDisplay(JSON.parse(newCart3))
   }
   useEffect(() => {
     getBmFromLocalStorage()
   }, [])
+  const delItem1 = (item) => {
+    // 商品刪除
+    const currentCart = JSON.parse(localStorage.getItem('bookmark')) || []
+    const index = currentCart.findIndex((v) => v.id === item.id)
+
+    if (index > -1) {
+      currentCart.splice(index, 1)
+      localStorage.setItem('bookmark', JSON.stringify(currentCart))
+      setBmPdDisplay(currentCart)
+    }
+  }
+  const delItem2 = (item) => {
+    // 文章刪除
+    const currentCart = JSON.parse(localStorage.getItem('arbookmark')) || []
+    const index = currentCart.findIndex((v) => v.id === item.id)
+
+    if (index > -1) {
+      currentCart.splice(index, 1)
+      localStorage.setItem('kitcart', JSON.stringify(currentCart))
+      setBmArDisplay(currentCart)
+    }
+  }
+  const delItem3 = (item) => {
+    // 活動刪除
+    const currentCart = JSON.parse(localStorage.getItem('evbookmark')) || []
+    const index = currentCart.findIndex((v) => v.id === item.id)
+
+    if (index > -1) {
+      currentCart.splice(index, 1)
+      localStorage.setItem('evbookmark', JSON.stringify(currentCart))
+      setBmEvDisplay(currentCart)
+    }
+  }
+  
   const ScBar = (
     <>
       {/* bar */}
@@ -56,7 +90,7 @@ function DisplayBookMark(props) {
               <div
                 className="bmdelOne position-absolute scBtn"
                 onClick={() => {
-                  // delItem(item)
+                  delItem1(item)
                 }}
               >
                 <FaTimes />
@@ -84,7 +118,7 @@ function DisplayBookMark(props) {
               <div
                 className="bmdelOne position-absolute scBtn"
                 onClick={() => {
-                  // delItem(item)
+                  delItem2(item)
                 }}
               >
                 <FaTimes />
@@ -112,7 +146,7 @@ function DisplayBookMark(props) {
               <div
                 className="bmdelOne position-absolute scBtn"
                 onClick={() => {
-                  // delItem(item)
+                  delItem3(item)
                 }}
               >
                 <FaTimes />
