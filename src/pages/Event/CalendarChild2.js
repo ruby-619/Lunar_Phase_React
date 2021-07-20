@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 import FilterBar from './components/FilterBar'
+import {BsNewspaper} from 'react-icons/bs'
 
 
 
 
-const CalendarChild2 = () => {
+const CalendarChild2 = (props) => {
 
+    
     const [symptom, setSymptom] = useState([])
     const [displaySymptom, setdisplaySymptom] = useState([])
 
@@ -17,7 +19,12 @@ const CalendarChild2 = () => {
     const [priceRange, setPriceRange] = useState('所有')
     const priceRangeTypes = ['所有', '1萬以下', '1~2萬']
     const _ = require('lodash');
-    const [state, setstate] = useState()
+    // const [state, setstate] = useState()
+    // const {value, newDate, newMonth, calStepChild, setCalStepChild} = props
+    const {date, month, calStepChild, setCalStepChild} = props
+    console.log(date,month)
+
+    
 
 
     async function getEventFromServer() {
@@ -77,32 +84,47 @@ const CalendarChild2 = () => {
         return newSymptom
       }
 
-     
-    return (
-        <div>
-            <LunarPhaseNavbar/>
-            <div className="container">
-                <div className="row">
-                <div>
-                    <h2>症狀紀錄</h2>
-                    <FilterBar
-                    //   priceRangeTypes={priceRangeTypes}
-                    //   priceRange={priceRange}
-                    //   setPriceRange={setPriceRange}
-                      tagTypes={tagTypes}
-                      tags={tags}
-                      setTags={setTags}
-                    />
+      const ChildPart1 = (
+        <>
+        <div className="row">
+                <div className="d-flex">
+                    <h2 className=""><BsNewspaper/> 症狀紀錄</h2>
+                    <div>
+                      <FilterBar
+                        className="ml-3 col-3"
+                      //   priceRangeTypes={priceRangeTypes}
+                      //   priceRange={priceRange}
+                      //   setPriceRange={setPriceRange}
+                        tagTypes={tagTypes}
+                        tags={tags}
+                        setTags={setTags}
+                      />
+                    </div>
+                    <button className="btn-soft-green col-6 ml-2 mt-3"
+            onClick={()=>{setCalStepChild(2)}}>下一步</button>
                 </div>
                 </div>
-                {displaySymptom.length && displaySymptom.map((s, i) => {
+        </>
+      )
+
+      const ChildPart2 =(
+        <>
+        <div class="row">
+                      {/* 嗨嗨 喔你看到了 con一嚇   上面ㄇ 還這邊 應該上面就可以了 或者你可以看這頁的那個components(檢查的) prop裡面的值比較準  那你要不要直接開f12看props*/} 
+                      {/* 我剛剛在樓上23行下,undefined 喔喔喔喔
+                       */}
+                    {/* <h2 className=""><BsNewspaper/> 血量紀錄</h2> */}
+                       <h3 className="mt-5">下次經期可能開始日期：{month}月{date}日</h3> 
+                    </div>
+                    
+                { displaySymptom.length && displaySymptom.map((s, i) => {
 
               return (
                 
                   <div class="container">
                     <div className="row">
-                      <div className="card" style={{ width: "18rem" }}>
-                        <img className="card-img-top" src="https://fakeimg.pl/250x100/" alt="Card image cap" />
+                      <div className="card" style={{ width: "60rem" }}>
+                        <img className="card-img-top" src={`/img/Calendar/${s.SymptomImg}`} alt="Card image cap" /> 
                         <div className="card-body">
                         <h6 className="card-title">#{s.tags}</h6>
                         <h5 className="card-title">{s.SymptomArticleTitle}</h5>
@@ -121,6 +143,27 @@ const CalendarChild2 = () => {
             )
           })}
           <div></div>
+        </>
+      )
+
+      const switchChildSteps = (step) =>{
+        switch(step){
+          case 1:
+            return ChildPart1
+          case 2:
+            return ChildPart2
+          default: 
+            return ""
+      }
+    }
+
+     
+    return (
+        <div>
+            <LunarPhaseNavbar/>
+            <div className="container">
+                {switchChildSteps(calStepChild)}
+                    
             </div>
             <Footer/>
         </div>

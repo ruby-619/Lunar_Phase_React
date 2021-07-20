@@ -26,7 +26,7 @@ function FilterBar(props) {
       <h2 className="grid-title">
         {/* <i className="fa fa-filter"></i> 過濾 */}
       </h2>
-      <hr />
+      <br />
 
       {/* <h4>價格</h4> */}
 
@@ -39,14 +39,9 @@ function FilterBar(props) {
         />
       ))} */}
 
-      <hr />
+      <br />
 
-      <h4>
-        {/* 標籤 */}
-        {/* <button className="btn btn-link btn-sm" onClick={() => setTags([])}>
-          重設
-        </button> */}
-      </h4>
+      
 
       {/* <p>有包含勾選標籤均會顯示</p> */}
       {tagTypes.map((value, i) => (
