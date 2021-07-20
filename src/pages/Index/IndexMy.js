@@ -22,7 +22,7 @@ function IndexMy(props) {
     AOS.init({ offset: 120, duration: 800 })
   }, [])
 
-  const { cartQty } = props
+  const { cartQty, bmQty } = props
   return (
     <>
       {/* HEADER */}
@@ -91,7 +91,7 @@ function IndexMy(props) {
 
       {/* NAVBAR */}
 
-      <LunarPhaseNavbar cartQty={cartQty} />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
 
       {/* ABOUT */}
       <div id="about" className="index-about container-fluid">
@@ -282,7 +282,7 @@ function IndexMy(props) {
                   了解你自己的身體需求，解開每個月的周期密碼。
                 </p>
               </div>
-              <div className="index-article-unit-under  d-flex justify-content-between">
+              <div className="index-article-unit-under d-flex justify-content-between pt-4">
                 <div className="btn-read text-center">
                   <Link to="/article/detail/48">read</Link>
                 </div>
@@ -299,14 +299,14 @@ function IndexMy(props) {
               </Link>
             </div>
           </div>
-          <div
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
-            data-aos-delay="600"
-            data-aos-offset="0"
-            className="index-article-unit-wrap row text-left col-12"
-          >
-            <div className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
+          <div className="index-article-unit-wrap row text-left col-12">
+            <div
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-delay="600"
+              data-aos-offset="0"
+              className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
+            >
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.07.19</p>
                 <div className="index-article-unit-img col-12 p-0">
@@ -320,7 +320,7 @@ function IndexMy(props) {
                   </h5>
                 </Link>
               </div>
-              <div className="index-article-unit-under  d-flex justify-content-between">
+              <div className="index-article-unit-under d-flex justify-content-between pt-4">
                 <div className="btn-read text-center">
                   <Link to="/article/detail/39">read</Link>
                 </div>
@@ -331,7 +331,13 @@ function IndexMy(props) {
                 </div>
               </div>
             </div>
-            <div className="border-right-2 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
+            <div
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-delay="600"
+              data-aos-offset="0"
+              className="border-right-2 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
+            >
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.07.12</p>
                 <div className="index-article-unit-img col-12 p-0">
@@ -345,7 +351,7 @@ function IndexMy(props) {
                   </h5>
                 </Link>
               </div>
-              <div className="index-article-unit-under  d-flex justify-content-between">
+              <div className="index-article-unit-under d-flex justify-content-between pt-4">
                 <div className="btn-read text-center">
                   <Link to="/article/detail/2">read</Link>
                 </div>
@@ -356,7 +362,13 @@ function IndexMy(props) {
                 </div>
               </div>
             </div>
-            <div className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
+            <div
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-delay="600"
+              data-aos-offset="0"
+              className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
+            >
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.07.05</p>
                 <div className="index-article-unit-img col-12 p-0">
@@ -370,7 +382,7 @@ function IndexMy(props) {
                   </h5>
                 </Link>
               </div>
-              <div className="index-article-unit-under  d-flex justify-content-between">
+              <div className="index-article-unit-under d-flex justify-content-between pt-4">
                 <div className="btn-read text-center">
                   <Link to="/article/detail/38">read</Link>
                 </div>
@@ -381,7 +393,13 @@ function IndexMy(props) {
                 </div>
               </div>
             </div>
-            <div className="index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0">
+            <div
+              data-aos="fade-zoom-in"
+              data-aos-easing="ease-in-back"
+              data-aos-delay="600"
+              data-aos-offset="0"
+              className="index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
+            >
               <div className="p-0 m-0">
                 <p className="index-article-date mb-1">2021.06.28</p>
                 <div className="index-article-unit-img p-0">
@@ -395,7 +413,7 @@ function IndexMy(props) {
                   </h5>
                 </Link>
               </div>
-              <div className="index-article-unit-under  d-flex justify-content-between">
+              <div className="index-article-unit-under d-flex justify-content-between pt-4">
                 <div className="btn-read text-center">
                   <Link to="/article/detail/23">read</Link>
                 </div>
@@ -457,7 +475,7 @@ function IndexMy(props) {
           <div
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
-            data-aos-delay="2400"
+            data-aos-delay="2200"
             data-aos-duration="3000"
             className="index-kit-content-r col-12 col-md-8"
           >
@@ -466,7 +484,7 @@ function IndexMy(props) {
               每個女生都有個生理期秘密小包包，裡面是精挑細選的最佳選手。
               <br />
               Lunar Phase
-              提供新型態生理用品訂購方式，可依照妳的需求自由選購生理用品，想配多少數量自己決定。想試用的商品，只買一個也能選配。
+              提供新型態生理用品訂購方式，可依照妳的需求自由選購生理用品，想配多少數量自己決定。
               <br />
               輕鬆點選，就能在每個月該來的時候送到家，還能隨時更換項目或取消。
             </p>
@@ -576,13 +594,23 @@ function IndexMy(props) {
         <div className="banner-img"></div>
       </div>
       <div className="join-us container text-center">
-        <h2 data-aos="fade-down">Join Us</h2>
-        <p data-aos="fade-down" className="p-tc mb-5">
-          和我們一起探索更多生理期的大秘密
-        </p>
-        <button data-aos="fade-down" className="btn-soft-green mt-5">
-          SIGN UP
-        </button>
+        <h2 data-aos="fade-down mb-3">Join Us</h2>
+        <div className="d-flex flex-wrap mt-5">
+          <div data-aos="fade-down" className="col-12 col-md-6">
+            <h6 className="my-3">加入會員</h6>
+            <p className="p-tc">和我們一起探索更多生理期的大秘密</p>
+            <button data-aos="fade-down" className="btn-soft-green mt-3">
+              SIGN UP
+            </button>
+          </div>
+          <div data-aos="fade-down" className="col-12 col-md-6 mt-5 mt-md-0">
+            <h6 className="my-3">經期試算機</h6>
+            <p className="p-tc">立即檢測下次經期，獲取月經小知識</p>
+            <button data-aos="fade-down" className="btn-soft-green mt-3">
+              LET'S GO
+            </button>
+          </div>
+        </div>
         <div className="index-moon-circle text-center">
           <img src="/img/Index/moon-circle01.svg" alt="" />
         </div>
@@ -600,7 +628,7 @@ function IndexMy(props) {
                 />
               </Link>
             </div>
-            <nav className="my-auto col-12 col-md-10 px-0">
+            <nav className="my-auto mt-5 col-12 col-md-10 px-0">
               <ul className="d-flex justify-content-center justify-content-md-end  my-3 my-md-0 px-auto px-md-0 col-12">
                 <li>
                   <Link to="/product" className="index-footer-a ml-3">
@@ -630,7 +658,7 @@ function IndexMy(props) {
               </ul>
             </nav>
           </div>
-          <div className="row m-0 mt-3 p-0 index-footer-bottom col-12 justify-content-between align-items-end">
+          <div className="row m-0 mt-5 p-0 index-footer-bottom col-12 justify-content-between align-items-end">
             <div className="small text-center text-md-left p-0 mt-3 col-12 col-md-6">
               <p className="m-0 p-0">
                 JSMART co.

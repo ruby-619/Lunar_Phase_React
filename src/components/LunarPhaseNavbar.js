@@ -7,6 +7,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 // react-icon
 import { FaShoppingCart, FaUser, FaBookmark } from 'react-icons/fa'
+import { IoMdListBox } from 'react-icons/io'
+import { RiLogoutBoxRLine } from 'react-icons/ri'
 
 // component
 import NavBookmark from './NavBookmark'
@@ -60,7 +62,22 @@ function LunarPhaseNavbar(props) {
       <nav id="navbar" className={sticky ? 'sticky' : ''}>
         <div className="nav-bar">
           <div className="nav-bar-top d-flex">
-            <div className="col-4" />
+            {/* <div className="col-4" /> */}
+            <div className="nav-member-act col-4 d-flex justify-content-start ">
+              <div className="ml-2 mt-2">
+                <Link to="/login" className="mx-0">
+                  <FaUser />
+                </Link>
+              </div>
+              <div className="ml-2 mt-2">
+                <Link to="/logout" className="mx-0">
+                  <RiLogoutBoxRLine />
+                </Link>
+              </div>
+              {/* <div className="mt-2">
+                <p className="small">來賓 您好</p>
+              </div> */}
+            </div>
             <div className="col-4 d-flex justify-content-center">
               <Link to="/">
                 <h1 className="my-0">
@@ -73,15 +90,21 @@ function LunarPhaseNavbar(props) {
               </Link>
             </div>
             <div className="nav-member-act col-4 d-flex justify-content-end ">
-              <div className="mt-2">
+              {/* <div className="mt-2">
                 <p className="small">來賓 您好</p>
-              </div>
-              <div className="ml-2 mt-2">
+              </div> */}
+              {/* <div className="ml-2 mt-2">
                 <Link to="/login" className="mx-0">
                   <FaUser />
                 </Link>
                 <div />
               </div>
+              <div className="ml-2 mt-2">
+                <Link to="/login" className="mx-0">
+                  <RiLogoutBoxRLine />
+                </Link>
+                <div />
+              </div> */}
               <div className="ml-2 mt-2">
                 <Link to="/bookmark" className="mx-0">
                   <FaBookmark />
@@ -96,6 +119,11 @@ function LunarPhaseNavbar(props) {
                 </Link>
                 <p className="small m-0">(0)</p>
                 {/* <p className="small mx-0 mb-1">({cartQty.totalQty})</p> */}
+              </div>
+              <div className="ml-2 mt-2">
+                <Link to="/" className="mx-0">
+                  <IoMdListBox />
+                </Link>
               </div>
             </div>
           </div>
@@ -114,7 +142,7 @@ function LunarPhaseNavbar(props) {
                 <Link to="/event">EVENT</Link>
               </li>
               <li>
-                <Link to="/member">JOIN US</Link>
+                <Link to="/">JOIN US</Link>
               </li>
             </ul>
           </div>
@@ -142,15 +170,23 @@ function LunarPhaseNavbar(props) {
                   <Nav.Link href="/aarticle">ARTICLE</Nav.Link>
                   <Nav.Link href="/kit">KIT</Nav.Link>
                   <Nav.Link href="/event">EVENT</Nav.Link>
-                  <Nav.Link href="/login">JOIN US</Nav.Link>
+                  <Nav.Link href="/">JOIN US</Nav.Link>
                   <NavDropdown title="會員中心" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/">會員資料</NavDropdown.Item>
-                    <NavDropdown.Item href="/">我的收藏</NavDropdown.Item>
+                    <NavDropdown.Item href="/member/profile">
+                      會員資料
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/bookmark">
+                      我的收藏
+                    </NavDropdown.Item>
                     <NavDropdown.Item href="/cart/item">
                       購物車
                     </NavDropdown.Item>
+                    <NavDropdown.Item href="/cart/item">
+                      購物清單
+                    </NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="/">登入 / 登出</NavDropdown.Item>
+                    <NavDropdown.Item href="/login">登入</NavDropdown.Item>
+                    <NavDropdown.Item href="/logout">登出</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
               </Navbar.Collapse>

@@ -1,77 +1,84 @@
 import React from 'react'
-import { CardDeck, Card } from 'react-bootstrap'
+import 'react-bootstrap'
+// import './articleCarousel.scss'
+import { Link } from 'react-router-dom'
 
 const ArticleCard = () => {
   return (
     <>
-      <div className="row item-row py-3 mt-3">
-        <CardDeck className="m-auto">
-          <Card className="col-12 col-lg-4">
-            <a
-              href="http://localhost:3333/articledetail/35"
-              style={{ textDecoration: 'none' }}
-            >
-              <Card.Img
-                className="w-100 mt-3"
-                style={{ height: '170px', objectFit: 'cover' }}
-                src="https://image1.thenewslens.com/2020/11/7l6wfj58259t97nyo418ydjummny89.jpg"
+      <div data-aos="fade-down" className="row my-auto mb-5">
+        <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4  mt-3">
+          <Link
+            to="/article/detail/35"
+            style={{ textDecoration: 'none', color: 'black' }}
+          >
+            <div className="article-card-hover">
+              <img
+                className=" w-100 mb-3"
+                style={{ height: '230px', objectFit: 'cover' }}
+                src="https://images.pexels.com/photos/3958518/pexels-photo-3958518.jpeg"
+                alt=""
               />
-              <Card.Body>
-                <Card.Title className="text-left text-body">
+              <div className="w-100">
+                <h5 className="mb-4 text-left">
                   第一次使用棉條就上手！寫給妳的全方位使用教學指南
-                </Card.Title>
-                <div className="d-flex justify-content-between pt-4 text-body">
-                  <Card.Text>Audrey Ko</Card.Text>
-                  <Card.Text>2021-02-03</Card.Text>
+                </h5>
+                <div className="d-flex justify-content-between w-100">
+                  <p>Audrey Ko</p>
+                  <p>2021-02-03</p>
                 </div>
-              </Card.Body>
-            </a>
-          </Card>
-
-          <Card className="col-12 col-lg-4">
-            <a
-              href="http://localhost:3333/articledetail/24"
-              style={{ textDecoration: 'none' }}
-            >
-              <Card.Img
-                className="w-100 mt-3"
-                style={{ height: '170px', objectFit: 'cover' }}
-                src="https://castle.womany.net/images/content/pictures/33702/womany_mooncup_1441783172-29443-5169.jpg"
+              </div>
+            </div>
+          </Link>
+        </div>
+        <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+          <Link
+            to="/article/detail/24"
+            style={{ textDecoration: 'none', color: 'black' }}
+          >
+            <div className="article-card-hover">
+              <img
+                className=" w-100  mb-3"
+                style={{ height: '230px', objectFit: 'cover' }}
+                src="https://images.unsplash.com/photo-1607185073253-44296286cd82"
+                alt=""
               />
-              <Card.Body>
-                <Card.Title className="text-left text-body">
+              <div className="w-100">
+                <h5 className="mb-4 text-left">
                   給你的寵愛身體懶人包：第一次月亮杯就上手
-                </Card.Title>
-                <div className="d-flex justify-content-between pt-4 text-body">
-                  <Card.Text>慢慢說</Card.Text>
-                  <Card.Text>2021-06-14</Card.Text>
+                </h5>
+                <div className="d-flex justify-content-between w-100">
+                  <p>慢慢說</p>
+                  <p>2021-02-03</p>
                 </div>
-              </Card.Body>
-            </a>
-          </Card>
-
-          <Card className="col-12 col-lg-4">
-            <a
-              href="http://localhost:3333/articledetail/28"
-              style={{ textDecoration: 'none' }}
-            >
-              <Card.Img
-                className="w-100  mt-3"
-                style={{ height: '170px', objectFit: 'cover' }}
-                src="https://pbs.twimg.com/media/EnoBjg2W8AU_U47?format=jpg&name=large"
+              </div>
+            </div>
+          </Link>
+        </div>
+        <div className="article-card-col-12 col-12 col-md-6 col-lg-4  mt-3">
+          <Link
+            to="/article/detail/48"
+            style={{ textDecoration: 'none', color: 'black' }}
+          >
+            <div className="article-card-hover">
+              <img
+                className=" w-100 mb-3 "
+                style={{ height: '230px', objectFit: 'cover' }}
+                src="https://images.unsplash.com/photo-1445384763658-0400939829cd"
+                alt=""
               />
-              <Card.Body>
-                <Card.Title className="text-left text-body">
-                  讓「月經貧窮」走入歷史，蘇格蘭議會獨步全球通過「生理用品免費法案」
-                </Card.Title>
-                <div className="d-flex justify-content-between text-body">
-                  <Card.Text>中央社</Card.Text>
-                  <Card.Text>2021-05-13</Card.Text>
+              <div className="w-100">
+                <h5 className="mb-4 text-left">
+                  新種月事用品　溫柔對待你的「好朋友」
+                </h5>
+                <div className="d-flex justify-content-between w-100">
+                  <p>林以璿</p>
+                  <p>2021-06-07</p>
                 </div>
-              </Card.Body>
-            </a>
-          </Card>
-        </CardDeck>
+              </div>
+            </div>
+          </Link>
+        </div>
       </div>
     </>
   )

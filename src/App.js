@@ -157,8 +157,9 @@ function App() {
 
             {/* J */}
             <Route path="/order">
-              <DisplayOrder cartQty={cartQty} bmQty={bmQty} />
-            </Route>
+            <DisplayOrder              
+            />
+          </Route>
             <Route path="/bookmark">
               <DisplayBookMark
                 cartQty={cartQty}
@@ -191,7 +192,11 @@ function App() {
               />
             </Route>
             <Route path="/product-detail/:itemId">
-              <ProductDetail cartQty={cartQty} />
+              <ProductDetail
+                cartQty={cartQty}
+                updateBmQty={updateBmQty}
+                bmQty={bmQty}
+              />
             </Route>
             <Route exact path="/">
               <IndexMy cartQty={cartQty} />
