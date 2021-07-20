@@ -408,14 +408,21 @@ body {
     height: 130px;
     overflow: hidden;
     background-color: #ccc;
+    object-position: center bottom;
+}
+.itemKitPic {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    // object-fit: contain;
+    overflow: hidden;
+    object-position: center center;
 }
 .itemEvPic {
     width: 195px;
-    height: 130px;
+    height: 220px;
     background-color: #ccc;
-    // object-fit: cover;
     overflow: hidden;
-    object-position: center bottom;
 }
 .itemPic-sm {
     width: 78px;
