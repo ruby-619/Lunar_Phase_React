@@ -65,7 +65,7 @@ function OrderDailySet(props) {
                 {index === shoppingItemDay.length - 1 ? (
                   <div></div>
                 ) : (
-                  <TiPlus className="TiPlus" size="90px" />
+                  <TiPlus className="TiPlus" size="85px" />
                 )}
               </div>
             ))}

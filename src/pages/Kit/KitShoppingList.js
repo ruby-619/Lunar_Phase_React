@@ -11,7 +11,8 @@ import SvgPanty from './component/svg-component/SvgPanty'
 import { TiPlus } from 'react-icons/ti'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 
-function KitShoppingList() {
+function KitShoppingList(props) {
+  const { cartQty, bmQty } = props
   const [dataLoading, setDataLoading] = useState(false)
   const [smallTotalD, setSmallTotalD] = useState() //日常右上方小總計
   const [smallPriceD, setSmallPriceD] = useState() //未經月份加成的價格
@@ -434,7 +435,7 @@ function KitShoppingList() {
   //++++++++++++++++++++++++++++
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       {/* <!-- kit-shoppingList --> */}
       <div className="container">
         {/* <!-- 最上區塊的TITLE語 --> */}

@@ -4,13 +4,14 @@ import Footer from '../../components/Footer'
 import SvgSurprise from './component/svg-component/SvgSurprise'
 import SvgShakeHand from './component/svg-component/SvgShakeHand'
 import SvgGive from './component/svg-component/SvgGive'
-import FlashWall from './component/kit-index/FlashWall'
+// import FlashWall from './component/kit-index/FlashWall'
 import GoTestArea from './component/kit-index/GoTestArea'
 
-function KitIndex() {
+function KitIndex(props) {
+  const { cartQty, bmQty } = props
   return (
     <>
-    <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       <div className="kit-index-hero">
         <div className="kit-index-hero-icon">
           <SvgSurprise />
@@ -48,7 +49,9 @@ function KitIndex() {
                 <SvgShakeHand />
               </div>
               <div className="kit-index-info-text">
-                <h4 className="h4-tc kit-index-info-text-title">終止服務的權利</h4>
+                <h4 className="h4-tc kit-index-info-text-title">
+                  終止服務的權利
+                </h4>
                 <p className="kit-index-p">
                   很遺憾的，半年份,一年份的組合若是中間使用不習慣，可以於會員中心申請停止服務，並退還剩下組合的70%金額至您的帳戶中。
                 </p>
