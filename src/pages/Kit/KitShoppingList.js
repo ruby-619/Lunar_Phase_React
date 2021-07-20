@@ -419,9 +419,9 @@ function KitShoppingList() {
         itemImg: `/img/Kit/${shoppingItemEp[0].kitImg}`,
       },
     ]
-    localStorage.setItem('kitCart', JSON.stringify(kitcartD))
+    localStorage.setItem('kitcart', JSON.stringify(kitcartD))
     if (handle) {
-      localStorage.setItem('kitCart', JSON.stringify(kitcartDE))
+      localStorage.setItem('kitcart', JSON.stringify(kitcartDE))
     }
   }
 
