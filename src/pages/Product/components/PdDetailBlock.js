@@ -88,7 +88,7 @@ function PdDetailBlock(props) {
               >
                 <img src={`/img/Product/${itemCoverImg}`} alt="" />
               </button>
-              {mutiImgArray.length &&
+              {mutiImgArray.length > 0 &&
                 mutiImgArray.map((value, index) => {
                   return (
                     <>
