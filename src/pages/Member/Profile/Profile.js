@@ -145,7 +145,7 @@ function Profile(props) {
                             </div>
                             <button 
                                 id="profile" 
-                                className="btn-soft-green h5-tc"
+                                className="btn-soft-w-moana btn-soft-green h5-tc"
                                 onClick={ () => {profileToServer()} }
                             >
                                 確認

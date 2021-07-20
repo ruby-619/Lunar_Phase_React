@@ -237,7 +237,7 @@ function Login(props) {
                       required
                     />
                   </div>
-                  <button id="login" className="btn-soft-pink p-tc" onClick={() => {loginToSever();}}>
+                  <button id="login" className="btn-soft-w-moana btn-soft-pink p-tc" onClick={() => {loginToSever();}}>
                     登入
                   </button>
                 </form>
@@ -335,7 +335,7 @@ function Login(props) {
                   </div>
                   <div className="button-bg">
                     <div className="button_shadow"></div>
-                    <button id="register" className="btn-soft-pink p-tc" onClick={() => {registToServer()}}>註冊</button>
+                    <button id="register" className="btn-soft-w-moana btn-soft-pink p-tc" onClick={() => {registToServer()}}>註冊</button>
                   </div>
                 </form>
               </div>
@@ -347,7 +347,7 @@ function Login(props) {
                 請填寫您的帳號密碼，歡迎加入我們，<br />
                 很高興您能成為我們的一員
                 </p>
-                <button id="move" class="btn-soft-pink p-tc">註冊</button>
+                <button id="move" class="btn-soft-w-moana btn-soft-pink p-tc">註冊</button>
             </div>
         </div>
         </div>

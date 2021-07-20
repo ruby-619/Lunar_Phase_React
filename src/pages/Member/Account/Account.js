@@ -12,7 +12,7 @@ function Account(props) {
     // console.log(userData.success)
 
     // 壞人滾出去，不准來我家
-    // if (!userData.success) props.history.push('/login')
+    if (!userData.success) props.history.push('/login')
 
     return(
         <>
@@ -29,7 +29,7 @@ function Account(props) {
                         <div className="container">
                             <div className="account_col_moana">
                                 <div className="account_wrap">
-                                    <form action="" method="">
+                                    <form onSubmit={(e) => {e.preventDefault()}}>
                                         <div className="inner-icons">
                                             <svg className="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                                             <title>mail3</title>
@@ -54,7 +54,7 @@ function Account(props) {
                                         <div className="button-bg">
                                         <div className="button_shadow">
                                         </div>
-                                        <button className="btn-soft-green h5-tc">確定</button>
+                                        <button className="btn-soft-w-moana btn-soft-green h5-tc">確定</button>
                                     </div>
                                     </form>
                                 </div>

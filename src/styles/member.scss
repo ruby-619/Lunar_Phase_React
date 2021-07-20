@@ -47,7 +47,7 @@ a {
 /* ------------Other------------ */
 // h2 {
 //     text-align: center;
-// }註解byRuby
+// }
 
 .btn_pink_moana {
     background-color: #FDD2BB;
@@ -62,7 +62,7 @@ a {
 
 /* -----------Button------------- */
 /* ---------Import-style-guide----------- */
-.btn-soft-pink, .btn-soft-green {
+.btn-soft-w-moana {
   width: 429px;
 }
 /* ---------pagination-style-guide----------- */
@@ -170,7 +170,7 @@ a {
     position: relative;
 }
 
-input::placeholder { 
+.inner-icons input::placeholder { 
     color: #747474d1;
     position: absolute;
     transform: translateY(50%);
@@ -429,4 +429,3 @@ background-color: #F7F7EE;
 .order_list_bottom {
   margin-top: 20px;
 }
-
