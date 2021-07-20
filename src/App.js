@@ -134,30 +134,30 @@ function App() {
         <Switch>
           <ScrollToTop>
             <Route path="/category/:id?">
-              <EventCategoryCard cartQty={cartQty} />
+              <EventCategoryCard cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/event-list">
-              <EventList cartQty={cartQty} updateBmQty={updateBmQty} />
+              <EventList cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} />
             </Route>
             <Route path="/event-detail/:id?">
-              <EventDetail cartQty={cartQty} />
+              <EventDetail cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/event">
-              <EventIndex2 renderItem cartQty={cartQty} />
+              <EventIndex2 renderItem cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route exact path="/calendar">
-              <Calendar1 />
+              <Calendar1 cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route exact path="/calendar-child">
-              <CalendarChild />
+              <CalendarChild cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route exact path="/calendar-child2">
-              <CalendarChild2 />
+              <CalendarChild2 cartQty={cartQty} bmQty={bmQty} />
             </Route>
 
             {/* J */}
             <Route path="/order">
-            <DisplayOrder              
+            <DisplayOrder cartQty={cartQty} bmQty={bmQty}              
             />
           </Route>
             <Route path="/bookmark">
@@ -168,16 +168,17 @@ function App() {
               />
             </Route>
             <Route path="/cart/event">
-              <CartEv />
+              <CartEv cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/cart/kit">
-              <CartKit />
+              <CartKit cartQty={cartQty} bmQty={bmQty} />
             </Route>
 
             <Route path="/cart/item">
-              <CartItem
+              <CartItem 
                 updateQty={updateQty}
                 cartQty={cartQty}
+                bmQty={bmQty}
                 setCartQty={setCartQty}
               />
             </Route>
@@ -199,7 +200,7 @@ function App() {
               />
             </Route>
             <Route exact path="/">
-              <IndexMy cartQty={cartQty} />
+              <IndexMy cartQty={cartQty} bmQty={bmQty} />
             </Route>
             {/* <Route exact path="/">
             <Home />
@@ -208,55 +209,55 @@ function App() {
 
             {/* 晴 */}
             <Route path="/article/health">
-              <ArticleHealth />
+              <ArticleHealth cartQty={cartQty} bmQty={bmQty} />
             </Route>
 
             <Route path="/article/detail/:id?">
-              <ArticleDetail updateBmQty={updateBmQty} />
+              <ArticleDetail cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} />
             </Route>
             <Route path="/periodrecord">
-              <PeriodRecord />
+              <PeriodRecord cartQty={cartQty} bmQty={bmQty} />
             </Route>
 
             <Route path="/article1">
-              <ArticleIndex1 />
+              <ArticleIndex1 cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/article2">
-              <ArticleIndex2 />
+              <ArticleIndex2 cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/article3">
-              <ArticleIndex3 />
+              <ArticleIndex3 cartQty={cartQty} bmQty={bmQty} />
             </Route>
             {/* 晴 */}
 
             {/* Apple */}
-            <Route path="/kitIndex" component={KitIndex}>
-              {/* <KitIndex /> */}
+            <Route path="/kitIndex">
+              <KitIndex cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/kitTest">
-              <KitTest />
+              <KitTest cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/kitSetList">
-              <KitSetList />
+              <KitSetList cartQty={cartQty} bmQty={bmQty} />
             </Route>
-            <Route path="/kitShoppingList" component={KitShoppingList}>
-              {/* <KitShoppingList /> */}
+            <Route path="/kitShoppingList">
+              <KitShoppingList cartQty={cartQty} bmQty={bmQty} />
             </Route>
             {/* Apple */}
 
             {/* moana */}
 
             <Route path="/member/orderList">
-              <OrderList parendUser={parendUser} />
+              <OrderList parendUser={parendUser} cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/member/profile">
-              <Profile parendUser={parendUser} />
+              <Profile parendUser={parendUser} cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/member/account">
-              <Account parendUser={parendUser} />
+              <Account parendUser={parendUser} cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route path="/login">
-              <Login setParendUser={setParendUser} />
+              <Login setParendUser={setParendUser} cartQty={cartQty} bmQty={bmQty} />
             </Route>
 
             {/* moana */}

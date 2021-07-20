@@ -11,7 +11,7 @@ import CategoryNav from './CategoryNav'
 const _ = require('lodash');
 
 const EventCategoryCard = (props) => {
-  const{cartQty}=props
+  const{cartQty, bmQty}=props
   console.log(props)
   const [event, setEvent] = useState([])
   const [dataLoading, setDataLoading] = useState(false)
@@ -68,7 +68,7 @@ const EventCategoryCard = (props) => {
   
   return (
     <div>
-      <LunarPhaseNavbar cartQty={cartQty}/>
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
       <body className="bg2">
         {/* <CategoryNav/> */}
         <div class="container">
