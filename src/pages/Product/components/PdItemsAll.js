@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import PdItemBlock from './PdItemBlock'
-// import DropdownButton from 'react-bootstrap/DropdownButton'
-// import Dropdown from 'react-bootstrap/Dropdown'
 
 function PdItemsAll(props) {
   const { cateIdPa, updateBmQty } = props
@@ -83,17 +81,6 @@ function PdItemsAll(props) {
           >
             <h6 className="my-auto py-0">{cateNames[products.catePa]}系列</h6>
             <p className="my-auto ml-4 py-0">共 {products.total} 項商品</p>
-
-            {/* <DropdownButton id="dropdownMenu1n" className="mx-3" title="抓分類">
-              {cateOption.length &&
-            cateOption.map((value, index) => {
-              return (
-                <>
-                  <Dropdown.Item>{value.categoryName}</Dropdown.Item>
-                </>
-              )
-            })}
-            </DropdownButton> */}
           </div>
         </div>
         <div

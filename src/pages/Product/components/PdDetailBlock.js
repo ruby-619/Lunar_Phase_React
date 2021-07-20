@@ -5,6 +5,8 @@ import Swal from 'sweetalert2'
 import { FaRegBookmark } from 'react-icons/fa'
 
 function PdDetailBlock(props) {
+  const { updateBmQty } = props
+
   // By CART
   const [mycart, setMycart] = useState([])
   const [productName, setProductName] = useState('') // 加入購物車會跳出的訊息，不使用可省略
@@ -29,6 +31,29 @@ function PdDetailBlock(props) {
     setProductName('產品：' + item.name + '已成功加入購物車')
   }
 
+  // BOOKMARK
+  const [bookmark, setBookmark] = useState(false)
+  const [myBookmark, setMyBookmark] = useState(false)
+  const updateMarkToLocalStorage = (item) => {
+    const currentMark = JSON.parse(localStorage.getItem('bookmark')) || []
+    const index = currentMark.findIndex((v) => v.id === item.id)
+
+    if (index > -1) {
+      //currentCart[index].amount++
+      setProductName('這個商品已經加過了')
+
+      return
+    } else {
+      currentMark.push(item)
+    }
+
+    localStorage.setItem('bookmark', JSON.stringify(currentMark))
+
+    // 設定資料
+    setMyBookmark(currentMark)
+    setProductName('產品：' + item.name + '已成功加入收藏')
+  }
+
   //
   const {
     itemId,
@@ -44,7 +69,7 @@ function PdDetailBlock(props) {
   } = props
 
   const [qty, setQty] = useState(1)
-  const [bookmark, setBookmark] = useState(false)
+  // const [bookmark, setBookmark] = useState(false)
   const [changeImg, setChangImg] = useState(itemCoverImg)
 
   // alert
@@ -59,17 +84,17 @@ function PdDetailBlock(props) {
       timer: 1500,
     })
   }
-  // const alertMark = () => {
-  //   Swal.fire({
-  //     position: 'center',
-  //     // icon: 'question',
-  //     width: '30%',
-  //     imageUrl: '/img/svg/43-music-note-outline.gif',
-  //     title: '已加入收藏',
-  //     showConfirmButton: false,
-  //     timer: 1500,
-  //   })
-  // }
+  const alertMark = () => {
+    Swal.fire({
+      position: 'center',
+      // icon: 'question',
+      width: '30%',
+      imageUrl: '/img/svg/43-music-note-outline.gif',
+      title: '已加入收藏',
+      showConfirmButton: false,
+      timer: 1500,
+    })
+  }
 
   // 把多圖路徑字串變成陣列
   // console.log(itemImg)
@@ -82,12 +107,22 @@ function PdDetailBlock(props) {
         <div className="item-row row justify-content-between">
           <div className="item-pic-wrap d-flex col-12 col-md-6">
             <div className="item-pic-select col-2 mx-2 p-0 ">
-              <button
+              {itemCoverImg && (
+                <>
+                  <button
+                    onClick={() => setChangImg(itemCoverImg)}
+                    className="item-pic-select-dot mb-3 p-0"
+                  >
+                    <img src={`/img/Product/${itemCoverImg}`} alt="" />
+                  </button>
+                </>
+              )}
+              {/* <button
                 onClick={() => setChangImg(itemCoverImg)}
                 className="item-pic-select-dot mb-3 p-0"
               >
                 <img src={`/img/Product/${itemCoverImg}`} alt="" />
-              </button>
+              </button> */}
               {mutiImgArray.length > 0 &&
                 mutiImgArray.map((value, index) => {
                   return (
@@ -131,7 +166,17 @@ function PdDetailBlock(props) {
                 }
               >
                 <p
-                  onClick={() => setBookmark(!bookmark)}
+                  onClick={() => {
+                    setBookmark(!bookmark)
+                    updateMarkToLocalStorage({
+                      id: itemId, //傳itemId
+                      name: itemName,
+                      price: itemPrice,
+                      image: `/img/Product/${itemCoverImg}`,
+                    })
+                    alertMark()
+                    updateBmQty()
+                  }}
                   className="my-auto mx-0"
                 >
                   <FaRegBookmark /> + 加入收藏

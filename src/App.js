@@ -187,7 +187,11 @@ function App() {
               />
             </Route>
             <Route path="/product-detail/:itemId">
-              <ProductDetail cartQty={cartQty} />
+              <ProductDetail
+                cartQty={cartQty}
+                updateBmQty={updateBmQty}
+                bmQty={bmQty}
+              />
             </Route>
             <Route exact path="/">
               <IndexMy cartQty={cartQty} />

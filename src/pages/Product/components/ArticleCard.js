@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const ArticleCard = () => {
   return (
     <>
-      <div className="container d-flex m-auto">
+      <div data-aos="fade-down" className="row my-auto mb-5">
         <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4  mt-3">
           <Link
             to="/article/detail/35"

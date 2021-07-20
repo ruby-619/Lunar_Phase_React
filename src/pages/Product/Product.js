@@ -114,12 +114,24 @@ function Product(props) {
           )} */}
         </div>
         {/* ----- item List ----- */}
-        {cateId === 0 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
-        {cateId === 1 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
-        {cateId === 2 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
-        {cateId === 3 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
-        {cateId === 4 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
-        {cateId === 5 && <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />}
+        {cateId === 0 && (
+          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />
+        )}
+        {cateId === 1 && (
+          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />
+        )}
+        {cateId === 2 && (
+          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />
+        )}
+        {cateId === 3 && (
+          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />
+        )}
+        {cateId === 4 && (
+          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />
+        )}
+        {cateId === 5 && (
+          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} />
+        )}
       </div>
       {/* ----- top pick ----- */}
       <PdTopPick />
@@ -165,7 +177,7 @@ function Product(props) {
 
         <div className="row justify-content-between mt-5">
           <div className="product-order-link col-12 col-md-6">
-            <Link to="/kit">
+            <Link to="/kitindex">
               <div className="product-order-link-box">
                 <img src="/img/Product/items002.jpg" alt="" />
                 <div className="product-order-link-info">
