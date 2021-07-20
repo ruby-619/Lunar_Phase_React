@@ -23,6 +23,7 @@ import CartItem from './pages/Cart/CartItem'
 import CartEv from './pages/Cart/CartEv'
 import CartKit from './pages/Cart/CartKit'
 import DisplayBookMark from './pages/Cart/DisplayBookMark'
+import DisplayOrder from './pages/Cart/DisplayOrder'
 
 // 晴
 import ArticleIndex1 from "./pages/article/ArticleIndex1.js";
@@ -149,6 +150,11 @@ function App() {
             </Route>
 
           {/* J */}
+          <Route path="/order">
+            <DisplayOrder
+              cartQty={cartQty} bmQty={bmQty} 
+            />
+          </Route>
           <Route path="/bookmark">
             <DisplayBookMark
               cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty}
