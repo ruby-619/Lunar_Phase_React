@@ -147,7 +147,13 @@ function KitShoppingList() {
         // 因為 e.cat == threeBtn.clickKey
         // .indexOf()判斷符合條件的物件是陣列中的第幾個，()內必須是數字才能做判斷
         .indexOf(Number(kitCategoryB))
-      console.log('threeBtn.clickKey', threeBtn.clickKey)
+      // console.log('threeBtn.clickKey', threeBtn.clickKey)
+      console.log('threeBtnu有什麼', threeBtn)
+
+      threeBtn.arr = threeBtn.arr.map((e) => {
+        return { ...e, click: true ? false : false }
+      })
+
       threeBtn.arr[threeBtn.clickKey].click = true
       // console.log('threeBtn.clickKey拿到什麼', threeBtn.clickKey)
       arrthreeBtn = threeBtn.arr[threeBtn.clickKey]
@@ -167,8 +173,6 @@ function KitShoppingList() {
       // show: true,
       // 判斷是誰被點
       clickKey: k,
-      // e 為 objA.arr 裡的 1 個 {}
-      // 這邊的 map 是為了複製目標原來的陣列物件
       arr: cuteBtn.arr.map((e) => {
         return {
           ...e,
@@ -395,27 +399,29 @@ function KitShoppingList() {
 
   const sentLocal = () => {
     console.log('catDay', catDay)
+    let moneyD = smallTotalD.replace(/,/g, '')
+    let moneyE = smallTotalE.replace(/,/g, '')
 
     let kitcartD = {
-      id: '',
+      id: '1',
       name: catDay[0].kitCategoryName,
       amount: clickMon,
-      price: smallPriceD,
+      price: Number(moneyD),
       itemImg: `/img/Kit/${shoppingItemDay[0].kitImg}`,
     }
     let kitcartDE = [
       {
-        id: '',
+        id: '1',
         name: catDay[0].kitCategoryName,
         amount: clickMon,
-        price: smallPriceD,
+        price: Number(moneyD),
         itemImg: `/img/Kit/${shoppingItemDay[0].kitImg}`,
       },
       {
-        id: '',
+        id: '2',
         name: catEp.kitCategoryName,
         amount: 1,
-        price: smallTotalE,
+        price: Number(moneyE),
         itemImg: `/img/Kit/${shoppingItemEp[0].kitImg}`,
       },
     ]
