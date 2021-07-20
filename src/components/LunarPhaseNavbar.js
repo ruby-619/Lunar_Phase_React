@@ -77,7 +77,7 @@ function LunarPhaseNavbar(props) {
                 <p className="small">來賓 您好</p>
               </div>
               <div className="ml-2 mt-2">
-                <Link to="/" className="mx-0">
+                <Link to="/login" className="mx-0">
                   <FaUser />
                 </Link>
                 <div />
