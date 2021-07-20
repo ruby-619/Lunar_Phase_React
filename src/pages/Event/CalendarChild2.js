@@ -9,7 +9,7 @@ import {BsNewspaper} from 'react-icons/bs'
 
 const CalendarChild2 = (props) => {
 
-    
+    const{cartQty, bmQty}=props
     const [symptom, setSymptom] = useState([])
     const [displaySymptom, setdisplaySymptom] = useState([])
 
@@ -160,7 +160,7 @@ const CalendarChild2 = (props) => {
      
     return (
         <div>
-            <LunarPhaseNavbar/>
+             <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
             <div className="container">
                 {switchChildSteps(calStepChild)}
                     

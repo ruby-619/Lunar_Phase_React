@@ -5,13 +5,13 @@ import Footer from '../../components/Footer'
 
 
 
-export const CalendarChild = () => {
-    
+export const CalendarChild = (props) => {
+    const{cartQty, bmQty}=props
     const [likeList, setLikeList] = useState([])
     return (
         
         <div>
-        <LunarPhaseNavbar/>
+        <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
         <div class="container">
             <div class="row">
                 <div className="RecordArea">

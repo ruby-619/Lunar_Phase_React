@@ -8,7 +8,8 @@ import Footer from '../../components/LunarPhaseFooter';
 import CalendarChild2 from './CalendarChild2'
 
 
-function Calendar1() {
+function Calendar1(props) {
+  const{cartQty, bmQty}=props
   const [value, onChange] = useState(new Date());
   const newdate = value.getDate()
   
@@ -18,7 +19,7 @@ function Calendar1() {
 
   const part1 = (
     <>
-    <LunarPhaseNavbar/>
+    <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
       <div class="container">
         <div class="row">
           {/* <div className="CalendarArea"> */}

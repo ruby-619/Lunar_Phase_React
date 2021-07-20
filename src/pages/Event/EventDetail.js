@@ -6,10 +6,10 @@ import './Event.scss'
 
 
 const EventDetail = (props) => {
-  const{cartQty}=props
+  const{cartQty, bmQty}=props
   return (
     <div>
-      <LunarPhaseNavbar cartQty={cartQty}/>
+       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
       
         <EventDetailCard />
         <LunarPhaseFooter />

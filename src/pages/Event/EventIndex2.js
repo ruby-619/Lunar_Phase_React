@@ -13,7 +13,7 @@ import { FaPaintBrush, FaHandPaper } from 'react-icons/fa'
 import './Event.scss'
 
 const EventIndex2 = (props) => {
-  const{cartQty}=props
+  const{cartQty, bmQty}=props
   const [color, setcolor] = useState('FDD2BB')
   const [color2, setcolor2] = useState('FDD2BB')
   const [color3, setcolor3] = useState('FDD2BB')
@@ -21,7 +21,7 @@ const EventIndex2 = (props) => {
   const [color5, setcolor5] = useState('FDD2BB')
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty}/>
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
       <body className="bg1">
         <Carousel1 />
         <div class="container">
