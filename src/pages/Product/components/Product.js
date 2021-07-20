@@ -5,8 +5,8 @@ import './Product.scss'
 
 // component
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
+import Breadcrumb from '../../components/Breadcrumb'
 import Footer from '../../components/Footer'
-import PdBreadcrumb from './components/PdBreadcrumb'
 import PdSlider from './components/PdSlider'
 import PdLinkArticle from './components/PdLinkArticle'
 import PdLineHeart from './components/PdLineHeart'
@@ -68,7 +68,7 @@ function Product(props) {
     <>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       {/* breadcrumb */}
-      <PdBreadcrumb />
+      <Breadcrumb />
       {/* ----- carousel ----- */}
       <PdSlider />
       {/* ----- item category ----- */}

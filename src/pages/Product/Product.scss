@@ -98,6 +98,10 @@
 .product-carousel-img {
   object-fit: cover;
 }
+.carousel-item > img {
+  object-fit: cover;
+  vertical-align: middle;
+}
 
 /* ----- category ----- */
 .product-category {

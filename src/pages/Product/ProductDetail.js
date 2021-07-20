@@ -6,6 +6,7 @@ import './ProductDetail.scss'
 // component
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
+import PdBreadcrumb from './components/PdBreadcrumb'
 import PdDetailBlock from './components/PdDetailBlock'
 import PdInfoPad from './components/PdInfoPad'
 import ArticleCard from './components/ArticleCard'
@@ -91,6 +92,8 @@ function ProductDetail(props) {
   return (
     <>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
+      {/* breadcrumb */}
+      <PdBreadcrumb />
       {/* items */}
       {display}
       {/* <PdDetailBlock /> */}
