@@ -381,14 +381,14 @@
 .index-article-topic-content button {
   margin-right: 0;
 }
-// .index-article-topic-content {
-//   display: flex;
-//   flex-direction: column;
-//   align-content: space-between;
-// }
-// .index-article-topic-under {
-//   margin-top: auto;
-// }
+.index-article-topic-content {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+.index-article-topic-under {
+  margin-top: auto;
+}
 
 .index-article-date {
   font-family: 'DM Serif Display', serif;
@@ -695,7 +695,7 @@
 }
 /* ---join us--- */
 .join-us {
-  height: 500px;
+  min-height: 500px;
   padding: 120px 140px;
   position: relative;
 }
@@ -714,6 +714,7 @@
   // min-height: 480px;
   margin: 0 auto;
   object-fit: cover;
+  opacity: 0.9;
   // background: no-repeat url(../../img-bg/Index/moon-circle01.svg);
 }
 .index-moon-circle img {
