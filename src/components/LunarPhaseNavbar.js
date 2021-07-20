@@ -154,8 +154,8 @@ function LunarPhaseNavbar(props) {
             className="bg-nav-bar-mobile"
           >
             <Container fluid>
-              <Navbar.Brand href="#home">
-                <h1>
+              <Navbar.Brand href="/">
+                <h1 className="my-0 py-0">
                   <img
                     className="nav-logo"
                     src="/img/Index/logo-s-dark.svg"
@@ -167,8 +167,8 @@ function LunarPhaseNavbar(props) {
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto text-center">
                   <Nav.Link href="/product">PRODUCT</Nav.Link>
-                  <Nav.Link href="/aarticle">ARTICLE</Nav.Link>
-                  <Nav.Link href="/kit">KIT</Nav.Link>
+                  <Nav.Link href="/article1">ARTICLE</Nav.Link>
+                  <Nav.Link href="/kitindex">KIT</Nav.Link>
                   <Nav.Link href="/event">EVENT</Nav.Link>
                   <Nav.Link href="/">JOIN US</Nav.Link>
                   <NavDropdown title="會員中心" id="basic-nav-dropdown">
