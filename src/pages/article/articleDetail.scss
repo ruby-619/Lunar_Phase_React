@@ -28,7 +28,7 @@ margin-bottom: 50px;
         }
 
         .article-detail-content{
-            
+            // position: relative;
             .article-detail-content-p {
             padding: 20px;
             text-align: left;
@@ -38,12 +38,12 @@ margin-bottom: 50px;
         }
         .aritcle-detail-line{
             position: absolute;
-            left: 0;
+            left: -110px;
             width: 500px;
         }
         .aritcle-detail-line2{
             position: absolute;
-            right: 0;
+            right: -130px;
             width: 300px;
             z-index: -1;
         }
