@@ -13,8 +13,14 @@ import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const ArticleDetail = (props) => {
+  useEffect(() => {
+    AOS.init({ offset: 120, duration: 2000 })
+  }, [])
+
   const { updateBmQty } = props
   console.log(props)
   var moment = require('moment')
@@ -213,7 +219,10 @@ const ArticleDetail = (props) => {
               className="article-detail-content-p"
               dangerouslySetInnerHTML={{ __html: article.articleContent0 }}
             ></p>
-            <div className="article-detail-highlight mx-auto text-center my-5">
+            <div
+              data-aos="fade-right"
+              className="article-detail-highlight mx-auto text-center my-5"
+            >
               <img
                 className="article-detail-highlight-img"
                 src="http://localhost:3333/img/Article/Group 1120.png"
@@ -228,6 +237,7 @@ const ArticleDetail = (props) => {
               dangerouslySetInnerHTML={{ __html: article.articleContent1 }}
             ></p>
             <img
+              data-aos="fade-right"
               src="http://localhost:3333/img/Article/Path 534.svg"
               className="aritcle-detail-line"
               alt=""
