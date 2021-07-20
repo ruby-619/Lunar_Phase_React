@@ -17,6 +17,8 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 const ArticleDetail = (props) => {
+  const { cartQty, bmQty } = props
+
   useEffect(() => {
     AOS.init({ offset: 120, duration: 2000 })
   }, [])
@@ -126,7 +128,7 @@ const ArticleDetail = (props) => {
 
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
 
       <div>
         <div className="article-detail-title">

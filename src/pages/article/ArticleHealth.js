@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 
-const ArticleHealth = () => {
+const ArticleHealth = (props) => {
+  const { cartQty, bmQty } = props
+
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
 
       <div className="container pt-5">
         <div className="container">
