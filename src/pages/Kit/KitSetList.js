@@ -5,6 +5,7 @@ import DailySet from './component/kit-setList/DailySet'
 import EpSet from './component/kit-setList/EpSet'
 import BtnGreenBig from './component/kit-setList/BtnGreenBig'
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function KitSetList() {
   const [objDaily, setObjDaily] = useState({
@@ -75,7 +76,12 @@ function KitSetList() {
           ...e,
           // obj到時候要放觸發函式的變數，也就是e
           // 原本的 e 裡的 kitCategory 與被觸發的 obj.kitCategory 相同時，表示被按下 click:true
-          click: e.kitCategory === obj.kitCategory ? true : false,
+          click:
+            e.kitCategory === obj.kitCategory
+              ? !e.click
+                ? true
+                : false
+              : false,
         }
       }),
     })
@@ -86,7 +92,6 @@ function KitSetList() {
     console.log('obj', obj)
     //obj在陣列中的索引順序
     console.log('key', key)
-    //ObjDaily被改變
     //ObjDaily被按了objEp才能被選擇
     if (objDaily.key !== null) {
       //ObjDaily被改變
@@ -136,6 +141,15 @@ function KitSetList() {
     } else {
       localStorage.removeItem('kitCategoryB')
     }
+    Swal.fire({
+      position: 'center',
+      // icon: 'question',
+      width: '30%',
+      imageUrl: '/img/Kit/1103-confetti-outline.gif',
+      title: '這是你的專屬優惠',
+      showConfirmButton: false,
+      timer: 1500,
+    })
   }
 
   return (
@@ -143,15 +157,11 @@ function KitSetList() {
       <LunarPhaseNavbar />
       {/* <!-- kit-setList --> */}
       <div className="container">
-        <DailySet
-          functionA={functionA}
-          objDaily={objDaily}
-          setObjDaily={setObjDaily}
-        />
+        <DailySet functionA={functionA} objDaily={objDaily} />
         <hr />
-        <EpSet functionB={functionB} objEp={objEp} setObjEp={setObjEp} />
+        <EpSet functionB={functionB} objEp={objEp} objDaily={objDaily} />
         <Link to="/kitShoppingList">
-          <BtnGreenBig goShoppingList={goShoppingList} />
+          <BtnGreenBig goShoppingList={goShoppingList} objDaily={objDaily} />
         </Link>
       </div>
       <Footer />

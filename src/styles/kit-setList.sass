@@ -22,7 +22,34 @@
     &-show
         visibility: visible
 
-.kit-set-img
+.kit-set-img-ep
+    width: 250px
+    height: 180px
+    background-color: #ffffff
+    display: flex
+    justify-content: center
+    align-items: center
+    border-radius: 20px
+    cursor: pointer
+    transition-duration: 0.4s
+    filter: opacity(.5)
+
+    &-chose
+        filter: opacity(1)
+
+    &-click
+        background-color: #ffebe0
+        border: #fdd2bb solid 3px
+        transform: scale(1.1)
+        filter: opacity(1)
+
+    &:hover
+        background-color: #fdd2bb
+        border: #ffebe0 solid 3px
+        transform: scale(1.1)
+
+
+.kit-set-img-day
     width: 250px
     height: 180px
     background-color: #ffffff
@@ -33,14 +60,12 @@
     cursor: pointer
     transition-duration: 0.4s
 
-
     &:hover
         background-color: #fdd2bb
         border: #ffebe0 solid 3px
         transform: scale(1.1)
 
-
-    &-daily
+    &-click
         background-color: #fdd2bb
         border: #ffebe0 solid 3px
         transform: scale(1.1)
@@ -48,15 +73,8 @@
     &-ep:active .kit-set-ribbon
         visibility: visible
 
-
-    &-ep
-        background-color: #ffebe0
-        border: #fdd2bb solid 3px
-        transform: scale(1.1)
-
 .kit-set-text
     text-align: center
-
 
     &-p
         margin: 10px 0 0 0
@@ -82,7 +100,6 @@
     transition: 1s
     display: block
     margin: 60px auto
-
 
     &:hover
         box-shadow: inset 6px 6px 16px #e3e3db, inset -6px -6px 16px #ffffff

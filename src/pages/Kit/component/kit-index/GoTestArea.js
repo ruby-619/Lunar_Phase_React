@@ -8,7 +8,7 @@ function GoTestArea() {
     <>
       <div className="kit-index-go-text-area">
         <Link
-          to="/kitTest1"
+          to="/kitTest"
           onClick={() => {
             ;<BtnGoTest />
           }}

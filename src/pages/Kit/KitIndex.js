@@ -57,7 +57,7 @@ function KitIndex() {
           </div>
         </div>
       </div>
-      <FlashWall />
+      {/* <FlashWall /> */}
       {/* <!-- 前往測驗區 --> */}
       <GoTestArea />
       <Footer />

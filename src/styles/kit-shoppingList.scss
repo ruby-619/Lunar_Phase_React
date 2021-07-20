@@ -15,7 +15,7 @@
   margin: 70px 120px;
 }
 
-/* SET2刪除 */
+/* SET2刪除 ------------*/
 .delete {
   width: 65px;
   height: 65px;
@@ -40,7 +40,7 @@
   background-color: #e64b4b;
 }
 
-/* 右邊3個小可愛 */
+/* 右邊3個小可愛 ------------*/
 .right-little-btn {
   position: absolute;
   right: -93px;
@@ -56,24 +56,18 @@
   border-radius: 0 20px 20px 0;
   margin: 20px 0;
   cursor: pointer;
+  filter: opacity(0.5);
 }
-
-/* .little-btn:hover {
-    width: 100px;
-  } */
-
-.btn-cloth-pad:hover,
-.btn-cup:hover,
-.btn-panty:hover {
-  background-color: #fdd2bb;
-}
-
-.btn-cloth-pad:active,
-.btn-cup:active,
-.btn-panty:active {
+.little-btn-active {
   background-color: #fff;
   border: #fdd2bb solid 3px;
   box-sizing: border-box;
+  filter: opacity(1);
+}
+
+.little-btn:hover {
+  background-color: #fdd2bb;
+  filter: opacity(1);
 }
 
 .icon-cloth-pad {
@@ -81,7 +75,7 @@
   stroke: #b4b4a6;
 }
 
-.btn-cloth-pad:hover .icon-cloth-pad {
+.little-btn:hover .icon-cloth-pad {
   fill: #e64b4b;
   stroke: #e64b4b;
 }
@@ -90,7 +84,7 @@
   fill: #b4b4a6;
 }
 
-.btn-cup:hover .icon-cup {
+.little-btn:hover .icon-cup {
   fill: #e64b4b;
 }
 
@@ -99,7 +93,7 @@
   stroke: #b4b4a6;
 }
 
-.btn-panty:hover .icon-panty {
+.little-btn:hover .icon-panty {
   fill: #e64b4b;
   stroke: #e64b4b;
 }
@@ -110,14 +104,14 @@
   justify-content: space-between;
 }
 
-/* 組合名稱 */
+/* 組合名稱 ------------*/
 .set-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 400;
 }
 
-/* 右上方總計區塊 */
+/* 右上方總計區塊 ------------*/
 .sale-price-s {
   display: flex;
   flex-direction: column;
@@ -161,7 +155,7 @@
   justify-content: center;
 }
 
-/* 商品圖片區 */
+/* 商品圖片區 ------------*/
 .kit-shopping-list-product-wrap {
   display: flex;
   flex-direction: column;
@@ -200,7 +194,7 @@
   margin: 5px 0;
 }
 
-/* Day按鈕 */
+/* Day按鈕 ------------*/
 .kit-dropdown-text-center {
   text-align: center !important;
 }
@@ -252,7 +246,43 @@
   margin: auto;
 }
 
-/* 下方總計區(上) */
+.add-EPitem-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-EPitem {
+  width: 30%;
+  height: 100px;
+  padding: 10px;
+  border-radius: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  border: 1px solid #383844;
+  font-family: 'Montserrat', 'Noto Sans TC', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: center;
+}
+
+.add-EPitem:hover {
+  transition: 0.3s;
+  background-color: #383844;
+  color: #f7f7ee;
+}
+
+.add-EPitem-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 下方總計區(上) ------------*/
 .kit-items {
   margin-bottom: 15px;
 }
@@ -318,7 +348,7 @@
   color: #e64b4b;
 }
 
-/* 其他選擇＋前往購買按鈕 */
+/* 其他選擇＋前往購買按鈕 ------------*/
 .kit-go-buy-btn-area {
   display: flex;
   justify-content: center;

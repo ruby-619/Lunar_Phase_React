@@ -13,11 +13,12 @@ function DailySet(props) {
             {/* click變成true的話，改變classNameName */}
             <div
               className={
-                'kit-set-img ' + (objDaily.click ? 'kit-set-img-daily' : '')
+                'kit-set-img-day ' +
+                (objDaily.click ? 'kit-set-img-day-click' : '')
               }
               // 被觸發事件(onClick)後，進行functionA
               onClick={() => {
-                functionA(objDaily,key)
+                functionA(objDaily, key)
               }}
             >
               <div

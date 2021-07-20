@@ -2,7 +2,7 @@ import React from 'react'
 import SvgRibbonSet from '../svg-component/SvgRibbonSet'
 
 function EpSet(props) {
-  const { functionB, objEp } = props
+  const { functionB, objEp,objDaily } = props
   return (
     <>
       <div className="kit-set-list-title-ep">
@@ -13,7 +13,11 @@ function EpSet(props) {
         {objEp.arr.map((objEp, key) => (
           <div className="kit-set-box">
             <div
-              className={'kit-set-img ' + (objEp.click ? 'kit-set-img-ep' : '')}
+              className={
+                'kit-set-img-ep ' +
+                (objDaily.key !== null ? 'kit-set-img-ep-chose ' : '') +
+                (objEp.click ? 'kit-set-img-ep-click ' : '')
+              }
               onClick={() => {
                 functionB(objEp, key)
               }}
@@ -26,7 +30,7 @@ function EpSet(props) {
                 <SvgRibbonSet />
               </div>
               <div className="kit-set-text">
-                <h4 className="kit-settext h4-tc">{objEp.name}</h4>
+                <h4 className="kit-set-text h4-tc">{objEp.name}</h4>
                 <div className="kit-set-text-p">{objEp.span}</div>
               </div>
             </div>

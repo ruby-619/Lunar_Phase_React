@@ -1,21 +1,22 @@
-import React from 'react'
-import SvgClothPad from '../svg-component/SvgClothPad'
-import SvgCup from '../svg-component/SvgCup'
-import SvgPanty from '../svg-component/SvgPanty'
+import React, { useState } from 'react'
 
-function RightBtn() {
+function RightBtn(props) {
+  const { cuteBtn, threeClick } = props
+  console.log('cuteBtn', cuteBtn)
+
   return (
     <>
       <div className="right-little-btn">
-        <div className="little-btn ">
-          <SvgClothPad className="btn-cloth-pad" />
-        </div>
-        <div className="little-btn">
-          <SvgCup className="btn-cup" />
-        </div>
-        <div className="little-btn">
-          <SvgPanty className="btn-panty" />
-        </div>
+        {cuteBtn.arr.map((btn, key) => (
+          <div
+            className={'little-btn ' + (btn.click ? 'little-btn-active' : '')}
+            onClick={() => {
+              threeClick(btn, key)
+            }}
+          >
+            {btn.icon}
+          </div>
+        ))}
       </div>
     </>
   )

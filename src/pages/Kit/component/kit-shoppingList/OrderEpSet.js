@@ -1,34 +1,41 @@
 import React from 'react'
 import { TiPlus } from 'react-icons/ti'
 import SummarySmallEp from './SummarySmallEp'
-import RightBtn from '../kit-shoppingList/RightBtn'
+import RightBtn from './RightBtn'
 
 function OrderEpSet(props) {
   const {
     shoppingItemEp,
-    setShoppingItemEp,
     catEp,
-    setCatEp,
+    sumEpSmall,
     smallTotalE,
-    setSmallTotalE,
+    cuteBtn,
+    threeClick,
+    deleteFunction,
   } = props
+  console.log('裡面到底有殺小，不要搞我', catEp)
   return (
     <>
       <TiPlus className="TiPlus-r" size="100px" />
       <div className="kit-shopping-list-bg">
         {/* <!-- 刪除鈕 --> */}
-        <div className="delete">
+        <div
+          className="delete"
+          onClick={() => {
+            deleteFunction(true)
+          }}
+        >
           <i className="fas fa-times fa-3x"></i>
         </div>
         {/* <!-- 右邊3個小可愛 --> */}
-        <RightBtn />
+        <RightBtn cuteBtn={cuteBtn} threeClick={threeClick} />
         <div className="kit-shopping-list-wrap">
           {/* <!-- 組合名稱＋右上方總計 --> */}
           <div className="kit-shopping-list-set-title">
             {/* <!-- 組合名稱 --> */}
             <div>
-              {catEp && catEp.length > 0 ? (
-                <div className="set-title">{catEp[0].kitCategoryName}</div>
+              {catEp ? (
+                <div className="set-title">{catEp.kitCategoryName}</div>
               ) : (
                 <div className="set-title"></div>
               )}
@@ -36,9 +43,8 @@ function OrderEpSet(props) {
             {/* <!-- 右上方總計區塊 --> */}
             <SummarySmallEp
               shoppingItemEp={shoppingItemEp}
-              setShoppingItemEp={setShoppingItemEp}
               smallTotalE={smallTotalE}
-              setSmallTotalE={setSmallTotalE}
+              sumEpSmall={sumEpSmall}
             />
           </div>
           <div className="kit-shopping-list-product">
