@@ -36,7 +36,7 @@ function Product() {
             />
             <Carousel.Caption>
               <h3>可重複利用的生理用品</h3>
-              <p>拋開濕悶，體會月亮褲的乾爽迷人</p>
+              <p>拋開傳統衛生棉，體會月亮褲的乾爽迷人</p>
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>

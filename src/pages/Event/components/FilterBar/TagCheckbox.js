@@ -4,7 +4,7 @@ function TagCheckbox(props) {
   const { value, handleChecked, tags } = props
   return (
     <>
-      <div className="checkbox">
+      <div className="checkbox ml-5">
         <label className="SymptomLabel">
           <input
             type="checkbox"

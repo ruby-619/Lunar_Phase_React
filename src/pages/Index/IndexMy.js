@@ -475,7 +475,7 @@ function IndexMy(props) {
           <div
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
-            data-aos-delay="2400"
+            data-aos-delay="2200"
             data-aos-duration="3000"
             className="index-kit-content-r col-12 col-md-8"
           >
@@ -484,7 +484,7 @@ function IndexMy(props) {
               每個女生都有個生理期秘密小包包，裡面是精挑細選的最佳選手。
               <br />
               Lunar Phase
-              提供新型態生理用品訂購方式，可依照妳的需求自由選購生理用品，想配多少數量自己決定。想試用的商品，只買一個也能選配。
+              提供新型態生理用品訂購方式，可依照妳的需求自由選購生理用品，想配多少數量自己決定。
               <br />
               輕鬆點選，就能在每個月該來的時候送到家，還能隨時更換項目或取消。
             </p>
@@ -605,7 +605,7 @@ function IndexMy(props) {
           </div>
           <div data-aos="fade-down" className="col-12 col-md-6 mt-5 mt-md-0">
             <h6 className="my-3">經期試算機</h6>
-            <p className="p-tc">立即檢測下次經期</p>
+            <p className="p-tc">立即檢測下次經期，獲取月經小知識</p>
             <button data-aos="fade-down" className="btn-soft-green mt-3">
               LET'S GO
             </button>
@@ -628,7 +628,7 @@ function IndexMy(props) {
                 />
               </Link>
             </div>
-            <nav className="my-auto col-12 col-md-10 px-0">
+            <nav className="my-auto mt-5 col-12 col-md-10 px-0">
               <ul className="d-flex justify-content-center justify-content-md-end  my-3 my-md-0 px-auto px-md-0 col-12">
                 <li>
                   <Link to="/product" className="index-footer-a ml-3">
@@ -658,7 +658,7 @@ function IndexMy(props) {
               </ul>
             </nav>
           </div>
-          <div className="row m-0 mt-3 p-0 index-footer-bottom col-12 justify-content-between align-items-end">
+          <div className="row m-0 mt-5 p-0 index-footer-bottom col-12 justify-content-between align-items-end">
             <div className="small text-center text-md-left p-0 mt-3 col-12 col-md-6">
               <p className="m-0 p-0">
                 JSMART co.

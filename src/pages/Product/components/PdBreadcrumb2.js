@@ -1,16 +1,19 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { RiSearchLine } from 'react-icons/ri'
 
-function Breadcrumb() {
+function PdBreadcrumb2() {
   return (
     <>
       <div className="top-line container-fluid">
         <div className="d-flex justify-content-between">
           <div className="bread-box">
             <div className="bread d-flex">
-              <a href>HOME</a>
+              <Link to="/">HOME</Link>
               <p>&gt;</p>
-              <a href>PRODUCT</a>
+              <Link to="/product">PRODUCT</Link>
+              <p>&gt;</p>
+              <Link to="/product-detail">PRODUCT INFO</Link>
             </div>
           </div>
           <div className="search-box">
@@ -31,4 +34,4 @@ function Breadcrumb() {
   )
 }
 
-export default Breadcrumb
+export default PdBreadcrumb2
