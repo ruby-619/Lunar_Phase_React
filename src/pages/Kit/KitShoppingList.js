@@ -396,23 +396,32 @@ function KitShoppingList() {
   const sentLocal = () => {
     console.log('catDay', catDay)
 
-    let kitPakegeDay = {
+    let kitcartD = {
       id: '',
       name: catDay[0].kitCategoryName,
       amount: clickMon,
       price: smallPriceD,
       itemImg: `/img/Kit/${shoppingItemDay[0].kitImg}`,
     }
-    let kitPakegeEp = {
-      id: '',
-      name: catEp.kitCategoryName,
-      amount: 1,
-      price: smallTotalE,
-      itemImg: `/img/Kit/${shoppingItemEp[0].kitImg}`,
-    }
-    localStorage.setItem('kitPakegeDay', JSON.stringify(kitPakegeDay))
+    let kitcartDE = [
+      {
+        id: '',
+        name: catDay[0].kitCategoryName,
+        amount: clickMon,
+        price: smallPriceD,
+        itemImg: `/img/Kit/${shoppingItemDay[0].kitImg}`,
+      },
+      {
+        id: '',
+        name: catEp.kitCategoryName,
+        amount: 1,
+        price: smallTotalE,
+        itemImg: `/img/Kit/${shoppingItemEp[0].kitImg}`,
+      },
+    ]
+    localStorage.setItem('kitCart', JSON.stringify(kitcartD))
     if (handle) {
-      localStorage.setItem('kitPakegeEp', JSON.stringify(kitPakegeEp))
+      localStorage.setItem('kitCart', JSON.stringify(kitcartDE))
     }
   }
 
