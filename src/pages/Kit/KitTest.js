@@ -9,7 +9,8 @@ import SvgTampon from './component/svg-component/SvgTampon'
 import SvgSetEp from './component/svg-component/SvgSetEp'
 import Swal from 'sweetalert2'
 
-function KitTest1() {
+function KitTest1(props) {
+  const {cartQty,bmQty} =props
   const [test, setTest] = useState([
     {
       qId: 1,
@@ -173,7 +174,7 @@ function KitTest1() {
 
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
       {/* <!-- kit-test --> */}
       <div className="container">
         {/* <!-- 最上方的題目進度條 --> */}

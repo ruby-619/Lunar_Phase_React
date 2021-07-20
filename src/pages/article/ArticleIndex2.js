@@ -12,10 +12,12 @@ import Footer from '../../components/Footer'
 // https://react-bootstrap.github.io/components/carousel/
 // https://ithelp.ithome.com.tw/articles/10227641
 
-const ArticleIndex2 = () => {
+const ArticleIndex2 = (props) => {
+  const { cartQty, bmQty } = props
+
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       <div className="article-index">
         <ArticleCarousel />
         <img

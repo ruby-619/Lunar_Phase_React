@@ -27,7 +27,9 @@ async function fetchSetData(data) {
   })
 }
 
-const Home = () => {
+const Home = (props) => {
+  const { cartQty, bmQty } = props
+
   const [data, setData] = useState([])
   const submittingStatus = useRef(false)
   useEffect(() => {
@@ -43,7 +45,7 @@ const Home = () => {
 
   return (
     <>
-      <LunarPhaseNavbar />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
 
       <div className="period-record mx-auto">
         <Edit add={setData} submittingStatus={submittingStatus} />

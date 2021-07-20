@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Carousel from 'react-bootstrap/Carousel'
 import './articleCarousel.scss'
 import { Link } from 'react-router-dom'
