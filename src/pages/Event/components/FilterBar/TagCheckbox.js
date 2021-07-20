@@ -5,7 +5,7 @@ function TagCheckbox(props) {
   return (
     <>
       <div className="checkbox">
-        <label>
+        <label className="SymptomLabel">
           <input
             type="checkbox"
             className="icheck"

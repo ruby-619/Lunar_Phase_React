@@ -241,7 +241,7 @@ const EventListCard = (props) => {
                       onClick={() => {
                         props.history.push(`/event-detail/${v.id}`)
                       }}
-                      className="TextAlignLeft"
+                      className="TextAlignLeft CursorPointer"
                     >
                       {v.eventName}
                     </h4>
@@ -298,7 +298,7 @@ const EventListCard = (props) => {
                         <div>
                           <GoLocation size="25px" />
                         </div>
-                        {v.eventLocation}
+                        {v.eventLocation}{v.eventAddress}
                       </div>
                       <h6>尚有名額</h6>
                     </div>
