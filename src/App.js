@@ -60,7 +60,7 @@ function App() {
   const [bmQty, setBmQty] = useState({
     itemsQty: 0,
     eventsQty: 0,
-    kitsQty: 0,
+    arQty: 0,
     totalQty: 0,
   })
 
@@ -109,7 +109,7 @@ function App() {
       ...bmQty,
       itemsQty: _.size(localPdBookmarkArr),
       eventsQty: _.size(localEvBookmarkArr),
-      kitsQty: _.size(localArBookmarkArr),
+      arQty: _.size(localArBookmarkArr),
       totalQty:
         _.size(localPdBookmarkArr) +
         _.size(localEvBookmarkArr) +

@@ -197,7 +197,7 @@ const ArticleDetail = (props) => {
                 style={{ cursor: 'pointer' }}
                 onClick={() => {
                   updateMarkToLocalStorage({
-                    id: article.articleId, //傳Id
+                    id: article.id, //傳Id
                     name: article.articleName,
                     author: article.articleAuthor,
                     image: article.articleImg,

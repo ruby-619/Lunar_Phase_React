@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Breadcrumb from '../../components/Breadcrumb'
 import BmPdLabel from './components/BmPdLabel'
@@ -20,9 +21,9 @@ function DisplayBookMark(props) {
 
     updateBmQty()
 
-    console.log('cart1',JSON.parse(newCart1))
-    console.log('cart2',JSON.parse(newCart2))
-    console.log('cart3',JSON.parse(newCart3))
+    console.log('cart1', JSON.parse(newCart1))
+    console.log('cart2', JSON.parse(newCart2))
+    console.log('cart3', JSON.parse(newCart3))
     setBmPdDisplay(JSON.parse(newCart1))
     setBmArDisplay(JSON.parse(newCart2))
     setBmEvDisplay(JSON.parse(newCart3))
@@ -39,6 +40,7 @@ function DisplayBookMark(props) {
       currentCart.splice(index, 1)
       localStorage.setItem('bookmark', JSON.stringify(currentCart))
       setBmPdDisplay(currentCart)
+      updateBmQty()
     }
   }
   const delItem2 = (item) => {
@@ -48,8 +50,9 @@ function DisplayBookMark(props) {
 
     if (index > -1) {
       currentCart.splice(index, 1)
-      localStorage.setItem('kitcart', JSON.stringify(currentCart))
+      localStorage.setItem('arbookmark', JSON.stringify(currentCart))
       setBmArDisplay(currentCart)
+      updateBmQty()
     }
   }
   const delItem3 = (item) => {
@@ -61,9 +64,10 @@ function DisplayBookMark(props) {
       currentCart.splice(index, 1)
       localStorage.setItem('evbookmark', JSON.stringify(currentCart))
       setBmEvDisplay(currentCart)
+      updateBmQty()
     }
   }
-  
+
   const ScBar = (
     <>
       {/* bar */}
@@ -80,13 +84,17 @@ function DisplayBookMark(props) {
         {bmPdDisplay.map((item, index) => {
           return (
             <div key={item.id} className="col-6 d-flex align-items-center py-2">
-              <div className="itemPic ml-5">
-                <img className="w-100" src={item.image} alt="" />
-              </div>
-              <div className="sc-nameFont itemName">
-                <div className="mb-0">{item.name}</div>
-                <div className="mb-0 text-info">$ {item.price}</div>
-              </div>
+              <Link to={`/product-detail/${item.id}`}>
+                <div className="itemPic ml-5">
+                  <img className="w-100" src={item.image} alt="" />
+                </div>
+              </Link>
+              <Link to={`/product-detail/${item.id}`}>
+                <div className="sc-nameFont itemName">
+                  <div className="mb-0">{item.name}</div>
+                  <div className="mb-0 text-info">$ {item.price}</div>
+                </div>
+              </Link>
               <div
                 className="bmdelOne position-absolute scBtn"
                 onClick={() => {
@@ -108,13 +116,17 @@ function DisplayBookMark(props) {
         {bmArDisplay.map((item, index) => {
           return (
             <div key={item.id} className="col-6 d-flex align-items-center py-2">
-              <div className="itemPic ml-5">
-                <img className="h-100" src={item.image} alt="" />
-              </div>
-              <div className="sc-nameFont itemName">
-                <div className="mb-1">{item.name}</div>
-                <div className="mb-0 text-info">作者：{item.author}</div>
-              </div>
+              <Link to={`/article/detail/${item.id}`}>
+                <div className="itemArPic ml-5">
+                  <img className="h-100" src={item.image} alt="" />
+                </div>
+              </Link>
+              <Link to={`/article/detail/${item.id}`}>
+                <div className="sc-nameFont itemName">
+                  <div className="mb-1">{item.name}</div>
+                  <div className="mb-0 text-info">作者：{item.author}</div>
+                </div>
+              </Link>
               <div
                 className="bmdelOne position-absolute scBtn"
                 onClick={() => {
@@ -136,13 +148,19 @@ function DisplayBookMark(props) {
         {bmEvDisplay.map((item, index) => {
           return (
             <div key={item.id} className="col-6 d-flex align-items-center py-2">
-              <div className="itemEvPic ml-5">
-                <img className="w-100" src={item.image} alt="" />
-              </div>
-              <div className="sc-nameFont itemName">
-                <div className="mb-0">{item.name}</div>
-                <div className="mb-0 text-info">{moment(item.date).format('YYYY-MM-DD')}</div>
-              </div>
+              <Link to={`/event-detail/${item.id}`}>
+                <div className="itemEvPic ml-5">
+                  <img className="w-100" src={item.image} alt="" />
+                </div>
+              </Link>
+              <Link to={`/event-detail/${item.id}`}>
+                <div className="sc-nameFont itemName">
+                  <div className="mb-0">{item.name}</div>
+                  <div className="mb-0 text-info">
+                    {moment(item.date).format('YYYY-MM-DD')}
+                  </div>
+                </div>
+              </Link>
               <div
                 className="bmdelOne position-absolute scBtn"
                 onClick={() => {
@@ -157,7 +175,6 @@ function DisplayBookMark(props) {
       </div>
     </>
   )
- 
 
   return (
     <>
@@ -169,13 +186,13 @@ function DisplayBookMark(props) {
           <img src="/img/Cart/bgMountain.svg" alt="" />
         </div>
       </div>
-      <BmPdLabel showBm={showBm} setShowBm={setShowBm} />
+      <BmPdLabel showBm={showBm} setShowBm={setShowBm} bmQty={bmQty} />
       <div className="container-fluid">
         <div className="col-10 mx-auto px-0 shadow-sm ">
           {ScBar}
-          {showBm===1 ? displayBmItems1 : ''}
-          {showBm===2 ? displayBmItems2 : ''}
-          {showBm===3 ? displayBmItems3 : ''}
+          {showBm === 1 ? displayBmItems1 : ''}
+          {showBm === 2 ? displayBmItems2 : ''}
+          {showBm === 3 ? displayBmItems3 : ''}
         </div>
       </div>
       <Footer />
