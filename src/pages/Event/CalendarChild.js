@@ -151,16 +151,9 @@ export const CalendarChild = (props) => {
                                   />
                             <label>腹部脹氣</label>
                         </div>
+                      {/* <button className="btn-soft-green">下一步</button> */}
                     </div>
                 </div>
-                      
-                      <div className="RecordArea">
-                          {/* <h2>經血量</h2> */}
-                      </div>
-                        {/* <div>量少</div>
-                      <input type ="range" min="0" max="10" width="10px"></input><div>量多</div>
-                      <br/> */}
-                      <Link to="./calendar-child2"><button className="btn-soft-green">下一步</button></Link>
             </div>
         </div>
       <Footer/>

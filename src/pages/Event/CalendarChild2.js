@@ -3,6 +3,7 @@ import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 import FilterBar from './components/FilterBar'
 import {BsNewspaper} from 'react-icons/bs'
+import {ImHeart} from 'react-icons/im'
 
 
 
@@ -100,10 +101,16 @@ const CalendarChild2 = (props) => {
                         setTags={setTags}
                       />
                     </div>
-                    <button className="btn-soft-green col-6 ml-2 mt-3"
-            onClick={()=>{setCalStepChild(2)}}>下一步</button>
                 </div>
                 </div>
+                <div class="row d-flex justify-content-end">
+                      
+                        <div className="">
+                          <button className="btn-soft-green mt-auto "
+                                  onClick={()=>{setCalStepChild(2)}}>下一步</button>
+                        </div>
+                   
+                    </div>
         </>
       )
 
@@ -114,17 +121,20 @@ const CalendarChild2 = (props) => {
                       {/* 我剛剛在樓上23行下,undefined 喔喔喔喔
                        */}
                     {/* <h2 className=""><BsNewspaper/> 血量紀錄</h2> */}
-                       <h3 className="mt-5">下次經期可能開始日期：{month}月{date}日</h3> 
+                       <h2 className="mt-5"><ImHeart color="#E64B4B"/> 您的經期可能在{month}月{date}日開始</h2> 
                     </div>
                     
+                      <div class="row">
+                        <h4 className>下次你會更懂得照顧自己一點點</h4>
+                      </div>
                 { displaySymptom.length && displaySymptom.map((s, i) => {
 
               return (
                 
                   <div class="container">
                     <div className="row">
-                      <div className="card" style={{ width: "60rem" }}>
-                        <img className="card-img-top" src={`/img/Calendar/${s.SymptomImg}`} alt="Card image cap" /> 
+                      <div className="card" style={{ width: "50rem" }}>
+                        <div className="symptomImgWrap"><img className="card-img-top symptomImg" src={`/img/Calendar/${s.SymptomImg}`} alt="Card image cap" /></div>
                         <div className="card-body">
                         <h6 className="card-title">#{s.tags}</h6>
                         <h5 className="card-title">{s.SymptomArticleTitle}</h5>

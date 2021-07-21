@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react'
 // import { BsBookmark } from 'react-icons/bs'
 // import { FcBookmark } from 'react-icons/fc'
 import { withRouter } from 'react-router-dom'
+import Swal from 'sweetalert2'
+
 
 const EventDetailCard = (props) => {
   // const [total, setTotal] = useState(0)
@@ -12,6 +14,18 @@ const EventDetailCard = (props) => {
   const [eventName, setEventname] = useState([])
   const [myevcart, setMyevcart] = useState([])
   const [dataLoading, setDataLoading] = useState(false)
+
+  const alertCheck = () => {
+    Swal.fire({
+      position: 'center',
+      // icon: 'question',
+      width: '30%',
+      imageUrl: '/img/svg/1103-confetti-outline.gif',
+      title: '已加入購物車',
+      showConfirmButton: false,
+      timer: 1500,
+    })
+  }
 
   const updateCartToLocalStorage = (item) => {
     const currentCart = JSON.parse(localStorage.getItem('evcart')) || []
@@ -198,6 +212,7 @@ const EventDetailCard = (props) => {
                     price: event.eventPrice,
                     image: event.eventImg,
                   })
+                  alertCheck()
                 }}
                 className="btn-border-l"
               >

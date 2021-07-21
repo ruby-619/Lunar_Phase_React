@@ -38,15 +38,15 @@ function Calendar1(props) {
              <div className="d-flex justify-content-end m-3">
               <h5 className="SelectedDateDisplay mr-3">選擇日期：{value.getMonth()+1}月{value.getDate()}日</h5> 
             <div><br/>
-            <button className="btn-soft-green col-6 ml-2 mt-3"
+            <button className="btn-soft-green  ml-2 mt-3"
             onClick={()=>{setCalStep(2)}}>下一步</button>
             </div>
             </div> 
             <div>
-              <h4>預計下一次月經開始日期：</h4>
+              {/* <h4>預計下一次月經開始日期：</h4> */}
             </div> 
             <div>
-              <h4>預計下一次月經開始日期：{newdate +28 >=31 ?value.getMonth()+2:value.getMonth()+1}月{newdate +28 <=31 ? newdate+28: newdate+28-31}日</h4>
+              {/* <h4>預計下一次月經開始日期：{newdate +28 >=31 ?value.getMonth()+2:value.getMonth()+1}月{newdate +28 <=31 ? newdate+28: newdate+28-31}日</h4> */}
             </div>  
           
           {/* {newdate +28 >30 ? newdate-30: newdate} */}
