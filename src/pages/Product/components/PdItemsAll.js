@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PdItemBlock from './PdItemBlock'
 
 function PdItemsAll(props) {
-  const { cateIdPa, updateBmQty } = props
+  const { cateIdPa, updateBmQty, updateQty } = props
   const catePa = cateIdPa
   const [products, setProducts] = useState([])
   // const [cateName, setCateName] = useState('')
@@ -94,6 +94,7 @@ function PdItemsAll(props) {
               return (
                 <>
                   <PdItemBlock
+                    updateQty={updateQty}
                     updateBmQty={updateBmQty}
                     itemId={value.itemId}
                     itemSize={value.itemSize}

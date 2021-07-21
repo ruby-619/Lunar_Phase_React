@@ -19,7 +19,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 function ProductDetail(props) {
-  const { cartQty, updateBmQty, bmQty } = props
+  const { updateQty, cartQty, updateBmQty, bmQty } = props
   const { itemId } = useParams()
   // console.log(itemId)
 
@@ -63,7 +63,8 @@ function ProductDetail(props) {
     // AOS
     AOS.init({ offset: 120, duration: 800 })
 
-    // updateBmQty()
+    updateBmQty()
+    updateQty()
   }, [itemId])
 
   const display = (
@@ -83,6 +84,7 @@ function ProductDetail(props) {
               itemDescription={value.itemDescription}
               optionName={value.optionName}
               updateBmQty={updateBmQty}
+              updateQty={updateQty}
             />
           )
         })}

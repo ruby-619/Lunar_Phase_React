@@ -20,9 +20,11 @@ import 'aos/dist/aos.css'
 function IndexMy(props) {
   useEffect(() => {
     AOS.init({ offset: 120, duration: 800 })
+    updateQty()
+    updateBmQty()
   }, [])
 
-  const { cartQty, bmQty } = props
+  const { cartQty, bmQty, updateQty, updateBmQty } = props
   return (
     <>
       {/* HEADER */}

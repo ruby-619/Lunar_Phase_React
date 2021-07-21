@@ -196,19 +196,25 @@ function App() {
             <Route path="/product">
               <Product
                 cartQty={cartQty}
-                updateBmQty={updateBmQty}
+                updateQty={updateQty}
                 bmQty={bmQty}
+                updateBmQty={updateBmQty}
               />
             </Route>
             <Route path="/product-detail/:itemId">
               <ProductDetail
                 cartQty={cartQty}
-                updateBmQty={updateBmQty}
+                updateQty={updateQty}
                 bmQty={bmQty}
+                updateBmQty={updateBmQty}
               />
             </Route>
             <Route exact path="/">
-              <IndexMy cartQty={cartQty} bmQty={bmQty} />
+              <IndexMy 
+                cartQty={cartQty}
+                updateQty={updateQty}
+                bmQty={bmQty}
+                updateBmQty={updateBmQty} />
             </Route>
             {/* <Route exact path="/">
             <Home />

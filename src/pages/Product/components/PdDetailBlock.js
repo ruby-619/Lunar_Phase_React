@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import { FaRegBookmark } from 'react-icons/fa'
 
 function PdDetailBlock(props) {
-  const { updateBmQty } = props
+  const { updateBmQty, updateQty } = props
 
   // By CART
   const [mycart, setMycart] = useState([])
@@ -29,6 +29,7 @@ function PdDetailBlock(props) {
     // 設定資料
     setMycart(currentCart)
     setProductName('產品：' + item.name + '已成功加入購物車')
+    updateQty()
   }
 
   // BOOKMARK
