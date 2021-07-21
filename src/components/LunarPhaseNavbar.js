@@ -141,8 +141,9 @@ function LunarPhaseNavbar(props) {
               <li>
                 <Link to="/event">EVENT</Link>
               </li>
-              <li>
-                <Link to="/login">JOIN US</Link>
+              <li className="nav-calculator">
+                <Link to="/calendar">CALCULATOR</Link>
+                <p className="nav-calculator-info">經期試算</p>
               </li>
             </ul>
           </div>
@@ -170,7 +171,7 @@ function LunarPhaseNavbar(props) {
                   <Nav.Link href="/article1">ARTICLE</Nav.Link>
                   <Nav.Link href="/kitindex">KIT</Nav.Link>
                   <Nav.Link href="/event">EVENT</Nav.Link>
-                  <Nav.Link href="/login">JOIN US</Nav.Link>
+                  <Nav.Link href="/calendar">PERIOD CALCULATOR</Nav.Link>
                   <NavDropdown title="會員中心" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/member/profile">
                       會員資料
@@ -181,12 +182,10 @@ function LunarPhaseNavbar(props) {
                     <NavDropdown.Item href="/cart/item">
                       購物車
                     </NavDropdown.Item>
-                    <NavDropdown.Item href="/cart/item">
-                      購物清單
-                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/order">購物清單</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="/login">登入</NavDropdown.Item>
-                    <NavDropdown.Item href="/logout">登出</NavDropdown.Item>
+                    <NavDropdown.Item href="/">登出</NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
               </Navbar.Collapse>
