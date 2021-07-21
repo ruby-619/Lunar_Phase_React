@@ -163,6 +163,13 @@ function KitShoppingList(props) {
       // threeBtn.show = false
       let dleteBB = false
       setHandle(dleteBB)
+      threeBtn.arr = threeBtn.arr.map((e) => {
+        return { ...e, click: true ? false : false }
+      })
+      threeBtn.arr[0].click = true
+      arrthreeBtn = threeBtn.arr[0]
+      setCatEp(arrthreeBtn)
+
     }
     setCuteBtn(threeBtn)
     // console.log('這邊///', cuteBtn)
