@@ -142,7 +142,7 @@ function LunarPhaseNavbar(props) {
                 <Link to="/event">EVENT</Link>
               </li>
               <li>
-                <Link to="/">JOIN US</Link>
+                <Link to="/login">JOIN US</Link>
               </li>
             </ul>
           </div>
@@ -170,7 +170,7 @@ function LunarPhaseNavbar(props) {
                   <Nav.Link href="/article1">ARTICLE</Nav.Link>
                   <Nav.Link href="/kitindex">KIT</Nav.Link>
                   <Nav.Link href="/event">EVENT</Nav.Link>
-                  <Nav.Link href="/">JOIN US</Nav.Link>
+                  <Nav.Link href="/login">JOIN US</Nav.Link>
                   <NavDropdown title="會員中心" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/member/profile">
                       會員資料

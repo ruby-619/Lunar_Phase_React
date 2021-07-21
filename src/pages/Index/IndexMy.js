@@ -599,16 +599,20 @@ function IndexMy(props) {
           <div data-aos="fade-down" className="col-12 col-md-6">
             <h6 className="my-3">加入會員</h6>
             <p className="p-tc">和我們一起探索更多生理期的大秘密</p>
-            <button data-aos="fade-down" className="btn-soft-green mt-3">
-              SIGN UP
-            </button>
+            <Link to="/login">
+              <button data-aos="fade-down" className="btn-soft-green mt-3">
+                SIGN UP
+              </button>
+            </Link>
           </div>
           <div data-aos="fade-down" className="col-12 col-md-6 mt-5 mt-md-0">
             <h6 className="my-3">經期試算機</h6>
             <p className="p-tc">立即檢測下次經期，獲取月經小知識</p>
-            <button data-aos="fade-down" className="btn-soft-green mt-3">
-              LET'S GO
-            </button>
+            <Link to="/calendar">
+              <button data-aos="fade-down" className="btn-soft-green mt-3">
+                LET'S GO
+              </button>
+            </Link>
           </div>
         </div>
         <div className="index-moon-circle text-center">
@@ -651,7 +655,7 @@ function IndexMy(props) {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/" className="index-footer-a ml-3">
+                  <Link to="/calendar" className="index-footer-a ml-3">
                     JOIN US
                   </Link>
                 </li>
