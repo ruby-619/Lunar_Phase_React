@@ -614,6 +614,16 @@ $labelName: 20px;
     margin: 0;
     background-color: rgba(205,205,210,0.35);
 }
+.dropdownItemNum {
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Noto Sans TC', serif;
+    font-size: 18px;
+    line-height: 86px;
+    font-weight: normal;
+    color: $myDark;
+    background-color: #fdd2bbb6;
+}
 .dropdownItem:hover {
     background-color: $bg-hover;
 }

@@ -29,17 +29,18 @@ function DisplayOrderItems(props) {
     getOrderFromServer()
   }, [])
 
- 
-  return <>
-    {!_.isEmpty(order) &&
-          order.map((item, index) => {
-            return (
+  return (
+    <>
+      {!_.isEmpty(order) &&
+        order.map((item, index) => {
+          return (
+            <div className="d-flex key={item.itemId}">
+              <div className="dropdownItemNum col-1 d-flex ml-auto my-2 mr-2 align-content-center justify-content-center">{index+1}</div>
               <div
-                key={item.itemId}
-                className="dropdownItemOrder col-11 mx-auto my-2 d-flex mr-5  align-items-center py-3"
+                className="dropdownItemOrder col-10 my-2 d-flex mr-5  align-items-center py-3"
               >
                 <div className="col-5 d-flex align-items-center sc-nameFont">
-                  <div className="itemPic-sm mr-3 overflow-hidden ml-4">
+                  <div className="itemPic-sm mr-3 overflow-hidden">
                     <img
                       className="h-100"
                       src={`/img/Product/${item.itemCoverImg}`}
@@ -55,9 +56,11 @@ function DisplayOrderItems(props) {
                   <div className="sc-priceFont">商品詳細頁</div>
                 </Link>
               </div>
-            )
-          })}
-  </>
+            </div>
+          )
+        })}
+    </>
+  )
 }
 
 export default DisplayOrderItems
