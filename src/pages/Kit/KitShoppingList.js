@@ -400,7 +400,7 @@ function KitShoppingList(props) {
 
   const sentLocal = () => {
     console.log('catDay', catDay)
-    let moneyD = smallPriceD.replace(/,/g, '')
+    let moneyD = smallPriceD
     let moneyE = smallTotalE.replace(/,/g, '')
 
     let kitcartD = {
