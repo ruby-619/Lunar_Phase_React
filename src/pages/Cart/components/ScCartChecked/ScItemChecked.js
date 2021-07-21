@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 const _ = require('lodash');
 
 function ScItemChecked(props) {
@@ -18,7 +19,9 @@ function ScItemChecked(props) {
           <div className="col-1 sc-priceFont">{item.amount}</div>
           <div className="col-2 sc-priceFont">$ {item.price}</div>
           <div className="col-2 sc-priceFont">$ {item.amount * item.price}</div>
-          <div className="col-2 sc-priceFont">商品詳細頁</div>
+          <Link className="col-2" to={`/product-detail/${item.id}`}>
+            <div className="sc-priceFont">商品詳細頁</div>
+          </Link>
         </div>
       )
     })}

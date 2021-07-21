@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaTimes } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 function ScEvItem(props) {
   const [mycart, setMycart] = useState([])
@@ -86,8 +87,8 @@ function ScEvItem(props) {
     return total
   }
 
-   // 計算總商品數量的函式
-   const amountSum = (items) => {
+  // 計算總商品數量的函式
+  const amountSum = (items) => {
     let totalAmount = 0
     for (let i = 0; i < items.length; i++) {
       totalAmount += items[i].amount
@@ -106,12 +107,20 @@ function ScEvItem(props) {
           >
             <div className="col-6 d-flex align-items-center">
               {/* <div className="myCheckbox selectOne ml-4" /> */}
-              <div className="itemEvPic ml-5 mr-5">
-                <img className="w-100" src={`/img/Event/${item.image}`} alt=""/>
-              </div>
-              <div className="sc-nameFont itemName">
-                <div className="mb-0">{item.name}</div>
-              </div>
+              <Link to={`/event-detail/${item.id}`}>
+                <div className="itemEvPic ml-5 mr-5">
+                  <img
+                    className="w-100"
+                    src={`/img/Event/${item.image}`}
+                    alt=""
+                  />
+                </div>
+              </Link>
+              <Link to={`/event-detail/${item.id}`}>
+                <div className="sc-nameFont itemName">
+                  <div className="mb-0">{item.name}</div>
+                </div>
+              </Link>
             </div>
             <div className="d-flex col-2 justify-content-center">
               <div
@@ -139,7 +148,7 @@ function ScEvItem(props) {
                 delItem(item)
               }}
             >
-              <FaTimes/>
+              <FaTimes />
             </div>
           </div>
         )
@@ -165,7 +174,6 @@ function ScEvItem(props) {
       </div>
     </>
   )
-
 
   return (
     <>

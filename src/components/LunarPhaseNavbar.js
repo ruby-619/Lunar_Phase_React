@@ -121,7 +121,7 @@ function LunarPhaseNavbar(props) {
                 {/* <p className="small mx-0 mb-1">({cartQty.totalQty})</p> */}
               </div>
               <div className="ml-2 mt-2">
-                <Link to="/" className="mx-0">
+                <Link to="/order" className="mx-0">
                   <IoMdListBox />
                 </Link>
               </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { FaTimes } from 'react-icons/fa'
 
 function ScItem(props) {
@@ -6,12 +7,11 @@ function ScItem(props) {
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
-
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('cart') || '[]'
 
     updateQty()
-    
+
     console.log(JSON.parse(newCart))
     setMycart(JSON.parse(newCart))
   }
@@ -93,8 +93,8 @@ function ScItem(props) {
     return total
   }
 
-   // 計算總商品數量的函式
-   const amountSum = (items) => {
+  // 計算總商品數量的函式
+  const amountSum = (items) => {
     let totalAmount = 0
     for (let i = 0; i < items.length; i++) {
       totalAmount += items[i].amount
@@ -113,12 +113,16 @@ function ScItem(props) {
           >
             <div className="col-6 d-flex align-items-center">
               {/* <div className="myCheckbox selectOne ml-4" /> */}
+              <Link to={`/product-detail/${item.id}`}>
               <div className="itemPic ml-5">
-                <img className="w-100" src={item.image} alt=""/>
+                <img className="w-100" src={item.image} alt="" />
               </div>
-              <div className="sc-nameFont itemName">
-                <div className="mb-0">{item.name}</div>
-              </div>
+              </Link>
+              <Link to={`/product-detail/${item.id}`}>
+                <div className="sc-nameFont itemName">
+                  <div className="mb-0">{item.name}</div>
+                </div>
+              </Link>
             </div>
             <div className="d-flex col-2 justify-content-center">
               <div
@@ -133,7 +137,9 @@ function ScItem(props) {
               <div className="sc-qtyFont p-2">{item.amount}</div>
               <div
                 className="sc-qtyFont p-2 scBtn scBtnAdd"
-                onClick={() =>{ updateCartToLocalStorage(item, true)} }
+                onClick={() => {
+                  updateCartToLocalStorage(item, true)
+                }}
               >
                 +
               </div>
@@ -146,7 +152,7 @@ function ScItem(props) {
                 delItem(item)
               }}
             >
-              <FaTimes/>
+              <FaTimes />
             </div>
           </div>
         )
@@ -172,7 +178,6 @@ function ScItem(props) {
       </div>
     </>
   )
-
 
   return (
     <>

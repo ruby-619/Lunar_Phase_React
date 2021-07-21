@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { FaTimes } from 'react-icons/fa'
 
 function ScKitItem(props) {
@@ -106,12 +107,16 @@ function ScKitItem(props) {
           >
             <div className="col-6 d-flex align-items-center">
               {/* <div className="myCheckbox selectOne ml-4" /> */}
-              <div className="itemKitPic ml-5 mr-4">
-                <img className="w-100" src={item.itemImg} alt=""/>
-              </div>
-              <div className="sc-nameFont itemName">
-                <div className="mb-0">{item.name}</div>
-              </div>
+              <Link to="/kitSetList">
+                <div className="itemKitPic ml-5 mr-4">
+                  <img className="w-100" src={item.itemImg} alt="" />
+                </div>
+              </Link>
+              <Link to="/kitSetList">
+                <div className="sc-nameFont itemName">
+                  <div className="mb-0">{item.name}</div>
+                </div>
+              </Link>
             </div>
             <div className="d-flex col-2 justify-content-center">
               <div
@@ -139,7 +144,7 @@ function ScKitItem(props) {
                 delItem(item)
               }}
             >
-              <FaTimes/>
+              <FaTimes />
             </div>
           </div>
         )

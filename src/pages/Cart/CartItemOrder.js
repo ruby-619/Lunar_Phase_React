@@ -5,8 +5,7 @@ import Breadcrumb from '../../components/Breadcrumb'
 import ScStepRow from './components/ScStepRow'
 import ScLabel from './components/ScLabel'
 import Footer from '../../components/Footer'
-const _ = require('lodash');
-
+const _ = require('lodash')
 
 function CartItemOrder(props) {
   const { setStep, cartQty, isCon, scOrderId } = props
@@ -22,12 +21,10 @@ function CartItemOrder(props) {
     return totalAmount
   }
 
-  
-
   async function getOrderFromServer() {
     /* get orderid去取訂單資料 */
     const url = 'http://localhost:4567/orderlist/' + scOrderId
-    console.log('scOrderId',scOrderId)
+    console.log('scOrderId', scOrderId)
 
     const request = new Request(url, {
       method: 'GET',
@@ -40,7 +37,7 @@ function CartItemOrder(props) {
     const dataRes = await response.json()
     console.log('訂單dataRes', dataRes)
     setOrder(dataRes)
-     
+
     console.log('訂單scOrderId', scOrderId)
     // console.log('訂單order', order) //會是空的因為setOrder異步執行
   }
@@ -85,9 +82,7 @@ function CartItemOrder(props) {
               </div>
               <div className="col-1 sc-priceFont">{item.checkQty}</div>
               <div className="col-2 sc-priceFont">$ {item.checkPrice}</div>
-              <div className="col-2 sc-priceFont">
-                $ {item.checkSubtotal}
-              </div>
+              <div className="col-2 sc-priceFont">$ {item.checkSubtotal}</div>
               <Link className="col-2" to={`/product-detail/${item.itemId}`}>
                 <div className="sc-priceFont">商品詳細頁</div>
               </Link>
@@ -105,9 +100,14 @@ function CartItemOrder(props) {
         }}
       >
         <div className="sc-describeFont mx-3">
-          訂單金額(<scspan>{!_.isEmpty(order) && amountSum(order)}</scspan> 件商品)
+          訂單金額(<scspan>{!_.isEmpty(order) && amountSum(order)}</scspan>{' '}
+          件商品)
         </div>
-        <div className="sc-describePriceFont mx-4">NT{(!_.isEmpty(order) && order[0].orderPrice)-( !_.isEmpty(order) && order[0].shippingPrice)}</div>
+        <div className="sc-describePriceFont mx-4">
+          NT
+          {(!_.isEmpty(order) && order[0].orderPrice) -
+            (!_.isEmpty(order) && order[0].shippingPrice)}
+        </div>
         <img
           id="dropdownBtn"
           // className="icon18px dropdownIcon"
@@ -160,7 +160,11 @@ function CartItemOrder(props) {
         <div className="col-3 d-flex justify-content-between p-0 ml-auto">
           <div className="sc-describeFont">商品總金額:</div>
           <div className="sc-describeFont">
-            <scspan>NT {(!_.isEmpty(order) && order[0].orderPrice)-( !_.isEmpty(order) && order[0].shippingPrice)}</scspan>
+            <scspan>
+              NT{' '}
+              {(!_.isEmpty(order) && order[0].orderPrice) -
+                (!_.isEmpty(order) && order[0].shippingPrice)}
+            </scspan>
           </div>
         </div>
         <div className="col-3 d-flex justify-content-between p-0 ml-auto">
@@ -212,13 +216,15 @@ function CartItemOrder(props) {
             </div>
             {displayText}
             {ScOrderData}
+            <Link to="/order">
+              <button className="oneClickBtn mt-5 ml-5">前往查看訂單</button>
+            </Link>
             {PriceRow}
           </div>
         </div>
       </div>
       <div className="my-5"></div>
-      <Footer/>
-      
+      <Footer />
     </>
   )
 }
