@@ -5,7 +5,6 @@ import CartItemStep2 from './CartItemStep2'
 import CartItemStep3 from './CartItemStep3'
 import { countries, townships, postcodes } from '../../data/townships'
 import CartItemOrder from './CartItemOrder'
-import { isEmpty } from 'lodash'
 const _ = require('lodash');
 const Swal = require('sweetalert2')
 
