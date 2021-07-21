@@ -69,11 +69,11 @@ function IndexMy(props) {
 
         <div className="index-top-bottom d-flex justify-content-between py-3">
           <div className="index-login-bar d-flex my-auto">
-            <Link to="">LOG IN</Link>
+            <Link to="/login">LOG IN</Link>
             <p> / </p>
-            <Link to="">CART</Link>
+            <Link to="/cart/item">CART</Link>
           </div>
-          <div className="index-news-bar d-flex my-auto">
+          <div data-aos="fade-left" className="index-news-bar d-flex my-auto">
             <Link
               className="index-news-bar-info my-auto py-0"
               to="/product-detail/30"
@@ -620,7 +620,7 @@ function IndexMy(props) {
         <footer className="">
           <div className="index-footer-top row m-0 p-0 justify-content-between col-12">
             <div className="index-footer-logo my-auto col-12 col-md-2">
-              <Link to="#top">
+              <Link to="#home">
                 <img
                   className="nav-logo"
                   src="/img/Index/logo-s-dark.svg"
@@ -628,7 +628,7 @@ function IndexMy(props) {
                 />
               </Link>
             </div>
-            <nav className="my-auto mt-5 col-12 col-md-10 px-0">
+            <nav className="my-auto col-12 col-md-10 px-0">
               <ul className="d-flex justify-content-center justify-content-md-end  my-3 my-md-0 px-auto px-md-0 col-12">
                 <li>
                   <Link to="/product" className="index-footer-a ml-3">
@@ -658,7 +658,7 @@ function IndexMy(props) {
               </ul>
             </nav>
           </div>
-          <div className="row m-0 mt-5 p-0 index-footer-bottom col-12 justify-content-between align-items-end">
+          <div className="row m-0 mt-4 p-0 index-footer-bottom col-12 justify-content-between align-items-end">
             <div className="small text-center text-md-left p-0 mt-3 col-12 col-md-6">
               <p className="m-0 p-0">
                 JSMART co.
