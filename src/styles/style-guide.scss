@@ -57,7 +57,7 @@ a:hover {
   background-color: #f7f7ee;
   text-align: center;
   box-shadow: 0px 3px 8px -5px #38384455;
-  padding: 10px 140px;
+  padding: 5px 140px;
   margin: 0;
   z-index: 999;
 }
@@ -125,6 +125,21 @@ a:hover {
   color: #38384470;
   transition: 0.2s;
 }
+.nav-calculator {
+  position: relative;
+}
+
+.nav-calculator-info {
+  position: absolute;
+  left: 25%;
+  bottom: 10px;
+  font-size: 12px;
+  color: #f7f7ee;
+}
+.nav-calculator:hover .nav-calculator-info {
+  color: #e9c1ac;
+  transition: 0.3s;
+}
 
 /* .nav-product {
     display: none;
@@ -154,6 +169,11 @@ a:hover {
   width: 100%;
   margin-top: 110px;
   padding: 20px 40px;
+}
+@media (max-width: 576px) {
+  .top-line {
+    display: none;
+  }
 }
 
 .bread-bar {

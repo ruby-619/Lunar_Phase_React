@@ -50,7 +50,7 @@ const ArticleHealth = (props) => {
             </div>
           </div>
           {/* <ArticleCard /> */}
-          <div className="container article-row row d-flex mx-auto mt-3">
+          <div className="container row d-flex mx-auto mt-3">
             <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
               <Link
                 to="/article/detail/35"
@@ -75,7 +75,7 @@ const ArticleHealth = (props) => {
                 </div>
               </Link>
             </div>
-            <div className="border-right border-dark  article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+            <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
               <Link
                 to="/article/detail/24"
                 style={{ textDecoration: 'none', color: 'black' }}
@@ -166,6 +166,126 @@ const ArticleHealth = (props) => {
                     <div className="d-flex justify-content-between w-100">
                       <p>Fairy Chang</p>
                       <p>2021-06-25</p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+              <Link
+                to="/article/detail/2"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                <div className="article-card-hover">
+                  <img
+                    className=" w-100 mb-3 "
+                    style={{ height: '230px', objectFit: 'cover' }}
+                    src="https://images.pexels.com/photos/4239010/pexels-photo-4239010.jpeg"
+                    alt=""
+                  />
+                  <div className="w-100">
+                    <h5 className="mb-4 text-left">
+                      女人生命中長時間相伴的「好朋友」，三種友善地球的永續生理期用品
+                    </h5>
+                    <div className="d-flex justify-content-between w-100">
+                      <p>吳心萍、黃靖文</p>
+                      <p>2021-05-05</p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+              <Link
+                to="/article/detail/25"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                <div className="article-card-hover">
+                  <img
+                    className=" w-100 mb-3 "
+                    style={{ height: '230px', objectFit: 'cover' }}
+                    src="https://castle.womany.net/images/content/pictures/123008/womany_inciclo_rYgnsKoimT8_unsplash_1621275108-1321841-0002-8431.jpg"
+                    alt=""
+                  />
+                  <div className="w-100">
+                    <h5 className="mb-4 text-left">
+                      關於月亮杯你一定要知道的十件事！你也來一杯
+                    </h5>
+                    <div className="d-flex justify-content-between w-100">
+                      <p>臉紅紅</p>
+                      <p>2021-05-10</p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+              <Link
+                to="/article/detail/26"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                <div className="article-card-hover">
+                  <img
+                    className=" w-100 mb-3 "
+                    style={{ height: '230px', objectFit: 'cover' }}
+                    src="https://image1.thenewslens.com/2019/10/mlrw5bx12lnz5c3ufu632hj815l3ua.jpeg"
+                    alt=""
+                  />
+                  <div className="w-100">
+                    <h5 className="mb-4 text-left">
+                      學校教育強化的月經污名，如何轉型為給所有人的月經教育？
+                    </h5>
+                    <div className="d-flex justify-content-between w-100">
+                      <p>辣台妹聊性別</p>
+                      <p>2021-05-11</p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+              <Link
+                to="/article/detail/32"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                <div className="article-card-hover">
+                  <img
+                    className=" w-100 mb-3 "
+                    style={{ height: '230px', objectFit: 'cover' }}
+                    src="https://c1.staticflickr.com/5/4183/34238230142_a2a6fdb581_b.jpg"
+                    alt=""
+                  />
+                  <div className="w-100">
+                    <h5 className="mb-4 text-left">
+                      第一次就上手！布衛生棉超完整解惑教學
+                    </h5>
+                    <div className="d-flex justify-content-between w-100">
+                      <p>環境資訊中心</p>
+                      <p>2021-05-04</p>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </div>
+            <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+              <Link
+                to="/article/detail/34"
+                style={{ textDecoration: 'none', color: 'black' }}
+              >
+                <div className="article-card-hover">
+                  <img
+                    className=" w-100 mb-3 "
+                    style={{ height: '230px', objectFit: 'cover' }}
+                    src="https://castle.womany.net/images/content/pictures/123009/womany_monika_kozub_bzv_zCAXgeg_unsplash_1621275110-1282110-0033-4616.jpg"
+                    alt=""
+                  />
+                  <div className="w-100">
+                    <h5 className="mb-4 text-left">
+                      月亮杯是什麼？經期使用「月亮杯」，優點、缺點大整理
+                    </h5>
+                    <div className="d-flex justify-content-between w-100">
+                      <p>Hello醫師</p>
+                      <p>2021-06-23</p>
                     </div>
                   </div>
                 </div>

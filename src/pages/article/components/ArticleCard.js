@@ -7,7 +7,7 @@ const ArticleCard = () => {
   return (
     <>
       <div className="container d-flex m-auto">
-        <div className="article-card-col-4 col-12 col-md-6 col-lg-4  mt-3">
+        <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4  mt-3">
           <Link
             to="/article/detail/35"
             style={{ textDecoration: 'none', color: 'black' }}
@@ -31,7 +31,7 @@ const ArticleCard = () => {
             </div>
           </Link>
         </div>
-        <div className="article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
+        <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
           <Link
             to="/article/detail/24"
             style={{ textDecoration: 'none', color: 'black' }}

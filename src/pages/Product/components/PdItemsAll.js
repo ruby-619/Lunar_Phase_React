@@ -79,8 +79,12 @@ function PdItemsAll(props) {
             data-aos-delay="100"
             className="d-flex mx-auto justify-content-between py-3 mb-3"
           >
-            <h6 className="my-auto py-0">{cateNames[products.catePa]}系列</h6>
-            <p className="my-auto ml-4 py-0">共 {products.total} 項商品</p>
+            <div className="d-flex flex-wrap text-center mx-auto">
+              <h6 className="my-md-auto py-0">
+                {cateNames[products.catePa]}系列
+              </h6>
+              <p className="my-md-auto ml-4 py-0">共 {products.total} 項商品</p>
+            </div>
           </div>
         </div>
         <div
@@ -110,7 +114,11 @@ function PdItemsAll(props) {
         </div>
         {/* page switch */}
         <div className="product-unit-page mt-5">
-          <div className="btn-group" role="group" aria-label="Basic example">
+          <div
+            className="btn-group d-flex flex-wrap"
+            role="group"
+            aria-label="Basic example"
+          >
             <button
               onClick={() => {
                 const page = products.page - 1
@@ -121,22 +129,24 @@ function PdItemsAll(props) {
             >
               &lt; PREV
             </button>
-            {pageArray.map((i) => {
-              const page = i + 1
-              return (
-                <>
-                  <button
-                    onClick={() => {
-                      getPoductFromServer({ page })
-                    }}
-                    type="button"
-                    className="btn"
-                  >
-                    {page}
-                  </button>
-                </>
-              )
-            })}
+            <div>
+              {pageArray.map((i) => {
+                const page = i + 1
+                return (
+                  <>
+                    <button
+                      onClick={() => {
+                        getPoductFromServer({ page })
+                      }}
+                      type="button"
+                      className="btn"
+                    >
+                      {page}
+                    </button>
+                  </>
+                )
+              })}
+            </div>
 
             <button
               onClick={() => {
