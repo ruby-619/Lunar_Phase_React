@@ -10,6 +10,7 @@ import { Link, withRouter} from 'react-router-dom'
 import '../../../../node_modules/bootstrap/dist/js/bootstrap.bundle'
 
 function OrderList(props) {
+    const { cartQty, bmQty } = props
     const userData = props.parendUser
     // console.log(userData.success)
 
@@ -18,7 +19,7 @@ function OrderList(props) {
     
     return(
         <>
-            <LunarPhaseNavbar />
+            <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
 
             <div className="member layout_wrap">
     

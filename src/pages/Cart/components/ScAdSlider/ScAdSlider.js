@@ -10,6 +10,7 @@
 */
 
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './ScAdSlider.scss'
 
 function ScAdSlider() {
@@ -18,15 +19,19 @@ function ScAdSlider() {
       image: '/img/Product/mc01-00.jpg',
       //   title: '弦月柔棉 日用薄型衛生棉 15片',
       //   time: '2019-10-26',
+      link: '/product-detail/30',
     },
     {
-      image: '/img/Product/items002.jpg',
+      image: '/img/Product/pt02-00.jpg',
+      link: '/product-detail/37',
     },
     {
       image: '/img/Product/mc01-01.jpg',
+      link: '/product-detail/32',
     },
     {
-      image: '/img/Product/mc01-00.jpg',
+      image: '/img/Product/tp01-00.jpg',
+      link: '/product-detail/15',
     },
     {
       image: '/img/Product/mc01-00.jpg',
@@ -58,7 +63,9 @@ function ScAdSlider() {
       return (
         <div className="contentBox" key={index}>
           <div className="cardBox">
-            <img className="imageStyle" src={item.image} alt="" />
+            <Link to={item.link}>
+              <img className="imageStyle" src={item.image} alt="" />
+            </Link>
           </div>
         </div>
       )

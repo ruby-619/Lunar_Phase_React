@@ -10,6 +10,7 @@ import { Link, withRouter } from 'react-router-dom'
 import swal from 'sweetalert';
 
 function Profile(props) {
+    const { cartQty, bmQty } = props
     const [userData, setUserData] = useState(props.parendUser)
     const [fields, setFields] = useState()
     const [data, setData] = useState()
@@ -58,7 +59,7 @@ function Profile(props) {
     
     return(
         <>
-            <LunarPhaseNavbar />
+            <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
 
             <div className="member layout_wrap">
 

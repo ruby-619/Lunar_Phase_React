@@ -11,6 +11,7 @@ import swal from 'sweetalert';
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 function Login(props) {
+    const { cartQty, bmQty } = props
     const [dataLoading, setDataLoading] = useState(false)
 
     let [move_ad, setMove_ad] = useState(false)
@@ -177,7 +178,7 @@ function Login(props) {
 
         {/* <LunarPhaseNavbar {...props} /> */}
 
-        <LunarPhaseNavbar userData={userData} setUserData={setUserData} />
+        <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}  userData={userData} setUserData={setUserData} />
 
         <div className="member layout_wrap">
           <div className="layout_container_moana">
