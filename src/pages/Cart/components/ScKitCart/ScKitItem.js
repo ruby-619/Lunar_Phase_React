@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import { FaTimes } from 'react-icons/fa'
 
 function ScKitItem(props) {
+  const { updateQty, setCartQty } = props
   const [mycart, setMycart] = useState([])
   const [mycartDisplay, setMycartDisplay] = useState([])
 
   function getCartFromLocalStorage() {
     const newCart = localStorage.getItem('kitcart') || '[]'
+    updateQty()
 
     console.log(JSON.parse(newCart))
     setMycart(JSON.parse(newCart))
@@ -58,6 +60,7 @@ function ScKitItem(props) {
 
     // 設定資料
     setMycart(currentCart)
+    updateQty()
   }
 
   // 參考ProductList.js中updateCartToLocalStorage概念
@@ -75,6 +78,7 @@ function ScKitItem(props) {
       currentCart.splice(index, 1)
       localStorage.setItem('kitcart', JSON.stringify(currentCart))
       setMycart(currentCart)
+      updateQty()
     }
   }
 
