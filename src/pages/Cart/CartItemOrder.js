@@ -8,7 +8,7 @@ import Footer from '../../components/Footer'
 const _ = require('lodash')
 
 function CartItemOrder(props) {
-  const { setStep, cartQty, isCon, scOrderId } = props
+  const { setStep, cartQty, isCon, scOrderId, bmQty } = props
   const [isHidden, setIsHidden] = useState(true) //下拉選單的顯示與否
   const [order, setOrder] = useState([])
 
@@ -186,7 +186,7 @@ function CartItemOrder(props) {
 
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty} />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       <Breadcrumb />
       <ScStepRow step={4} setStep={setStep} />
       {/*-------------- 第四頁 --------------*/}

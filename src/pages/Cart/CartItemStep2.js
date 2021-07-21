@@ -11,7 +11,7 @@ import Footer from '../../components/Footer'
 //網址 /cart/item
 function CartItemStep2(props) {
   const { 
-    prevStep, nextStep, setStep, cartQty,
+    prevStep, nextStep, setStep, cartQty, bmQty,
     inputs, setInputs,onChangeForField,
     handleSubmit,handleChange,handleInvalid,fieldErrors,
     isCon,
@@ -33,6 +33,7 @@ function CartItemStep2(props) {
     <>
       <LunarPhaseNavbar 
          cartQty={cartQty}
+         bmQty={bmQty}
       />
       <Breadcrumb />
 

@@ -4,7 +4,7 @@ import CartKitStep1 from './CartKitStep1'
 import { countries, townships, postcodes } from '../../data/townships'
 
 function CartKit(props) {
-  const { cartQty } = props
+  const { cartQty, bmQty } = props
   const [step, setStep] = useState(1)
   const [isCon, setIsCon] = useState(false) //物流是否為便利商店
   const [shipPrice, setShipPrice] = useState(0) //運費
@@ -183,6 +183,7 @@ function CartKit(props) {
       case 1:
         return (
           <CartKitStep1
+            bmQty={bmQty}
             cartQty={cartQty}
             nextStep={() => setStep(2)}
             setStep={setStep}

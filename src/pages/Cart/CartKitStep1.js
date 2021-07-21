@@ -11,10 +11,10 @@ import Footer from '../../components/Footer'
 
 //網址 /cart/kit
 function CartKitStep1(props) {
-  const { nextStep, setStep, cartQty } = props
+  const { nextStep, setStep, cartQty, bmQty } = props
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty} />
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       <Breadcrumb />
 
       <ScStepRow step={1} setStep={setStep} />

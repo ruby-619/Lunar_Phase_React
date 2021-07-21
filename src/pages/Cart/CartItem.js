@@ -11,7 +11,7 @@ const Swal = require('sweetalert2')
 
 
 function CartItem(props) {
-  const {cartQty, setCartQty, updateQty} = props
+  const {cartQty, setCartQty, updateQty, bmQty} = props
   const [step, setStep] = useState(1)
   const [isCon, setIsCon] = useState(false) //物流是否為便利商店
   const [shipPrice, setShipPrice] = useState(0) //運費
@@ -269,6 +269,7 @@ function CartItem(props) {
     switch(step){
       case 1:
         return <CartItemStep1 
+        bmQty={bmQty}
         updateQty={updateQty}
         cartQty={cartQty}
         setCartQty={setCartQty}
@@ -279,7 +280,8 @@ function CartItem(props) {
       />
       
       case 2:
-        return <CartItemStep2 
+        return <CartItemStep2
+        bmQty={bmQty} 
         cartQty={cartQty}
         prevStep={() => setStep(1)}
         nextStep={() => { return setStep(3)}} 
@@ -316,6 +318,7 @@ function CartItem(props) {
        
       case 3:
         return <CartItemStep3 
+        bmQty={bmQty}
         cartQty={cartQty}
         prevStep={() => setStep(2)}
         nextStep={() => {handleSubmit() }}
@@ -351,6 +354,7 @@ function CartItem(props) {
        
        case 4: 
        return <CartItemOrder
+          bmQty={bmQty}
           updateQty={updateQty}
          cartQty={cartQty}
          setCartQty={setCartQty}
