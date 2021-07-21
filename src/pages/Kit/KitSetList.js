@@ -7,8 +7,7 @@ import BtnGreenBig from './component/kit-setList/BtnGreenBig'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-function KitSetList(props) {
-  const { cartQty, bmQty } = props
+function KitSetList() {
   const [objDaily, setObjDaily] = useState({
     name: '一般組合',
     key: null,
@@ -155,7 +154,7 @@ function KitSetList(props) {
 
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
+      <LunarPhaseNavbar />
       {/* <!-- kit-setList --> */}
       <div className="container">
         <DailySet functionA={functionA} objDaily={objDaily} />

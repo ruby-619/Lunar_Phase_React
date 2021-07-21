@@ -5,7 +5,7 @@ function BtnGreenBig(props) {
   console.log('objDaily有什麼', objDaily)
   return (
     <>
-      {objDaily.key ? (
+      {objDaily.key !== null? (
         <button
           className="btn-soft-green-big"
           onClick={() => {
