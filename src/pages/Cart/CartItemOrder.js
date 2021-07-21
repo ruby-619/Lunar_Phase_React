@@ -42,6 +42,7 @@ function CartItemOrder(props) {
     // console.log('訂單order', order) //會是空的因為setOrder異步執行
   }
   useEffect(() => {
+    window.scrollTo(0, 0)
     getOrderFromServer()
   }, [])
 

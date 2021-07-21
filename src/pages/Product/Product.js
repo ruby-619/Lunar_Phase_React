@@ -137,7 +137,7 @@ function Product(props) {
         )}
       </div>
       {/* ----- top pick ----- */}
-      <PdTopPick />
+      <PdTopPick updateQty={updateQty} />
       {/* ----- info & link ----- */}
       <div id="naturally-bolck" className="naturally container-fluid px-0">
         {drawing ? displayDraw : ''}

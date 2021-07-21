@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-function PdTopPick() {
+function PdTopPick(props) {
   // By CART
+  const {updateQty} = props
   const [mycart, setMycart] = useState([])
   const [productName, setProductName] = useState('') // 加入購物車會跳出的訊息，不使用可省略
 
@@ -25,6 +26,7 @@ function PdTopPick() {
     // 設定資料
     setMycart(currentCart)
     setProductName('產品：' + item.name + '已成功加入購物車')
+    updateQty()
   }
 
   //
@@ -121,6 +123,7 @@ function PdTopPick() {
                         image: `/img/Product/${value.itemCoverImg}`,
                       })
                       alertCheck()
+                      updateQty()
                     }}
                     className="btn-border-s mx-auto mt-4"
                   >
