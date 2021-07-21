@@ -39,7 +39,7 @@ function DisplayOrderItems(props) {
                 className="dropdownItemOrder col-11 mx-auto my-2 d-flex mr-5  align-items-center py-3"
               >
                 <div className="col-5 d-flex align-items-center sc-nameFont">
-                  <div className="itemPic-sm mr-3 overflow-hidden">
+                  <div className="itemPic-sm mr-3 overflow-hidden ml-4">
                     <img
                       className="h-100"
                       src={`/img/Product/${item.itemCoverImg}`}
