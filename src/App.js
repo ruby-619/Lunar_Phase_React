@@ -157,7 +157,8 @@ function App() {
 
             {/* J */}
             <Route path="/order">
-            <DisplayOrder cartQty={cartQty} bmQty={bmQty}              
+            <DisplayOrder cartQty={cartQty} bmQty={bmQty} 
+            updateBmQty={updateBmQty} updateQty={updateQty}              
             />
           </Route>
             <Route path="/bookmark">

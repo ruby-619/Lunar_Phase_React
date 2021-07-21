@@ -9,7 +9,7 @@ var moment = require('moment') //日期格式化需要引入
 const _ = require('lodash')
 
 function DisplayOrder(props) {
-  const { cartQty, bmQty } = props
+  const { cartQty, bmQty, updateBmQty,updateQty } = props
 
 //   const [isHidden, setIsHidden] = useState([0,0,0,0,0,0,0,0,0,0]) //下拉選單的顯示與否
   const [isHidden, setIsHidden] = useState([1,1,1,1,1,1,1,1,1,1]) //下拉選單的顯示與否
@@ -36,6 +36,8 @@ function DisplayOrder(props) {
 
   useEffect(() => {
     getOrderListFromServer()
+    updateBmQty()
+    updateQty()
   }, [])
 
   function toggleIsHidden (i) {
