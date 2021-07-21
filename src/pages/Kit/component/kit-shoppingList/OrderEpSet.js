@@ -17,7 +17,7 @@ function OrderEpSet(props) {
   return (
     <>
       <TiPlus className="TiPlus-r" size="100px" />
-      <div className="kit-shopping-list-bg">
+      <div className="kit-shopping-list-bg-ep">
         {/* <!-- 刪除鈕 --> */}
         <div
           className="delete"

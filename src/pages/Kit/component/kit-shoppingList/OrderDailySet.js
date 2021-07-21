@@ -21,7 +21,7 @@ function OrderDailySet(props) {
 
   return (
     <>
-      <div className="kit-shopping-list-bg">
+      <div className="kit-shopping-list-bg-day">
         <div className="kit-shopping-list-wrap">
           {/* <!-- 組合名稱＋右上方總計 --> */}
           <div className="kit-shopping-list-set-title">

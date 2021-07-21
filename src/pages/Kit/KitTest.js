@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
-import Step from './component/kit-test/Step'
+// import Step from './component/kit-test/Step'
 import QuestionWall from './component/kit-test/QuestionWall'
 import SvgClothPadS from './component/svg-component/SvgClothPadS'
 import SvgSport from './component/svg-component/SvgSport'
@@ -10,7 +10,7 @@ import SvgSetEp from './component/svg-component/SvgSetEp'
 import Swal from 'sweetalert2'
 
 function KitTest1(props) {
-  const {cartQty,bmQty} =props
+  const { cartQty, bmQty } = props
   const [test, setTest] = useState([
     {
       qId: 1,
@@ -174,7 +174,7 @@ function KitTest1(props) {
 
   return (
     <>
-      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
+      <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
       {/* <!-- kit-test --> */}
       <div className="container">
         {/* <!-- 最上方的題目進度條 --> */}
