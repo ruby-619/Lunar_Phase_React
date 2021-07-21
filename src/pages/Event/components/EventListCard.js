@@ -109,6 +109,7 @@ const EventListCard = (props) => {
   }
   useEffect(() => {
     getEventFromServer()
+    updateBmQty()
   }, [])
 
   // 測試（抓page）
@@ -190,6 +191,7 @@ const EventListCard = (props) => {
     newEvent = handleLocation(newEvent, seletedLocation)
     console.log(newEvent)
     setdisplayEvent(newEvent)
+
 
     setTimeout(() => {
       setDataLoading(false)
