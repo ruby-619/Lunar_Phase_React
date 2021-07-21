@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 
 
 const EventDetailCard = (props) => {
+  const{ updateBmQty, updateQty } = props
   // const [total, setTotal] = useState(0)
   // const [collection, setcollection] = useState(1)// 書籤變色（暫時註解掉）
   // const [imageChange, setimageChange] = useState({})//小圖換大圖
@@ -47,6 +48,7 @@ const EventDetailCard = (props) => {
     console.log(currentCart)
     setEventname('活動：' + item.name + '已成功加入購物車')
     console.log(event.data)
+    updateQty()
   }
 
   async function getEventFromServer() {
@@ -213,6 +215,7 @@ const EventDetailCard = (props) => {
                     image: event.eventImg,
                   })
                   alertCheck()
+                  updateQty()
                 }}
                 className="btn-border-l"
               >

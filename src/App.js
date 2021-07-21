@@ -140,7 +140,7 @@ function App() {
               <EventList cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} />
             </Route>
             <Route path="/event-detail/:id?">
-              <EventDetail cartQty={cartQty} bmQty={bmQty} />
+              <EventDetail cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} updateQty={updateQty} />
             </Route>
             <Route path="/event">
               <EventIndex2 renderItem cartQty={cartQty} bmQty={bmQty} />
