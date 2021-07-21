@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 import { BsBookmark } from 'react-icons/bs'
 import { GoLocation } from 'react-icons/go'
 import { IoMdCalendar } from 'react-icons/io'
 import { withRouter } from 'react-router-dom'
+import {IoArrowBackCircleOutline} from 'react-icons/io5'
 // import CategoryNav from './CategoryNav'
 import LunarPhaseFooter from '../../../components/LunarPhaseFooter'
 import LunarPhaseNavbar from '../../../components/LunarPhaseNavbar'
-import CategoryNav from './CategoryNav'
+// import CategoryNav from './CategoryNav'
 const _ = require('lodash');
 
 const EventCategoryCard = (props) => {
@@ -72,7 +74,11 @@ const EventCategoryCard = (props) => {
       <body className="bg2">
         {/* <CategoryNav/> */}
         <div class="container">
-        <h6 className="CategoryTitle mt-3">目前所在分類：{!_.isEmpty(event) &&event[0].eventCategory}</h6>
+        <h6 className="CategoryTitle mt-3 CursorPointer" onClick={() => {
+                        props.history.push(`/event-list`)
+                      }}>
+          <IoArrowBackCircleOutline size="22px"/>目前所在分類：{!_.isEmpty(event) &&event[0].eventCategory}</h6>
+        
           {!_.isEmpty(event) &&event?.map((v, i) => {
             return (
               <div>
