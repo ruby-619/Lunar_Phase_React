@@ -8,7 +8,7 @@ import { FaTimes } from 'react-icons/fa'
 var moment = require('moment') //日期格式化需要引入
 
 function DisplayBookMark(props) {
-  const { cartQty, bmQty, updateBmQty } = props
+  const { cartQty, bmQty, updateBmQty, updateQty } = props
   const [bmPdDisplay, setBmPdDisplay] = useState([]) //1
   const [bmArDisplay, setBmArDisplay] = useState([]) //2
   const [bmEvDisplay, setBmEvDisplay] = useState([]) //3
@@ -30,6 +30,8 @@ function DisplayBookMark(props) {
   }
   useEffect(() => {
     getBmFromLocalStorage()
+    updateBmQty()
+    updateQty()
   }, [])
   const delItem1 = (item) => {
     // 商品刪除

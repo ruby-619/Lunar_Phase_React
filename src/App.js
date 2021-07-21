@@ -146,13 +146,13 @@ function App() {
               <EventIndex2 renderItem cartQty={cartQty} bmQty={bmQty} />
             </Route>
             <Route exact path="/calendar">
-              <Calendar1 cartQty={cartQty} bmQty={bmQty} />
+              <Calendar1 cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} updateQty={updateQty}/>
             </Route>
             <Route exact path="/calendar-child">
-              <CalendarChild cartQty={cartQty} bmQty={bmQty} />
+              <CalendarChild cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} updateQty={updateQty}/>
             </Route>
             <Route exact path="/calendar-child2">
-              <CalendarChild2 cartQty={cartQty} bmQty={bmQty} />
+              <CalendarChild2 cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} updateQty={updateQty}/>
             </Route>
 
             {/* J */}
@@ -166,10 +166,12 @@ function App() {
                 cartQty={cartQty}
                 bmQty={bmQty}
                 updateBmQty={updateBmQty}
+                updateQty={updateQty}              
               />
             </Route>
             <Route path="/cart/event">
               <CartEv 
+                updateBmQty={updateBmQty}
                 updateQty={updateQty}
                 cartQty={cartQty}
                 bmQty={bmQty}
@@ -177,6 +179,7 @@ function App() {
             </Route>
             <Route path="/cart/kit">
               <CartKit 
+                updateBmQty={updateBmQty}
                 updateQty={updateQty}
                 cartQty={cartQty}
                 bmQty={bmQty}
@@ -185,6 +188,7 @@ function App() {
 
             <Route path="/cart/item">
               <CartItem 
+                updateBmQty={updateBmQty}
                 updateQty={updateQty}
                 cartQty={cartQty}
                 bmQty={bmQty}

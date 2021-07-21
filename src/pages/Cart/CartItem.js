@@ -11,7 +11,7 @@ const Swal = require('sweetalert2')
 
 
 function CartItem(props) {
-  const {cartQty, setCartQty, updateQty, bmQty} = props
+  const {cartQty, setCartQty, updateQty, bmQty, updateBmQty} = props
   const [step, setStep] = useState(1)
   const [isCon, setIsCon] = useState(false) //物流是否為便利商店
   const [shipPrice, setShipPrice] = useState(0) //運費
@@ -254,6 +254,10 @@ function CartItem(props) {
     console.log('伺服器回傳的json資料', dataRes)
   }
 
+  useEffect(()=>{
+    updateBmQty()
+    updateQty()
+  },[])
 
   useEffect(() => {
     console.log('step',step)
