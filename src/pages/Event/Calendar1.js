@@ -69,7 +69,7 @@ function Calendar1(props) {
       case 1:
         return part1
       case 2:
-        return <CalendarChild2  
+        return <CalendarChild2 cartQty={cartQty} bmQty={bmQty}
         calStepChild={calStepChild} 
         setCalStepChild={setCalStepChild} 
         month={newdate +28 >=30 ? value.getMonth()+2:value.getMonth()+1}

@@ -70,7 +70,7 @@ function LunarPhaseNavbar(props) {
                 </Link>
               </div>
               <div className="ml-2 mt-2">
-                <Link to="/logout" className="mx-0">
+                <Link to="/" className="mx-0">
                   <RiLogoutBoxRLine />
                 </Link>
               </div>
