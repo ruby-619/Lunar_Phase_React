@@ -11,7 +11,7 @@ import Footer from '../../components/Footer'
 
 //網址 /cart/event
 function CartEvStep1(props) {
-  const { nextStep, setStep, cartQty, bmQty } = props
+  const { nextStep, setStep, cartQty, setCartQty, updateQty, bmQty } = props
   return (
     <>
       <LunarPhaseNavbar 
@@ -21,7 +21,10 @@ function CartEvStep1(props) {
       <ScStepRow step={1} setStep={setStep} />
       {/*-------------- 第一頁 --------------*/}
       <ScEvLabel />
-      <ScEvCart />
+      <ScEvCart 
+        setCartQty={setCartQty}
+        updateQty={updateQty}
+      />
       <ScBtn nextStep={nextStep} showStep1={false} showStep2={true} />
       <Footer/>
     </>

@@ -7,7 +7,7 @@ import CartEvStep4 from './CartEvStep4'
 import { countries, townships, postcodes } from '../../data/townships'
 
 function CartEv(props) {
-  const { cartQty, bmQty } = props
+  const { cartQty, setCartQty, updateQty, bmQty } = props
   const [step, setStep] = useState(1)
   const [isCon, setIsCon] = useState(false) //物流是否為便利商店
   const [shipPrice, setShipPrice] = useState(0) //運費
@@ -185,7 +185,10 @@ function CartEv(props) {
     switch (step) {
       case 1:
         return <CartEvStep1
-          cartQty={cartQty} bmQty={bmQty}
+          bmQty={bmQty}
+          updateQty={updateQty}
+          cartQty={cartQty}
+          setCartQty={setCartQty}
          nextStep={() => setStep(2)} setStep={setStep} />
         break
       case 2:

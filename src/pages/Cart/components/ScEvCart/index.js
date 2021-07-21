@@ -2,7 +2,7 @@ import React  from 'react'
 import ScEvItem from './ScEvItem'
 
 function ScEvCart(props) {
-
+  const { updateQty, setCartQty } = props
   const ScBar = (
     <>
       {/* 全選bar */}
@@ -36,7 +36,10 @@ function ScEvCart(props) {
         <div className="col-10 mx-auto px-0 shadow-sm ">
           {ScBar}
           {ScFormTitle} 
-          <ScEvItem />
+          <ScEvItem 
+            setCartQty={setCartQty}
+            updateQty={updateQty}
+          />
         </div>
       </div>
     </>

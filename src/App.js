@@ -168,10 +168,18 @@ function App() {
               />
             </Route>
             <Route path="/cart/event">
-              <CartEv cartQty={cartQty} bmQty={bmQty} />
+              <CartEv 
+                updateQty={updateQty}
+                cartQty={cartQty}
+                bmQty={bmQty}
+                setCartQty={setCartQty} />
             </Route>
             <Route path="/cart/kit">
-              <CartKit cartQty={cartQty} bmQty={bmQty} />
+              <CartKit 
+                updateQty={updateQty}
+                cartQty={cartQty}
+                bmQty={bmQty}
+                setCartQty={setCartQty} />
             </Route>
 
             <Route path="/cart/item">
