@@ -82,7 +82,7 @@ const EventIndex2 = (props) => {
                       setcolor3('#FDD2BB')
                     }}
                   /><p class="EventIcons mb-5">講座</p>
-                  <button className="btn-soft-green mt-5 Allevent">總覽</button>
+                  <button className="btn-soft-green mt-5 Allevent">活動總覽</button>
                 </div>
               </div>
             </Link>
