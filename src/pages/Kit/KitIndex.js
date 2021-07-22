@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
+import KitBreadcrumb from './component/KitBreadcrumb'
 import Footer from '../../components/Footer'
 import SvgSurprise from './component/svg-component/SvgSurprise'
 import SvgShakeHand from './component/svg-component/SvgShakeHand'
@@ -21,6 +22,7 @@ function KitIndex(props) {
   return (
     <>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
+      <KitBreadcrumb />
       <div className="kit-index-hero">
         <div
           className="kit-index-hero-icon"
