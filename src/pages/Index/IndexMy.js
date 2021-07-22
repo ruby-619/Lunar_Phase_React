@@ -42,7 +42,7 @@ function IndexMy(props) {
     }
 
     // drawing animate
-    const block = document.getElementById('bodyline-l')
+    const block = document.getElementById('pd-title')
     const drawMe = block.offsetTop
 
     function drawing() {
@@ -219,7 +219,9 @@ function IndexMy(props) {
       {/* product */}
       <div id="product" className="index-product container-fluid text-center">
         <div className="row index-product-row">
-          <h2 className="col-12 text-center">PRODUCT</h2>
+          <h2 id="pd-title" className="col-12 text-center">
+            PRODUCT
+          </h2>
           <div className="index-product-bg-mountain">
             <img src="/img/Index/mountain-w.svg" alt="mountain-bg" />
           </div>

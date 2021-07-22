@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TodoAddForm from './TodoAddForm'
 import TodoList from './TodoList'
 import 'react-bootstrap'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function TodoApp() {
   const [todoInput, setTodoInput] = useState('')
+  useEffect(() => {
+    AOS.init({ offset: 120, duration: 2000 })
+  }, [])
 
   // 待辨事項每個的物件值
   // todo = {id:number, text:string, completed:bool(default: false), edited:false}
@@ -156,7 +161,7 @@ function TodoApp() {
         setTodoInput={setTodoInput}
         handleAddNew={handleAddNew}
       />
-      <div className="position-relative text-center">
+      <div data-aos="fade-left" className="position-relative text-center">
         <img
           src="http://localhost:3333/img/Article/Path 539.svg"
           className="line3  w-50 position-absolute"

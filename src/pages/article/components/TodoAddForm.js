@@ -25,7 +25,7 @@ function TodoAddForm(props) {
           className="w-25 rounded-circle"
           alt="avator"
         />
-        <p className="my-auto ml-4">用戶A</p>
+        <p className="my-auto ml-4">shih ching huang</p>
       </div>
       <textarea
         className="form-control mt-3"
