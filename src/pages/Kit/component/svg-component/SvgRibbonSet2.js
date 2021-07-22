@@ -1,10 +1,10 @@
 import React from 'react'
 
-function SvgRibbonSet() {
+function SvgRibbonSet2() {
   return (
     <>
       <svg
-        className="ribbon-s"
+        className="ribbon-s2"
         xmlns="http://www.w3.org/2000/svg"
         width="108.643"
         height="44.567"
@@ -50,4 +50,4 @@ function SvgRibbonSet() {
     </>
   )
 }
-export default SvgRibbonSet
+export default SvgRibbonSet2

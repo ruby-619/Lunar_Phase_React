@@ -1,10 +1,34 @@
 .kit-index-hero {
   width: 100%;
-  height: 520px;
+  height: 500px;
   background-color: #e64b4b;
   // margin-top: 120px;
   background: url('http://localhost:3333/img/Kit/hero-2.jpg') no-repeat center
     30%/ 100%;
+}
+
+.ribbon-wrap {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+// 緞帶
+.ribbon-index {
+  width: 100%;
+  overflow: hidden;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation-delay: 2s;
+  animation: offset 3s linear forwards;
+  position: absolute;
+  top: 280px;
+}
+
+@keyframes offset {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .kit-index-hero-icon {
@@ -12,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 155px 0 0 0;
+  padding: 120px 0 0 0;
 }
 
 .kit-index-hero-icon-2 {
@@ -21,7 +45,7 @@
 
 /* 前導文區塊 */
 .kit-index-info-area {
-  margin: 150px 0 100px;
+  margin: 80px 0 100px;
   text-align: center;
 }
 
@@ -46,7 +70,6 @@
   justify-content: center;
 }
 
-
 .kit-index-info-box {
   display: flex;
   flex-direction: column;
@@ -60,15 +83,15 @@
 .kit-index-info-img-1 {
   width: 45%;
   height: 520px;
-  background: url('http://localhost:3333/img/Kit/chitoseIMGL1883.jpg') no-repeat center
-    30%/ 150%;
+  background: url('http://localhost:3333/img/Kit/chitoseIMGL1883.jpg') no-repeat
+    center 30%/ 150%;
 }
 
 .kit-index-info-img-2 {
   width: 45%;
   height: 520px;
-  background: url('http://localhost:3333/img/Kit/top-view-sanitary-towel.jpg') no-repeat center
-    50%/ 200%;
+  background: url('http://localhost:3333/img/Kit/top-view-sanitary-towel.jpg')
+    no-repeat center 50%/ 200%;
 }
 
 .kit-index-hero-2 {
@@ -76,7 +99,8 @@
   height: 520px;
   // border:solid #e64b4b;
   margin-bottom: 25px;
-  background: url('http://localhost:3333/img/Kit/lunarBox.jpg') no-repeat center 30%/ 100% ;
+  background: url('http://localhost:3333/img/Kit/lunarBox.jpg') no-repeat center
+    30%/ 100%;
 }
 
 .kit-index-info-text {
@@ -126,12 +150,12 @@
   bottom: 0;
 }
 
-.kit-index-bottom-text{
+.kit-index-bottom-text {
   text-align: center;
   margin: 50px;
 }
 
-.p-r{
+.p-r {
   color: #e64b4b;
 }
 

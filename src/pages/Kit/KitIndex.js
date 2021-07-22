@@ -5,7 +5,7 @@ import Footer from '../../components/Footer'
 import SvgSurprise from './component/svg-component/SvgSurprise'
 import SvgShakeHand from './component/svg-component/SvgShakeHand'
 import SvgGive from './component/svg-component/SvgGive'
-// import FlashWall from './component/kit-index/FlashWall'
+import SvgRibbonIndex from './component/svg-component/SvgRibbonIndex'
 import GoTestArea from './component/kit-index/GoTestArea'
 // AOS
 import AOS from 'aos'
@@ -15,6 +15,7 @@ function KitIndex(props) {
   const { cartQty, bmQty, updateQty, updateBmQty } = props
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     AOS.init({ offset: 120, duration: 800 })
     updateQty()
     updateBmQty()
@@ -22,6 +23,9 @@ function KitIndex(props) {
   return (
     <>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
+      <div className="ribbon-wrap">
+        <SvgRibbonIndex />
+      </div>
       <KitBreadcrumb />
       <div className="kit-index-hero">
         <div
@@ -55,7 +59,7 @@ function KitIndex(props) {
             <div
               className="kit-index-info-box"
               data-aos="fade-up"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               <SvgGive />
               <div className="kit-index-info-text">
@@ -72,7 +76,7 @@ function KitIndex(props) {
             <div
               className="kit-index-info-img-1"
               data-aos="fade-left"
-              data-aos-offset="300"
+              data-aos-offset="200"
               data-aos-easing="ease-in-sine"
             ></div>
           </div>
@@ -82,13 +86,13 @@ function KitIndex(props) {
             <div
               className="kit-index-info-img-2"
               data-aos="fade-right"
-              data-aos-offset="300"
+              data-aos-offset="200"
               data-aos-easing="ease-in-sine"
             ></div>
             <div
               className="kit-index-info-box"
               data-aos="fade-up"
-              data-aos-duration="3000"
+              data-aos-duration="2000"
             >
               {/* 一小塊 */}
               <div>

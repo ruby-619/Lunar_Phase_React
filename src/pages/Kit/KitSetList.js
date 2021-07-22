@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 import DailySet from './component/kit-setList/DailySet'
@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 function KitSetList(props) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const { cartQty, bmQty } = props
   const [objDaily, setObjDaily] = useState({
     name: '一般組合',
