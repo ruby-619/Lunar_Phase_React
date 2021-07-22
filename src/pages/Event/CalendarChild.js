@@ -15,7 +15,7 @@ export const CalendarChild = (props) => {
         <div class="container">
             <div class="row">
                 <div className="RecordArea">
-                <h2>症狀紀錄</h2>
+                <h2>有出現以下症狀嗎？</h2>
                     <div>
                         <input
                         type="checkbox"

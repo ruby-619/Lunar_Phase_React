@@ -124,7 +124,9 @@ div.carousel-root {
   margin-top: 68px;
   height: 300px;
 }
-
+.Allevent{
+  transform: translate(-17px,20px);
+}
 
 
 .box>.EventIcons{
@@ -133,6 +135,15 @@ div.carousel-root {
   opacity: 0;
 }
 .box>.EventIcons:hover{
+  opacity:1;
+}
+
+.box>.EventIconsArt{
+  text-align: center;
+  transform: translate(10px,60px);
+  opacity: 0;
+}
+.box>.EventIconsArt:hover{
   opacity:1;
 }
 
@@ -386,7 +397,7 @@ div.carousel-root {
   border-radius: 50%;
 }
 .EventIconsArt{
-  transform: translate(-14px, 80px);
+  transform: translate(30px, 90px);
 }
 .box-middle-right {
   transform: translate(25px, 80px);
