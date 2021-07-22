@@ -58,13 +58,15 @@ function TodoItem(props) {
           </div>
           <div className="my-auto">
             <BiEdit
-              className="mr-3 h3"
+              style={{ cursor: 'pointer' }}
+              className="article-message-icon  mr-3 h3"
               onClick={() => {
                 handleEdited(todoItem.id)
               }}
             />
             <AiOutlineDelete
-              className="h3"
+              style={{ cursor: 'pointer' }}
+              className="h3 article-message-icon "
               onClick={() => {
                 handleDelete(todoItem.id)
                 alertCheck()

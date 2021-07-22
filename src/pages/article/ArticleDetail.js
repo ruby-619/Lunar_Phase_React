@@ -69,7 +69,7 @@ const ArticleDetail = (props) => {
       // icon: 'question',
       width: '30%',
       imageUrl: '/img/svg/43-music-note-outline.gif',
-      title: '已加入收藏',
+      text: '已加入收藏！',
       showConfirmButton: false,
       timer: 1500,
     })
@@ -131,7 +131,7 @@ const ArticleDetail = (props) => {
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
 
       <div>
-        <div data-aos="fade-down" className="article-detail-title">
+        <div className="article-detail-title">
           <div className="text-center pt-5 mt-5">
             <h3 className="article-detail-title-h3">{article.articleName}</h3>
           </div>
@@ -231,7 +231,7 @@ const ArticleDetail = (props) => {
                 src="http://localhost:3333/img/Article/Group 1120.png"
                 alt=""
               />
-              <p className="article-detail-highlight-p">
+              <p className="article-detail-highlight-p pt-4">
                 {article.articleHighlight}
               </p>
             </div>
