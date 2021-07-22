@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 // import ReactDOM from 'react-dom'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
@@ -14,12 +14,18 @@ import {IoIosWine} from 'react-icons/io'
 import './Event.scss'
 
 const EventIndex2 = (props) => {
-  const{cartQty, bmQty}=props
+  const{cartQty, bmQty, updateQty, updateBmQty }=props
   const [color, setcolor] = useState('FDD2BB')
   const [color2, setcolor2] = useState('FDD2BB')
   const [color3, setcolor3] = useState('FDD2BB')
   const [color4, setcolor4] = useState('FDD2BB')
   const [color5, setcolor5] = useState('FDD2BB')
+
+  useEffect(()=>{
+    updateQty()
+    updateBmQty()
+  }, [])
+
   return (
     <>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
@@ -82,7 +88,7 @@ const EventIndex2 = (props) => {
                       setcolor3('#FDD2BB')
                     }}
                   /><p class="EventIcons mb-5">講座</p>
-                  <button className="btn-soft-green mt-5 Allevent">總覽</button>
+                  <button className="btn-soft-green mt-5 Allevent">活動總覽</button>
                 </div>
               </div>
             </Link>

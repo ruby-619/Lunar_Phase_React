@@ -143,7 +143,7 @@ function App() {
               <EventDetail cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} updateQty={updateQty} />
             </Route>
             <Route path="/event">
-              <EventIndex2 renderItem cartQty={cartQty} bmQty={bmQty} />
+              <EventIndex2 renderItem cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} updateQty={updateQty}/>
             </Route>
             <Route exact path="/calendar">
               <Calendar1 cartQty={cartQty} bmQty={bmQty} updateBmQty={updateBmQty} updateQty={updateQty}/>
@@ -239,7 +239,9 @@ function App() {
             </Route>
 
             <Route path="/article1">
-              <ArticleIndex1 cartQty={cartQty} bmQty={bmQty} />
+              <ArticleIndex1 cartQty={cartQty} bmQty={bmQty}  
+                updateBmQty={updateBmQty}
+                updateQty={updateQty} />
             </Route>
             <Route path="/article2">
               <ArticleIndex2 cartQty={cartQty} bmQty={bmQty} />
@@ -251,7 +253,11 @@ function App() {
 
             {/* Apple */}
             <Route path="/kitIndex">
-              <KitIndex cartQty={cartQty} bmQty={bmQty} />
+              <KitIndex 
+                cartQty={cartQty} bmQty={bmQty} 
+                updateBmQty={updateBmQty}
+                updateQty={updateQty}
+              />
             </Route>
             <Route path="/kitTest">
               <KitTest cartQty={cartQty} bmQty={bmQty} />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect }  from 'react'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
 import SvgSurprise from './component/svg-component/SvgSurprise'
@@ -11,7 +11,12 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 function KitIndex(props) {
-  const { cartQty, bmQty } = props
+  const { cartQty, bmQty, updateQty, updateBmQty } = props
+
+  useEffect(()=>{
+    updateQty()
+    updateBmQty()
+  }, [])
   return (
     <>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
