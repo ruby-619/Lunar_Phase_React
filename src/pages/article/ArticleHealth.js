@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './articleHealth.scss'
 import ArticleCard from './components/ArticleCard.js'
 import { Link } from 'react-router-dom'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const ArticleHealth = (props) => {
   const { cartQty, bmQty } = props
+  useEffect(() => {
+    AOS.init({ offset: 120, duration: 2000 })
+  }, [])
 
   return (
     <>
@@ -17,6 +22,7 @@ const ArticleHealth = (props) => {
           <div className="m-auto" style={{ position: 'relative' }}>
             <h3 className="text-center">｜分類文章｜</h3>
             <img
+              data-aos="fade-down"
               src="http://localhost:3333/img/Article/wave.svg"
               style={{
                 position: 'absolute',
@@ -29,28 +35,27 @@ const ArticleHealth = (props) => {
             />
           </div>
           <div className="container my-5">
-            <div className="w-100 border-top border-bottom border-dark ">
-              <div className="m-auto w-50 text-center d-flex justify-content-between p-3">
-                <Link to="/article1">
-                  <div className="article-category article-category-selected-btn text-decoration-none">
-                    衛教資訊
-                  </div>
-                </Link>
-                <Link to="/article2">
-                  <div className="article-category article-category-btn text-decoration-none">
+            <div className="w-100 border-top border-bottom border-dark">
+              <div
+                className="m-auto text-center d-flex flex-wrap justify-content-center justify-content-between py-3"
+                style={{ paddingLeft: '35%', paddingRight: '35%' }}
+              >
+                <div className="article-category article-category-selected-btn text-decoration-none ">
+                  <Link to="/article1">衛教資訊</Link>
+                </div>
+                <div className=" article-category article-category-btn text-decoration-none ">
+                  <Link className="text-center " to="/article2">
                     性教育
-                  </div>
-                </Link>
-                <Link to="/article3">
-                  <div className="article-category article-category-btn text-decoration-none">
-                    性別故事
-                  </div>
-                </Link>
+                  </Link>
+                </div>
+                <div className="article-category article-category-btn text-decoration-none ">
+                  <Link to="/article3">性別故事</Link>
+                </div>
               </div>
             </div>
           </div>
           {/* <ArticleCard /> */}
-          <div className="container row d-flex mx-auto mt-3">
+          <div data-aos="fade-up" className="container row d-flex mx-auto mt-3">
             <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4 mt-3">
               <Link
                 to="/article/detail/35"

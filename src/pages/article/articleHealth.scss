@@ -11,12 +11,7 @@
 //   margin: 12px;
 //   padding: 4px 0;
   border-bottom: 2px solid #e64b4b00;
-
  
-}
-
-.article-row{
-  margin:auto !important; 
 }
 
 .article-category-selected-btn{
@@ -39,8 +34,8 @@
   @media screen and (max-width:991px) {
     width: fit-content;
 font-size: 14px;
-width: 60px;
-margin: auto;
+// width: 60px;
+// margin: auto;
     }
 }
 
