@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './IndexMy.scss'
 
 // component
 import HeroSlider from './IndexHeroSlider'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
+import IndexLineA from './components/IndexLineA'
+import IndexLineB from './components/IndexLineB'
 
 // react-icon
 import { GrFacebookOption, GrInstagram } from 'react-icons/gr'
@@ -18,11 +20,57 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 function IndexMy(props) {
+  // nav sticky
+  const [sticky, setSticky] = useState(false)
+  // drawing animate
+  const [drawing, setDrawing] = useState(false)
+
   useEffect(() => {
+    // AOS
     AOS.init({ offset: 120, duration: 800 })
+
+    // navbar sticky
+    const navbar = document.getElementById('navbar')
+    const sticky = navbar.offsetTop
+    function navbarSticky() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add('sticky')
+        setSticky(true)
+      } else {
+        navbar.classList.remove('sticky')
+      }
+    }
+
+    // drawing animate
+    const block = document.getElementById('bodyline-l')
+    const drawMe = block.offsetTop
+
+    function drawing() {
+      if (window.pageYOffset >= drawMe) {
+        setDrawing(true)
+      } else {
+        setDrawing(false)
+      }
+    }
+    window.onscroll = function () {
+      drawing()
+      navbarSticky()
+    }
+
     updateQty()
     updateBmQty()
   }, [])
+
+  const displayDraw = (
+    <>
+      <IndexLineA />
+    </>
+  )
+  const displayDraw2 = (
+    <>
+      <IndexLineB />
+    </>
+  )
 
   const { cartQty, bmQty, updateQty, updateBmQty } = props
   return (
@@ -31,11 +79,13 @@ function IndexMy(props) {
       <header id="top">
         <div className="index-top-wrap">
           <h1 className="text-left mb-3">
-            <img
-              className="index-top-logo"
-              src="/img/Index/logo-l-dark.svg"
-              alt=""
-            />
+            <Link to="#home">
+              <img
+                className="index-top-logo"
+                src="/img/Index/logo-l-dark.svg"
+                alt=""
+              />
+            </Link>
           </h1>
           <div className="index-top-sns">
             <Link to="https://www.facebook.com/IIIEDU.TW" className="mr-3">
@@ -57,10 +107,10 @@ function IndexMy(props) {
                 <Link to="/kitindex">KIT</Link>
               </li>
               <li className="col">
-                <Link to="/order">EVENT</Link>
+                <Link to="/event">EVENT</Link>
               </li>
               <li className="col">
-                <Link to="/member">JOIN US</Link>
+                <Link to="/calendar">CALCULATOR</Link>
               </li>
             </ul>
           </nav>
@@ -156,8 +206,14 @@ function IndexMy(props) {
             </div>
           </div>
         </div>
-        <div className="index-bodyline-l" />
-        <div className="index-bodyline-r" />
+        <div id="bodyline-l" className="index-bodyline-l">
+          {drawing ? displayDraw : ''}
+          {/* <IndexLineA /> */}
+        </div>
+        <div className="index-bodyline-r">
+          {drawing ? displayDraw2 : ''}
+          {/* <IndexLineB /> */}
+        </div>
       </div>
 
       {/* product */}
@@ -465,12 +521,12 @@ function IndexMy(props) {
         <div
           data-aos="fade-zoom-in"
           data-aos-easing="ease-in-back"
-          data-aos-delay="1800"
+          data-aos-delay="1600"
           className="index-kit-pic4"
         />
         <div className="index-kit-content row index-row justify-content-between">
           <div className="index-kit-content-l pl-0 col-12 col-md-4">
-            <Link to="/kit">
+            <Link to="/kitindex">
               <h2>KIT</h2>
             </Link>
           </div>
@@ -498,7 +554,7 @@ function IndexMy(props) {
           </div>
         </div>
         <div className="btn-more index-kit-bottom mr-0 pr-0">
-          <Link to="/kit">more</Link>
+          <Link to="/kitindex">more</Link>
         </div>
       </div>
       {/* EVENT */}
@@ -526,7 +582,7 @@ function IndexMy(props) {
                   className="col-12 col-lg-4 mb-5"
                 >
                   <p className="index-article-date mb-2 mx-auto">2021.08.14</p>
-                  <Link to="/event">
+                  <Link to="/event-detail/1">
                     <img
                       className="index-event-unit-img"
                       src="/img/Index/flower05.jpg"
@@ -548,7 +604,7 @@ function IndexMy(props) {
                   className="col-12 col-lg-4 mb-5"
                 >
                   <p className="index-article-date mb-2 mx-auto">2021.08.21</p>
-                  <Link to="/event">
+                  <Link to="/event-detail/5">
                     <img
                       className="index-event-unit-img"
                       src="/img/Index/girltalk01.jpg"
@@ -570,7 +626,7 @@ function IndexMy(props) {
                   className="col-12 col-lg-4 mb-5"
                 >
                   <p className="index-article-date mb-2 mx-auto">2020.09.5</p>
-                  <Link to="/event">
+                  <Link to="/event-detail/4">
                     <img
                       className="index-event-unit-img"
                       src="/img/Index/surf04.jpg"

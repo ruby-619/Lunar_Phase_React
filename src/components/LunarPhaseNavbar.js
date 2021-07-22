@@ -11,7 +11,7 @@ import { IoMdListBox } from 'react-icons/io'
 import { RiLogoutBoxRLine } from 'react-icons/ri'
 
 // component
-import NavBookmark from './NavBookmark'
+//import NavBookmark from './NavBookmark'
 
 function LunarPhaseNavbar(props) {
   const { cartQty, bmQty } = props
