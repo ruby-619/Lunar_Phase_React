@@ -131,7 +131,7 @@ const ArticleDetail = (props) => {
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty} />
 
       <div>
-        <div className="article-detail-title">
+        <div data-aos="fade-down" className="article-detail-title">
           <div className="text-center pt-5 mt-5">
             <h3 className="article-detail-title-h3">{article.articleName}</h3>
           </div>
@@ -182,7 +182,7 @@ const ArticleDetail = (props) => {
         </Link>
         <div className="container ">
           <div className="d-flex justify-content-between align-items-center my-5 border-bottom pb-5">
-            <div className="ml-4">
+            <div data-aos="zoom-in" className="ml-4">
               <ArticleDetailJquery />
             </div>
             <div className="article-detail-author-date">
@@ -191,7 +191,7 @@ const ArticleDetail = (props) => {
                 {moment(article.articleDate).format('YYYY-MM-DD')}
               </p>
             </div>
-            <div className="mr-4">
+            <div data-aos="zoom-in" className="mr-4">
               <RiBookmarkFill
                 className="bookmarkfill aricle-detail-btn-hover h4 mr-4"
                 style={{ cursor: 'pointer' }}
@@ -223,6 +223,7 @@ const ArticleDetail = (props) => {
             ></p>
             <div
               data-aos="fade-right"
+              data-aos-duration="15000"
               className="article-detail-highlight mx-auto text-center my-5"
             >
               <img

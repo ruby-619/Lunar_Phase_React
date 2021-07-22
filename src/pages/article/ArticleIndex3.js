@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './articleIndex.scss'
 import 'react-bootstrap'
 // import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,12 +8,18 @@ import ArticleCarousel from './components/ArticleCarousel.js'
 // import '../../styles/global.scss'
 import LunarPhaseNavbar from '../../components/LunarPhaseNavbar'
 import Footer from '../../components/Footer'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 // https://react-bootstrap.github.io/components/carousel/
 // https://ithelp.ithome.com.tw/articles/10227641
 
 const ArticleIndex3 = (props) => {
   const { cartQty, bmQty } = props
+
+  useEffect(() => {
+    AOS.init({ offset: 120, duration: 2000 })
+  }, [])
 
   return (
     <>
@@ -22,6 +28,8 @@ const ArticleIndex3 = (props) => {
         <ArticleCarousel />
         <img
           src="http://localhost:3333/img/Article/wave.svg"
+          data-aos="fade-up"
+          data-aos-duration="3000"
           style={{
             width: '100%',
             position: 'absolute',

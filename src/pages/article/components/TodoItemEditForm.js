@@ -28,8 +28,8 @@ function TodoItemEditForm(props) {
           alt="avator"
         />
         <div className="ml-4 my-auto text-left">
-          <p className="mb-0">用戶A</p>
-          <small>2021-06-21</small>
+          <p className="mb-0">shih ching huang</p>
+          <small>2021-07-22</small>
         </div>
       </div>
       <li className="text-center">
