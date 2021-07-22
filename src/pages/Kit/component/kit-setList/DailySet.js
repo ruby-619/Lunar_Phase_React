@@ -3,6 +3,13 @@ import SvgRibbonSet from '../svg-component/SvgRibbonSet'
 
 function DailySet(props) {
   const { functionA, objDaily } = props
+  // const [ribbonClick, setRibbonClick] = useState(false)
+  const display = (
+    <>
+      <SvgRibbonSet />
+    </>
+  )
+
   return (
     <>
       {/* <!-- 最上區塊的日常組合TITLE語 --> */}
@@ -27,7 +34,8 @@ function DailySet(props) {
                   (objDaily.click ? 'kit-set-ribbon-show' : '')
                 }
               >
-                <SvgRibbonSet />
+                {/* <SvgRibbonSet1 /> */}
+                {objDaily.click ? display : ''}
               </div>
               <div className="kit-set-text">
                 <h4 className="kit-settext h4-tc">{objDaily.name}</h4>
@@ -40,12 +48,5 @@ function DailySet(props) {
     </>
   )
 }
-
-// const request = new Request(url, [
-//   method: 'GET',
-//   headers: new Headers (
-//   Accept: 'application/json',
-//   'Content-Type' : 'appliaction/json',
-//   }),
 
 export default DailySet

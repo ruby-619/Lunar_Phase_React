@@ -80,12 +80,7 @@ function KitSetList(props) {
           ...e,
           // obj到時候要放觸發函式的變數，也就是e
           // 原本的 e 裡的 kitCategory 與被觸發的 obj.kitCategory 相同時，表示被按下 click:true
-          click:
-            e.kitCategory === obj.kitCategory
-              ? !e.click
-                ? true
-                : false
-              : false,
+          click: e.kitCategory === obj.kitCategory ? true : false,
         }
       }),
     })

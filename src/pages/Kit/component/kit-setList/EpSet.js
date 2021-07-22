@@ -1,8 +1,13 @@
 import React from 'react'
-import SvgRibbonSet2 from '../svg-component/SvgRibbonSet2'
+import SvgRibbonSet from '../svg-component/SvgRibbonSet'
 
 function EpSet(props) {
-  const { functionB, objEp,objDaily } = props
+  const { functionB, objEp, objDaily } = props
+  const display = (
+    <>
+      <SvgRibbonSet />
+    </>
+  )
   return (
     <>
       <div className="kit-set-list-title-ep">
@@ -27,7 +32,8 @@ function EpSet(props) {
                   'kit-set-ribbon ' + (objEp.click ? 'kit-set-ribbon-show' : '')
                 }
               >
-                <SvgRibbonSet2 />
+                {/* <SvgRibbonSet2 /> */}
+                {objEp.click ? display : ''}
               </div>
               <div className="kit-set-text">
                 <h4 className="kit-set-text h4-tc">{objEp.name}</h4>
