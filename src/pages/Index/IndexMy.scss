@@ -785,6 +785,12 @@
     padding: 40px 20px;
   }
 }
+@media (max-width: 576px) {
+  .index-footer-btn {
+    font-size: 12px;
+  }
+}
+
 .index-footer-logo {
   height: 36px;
   margin-left: 0;
