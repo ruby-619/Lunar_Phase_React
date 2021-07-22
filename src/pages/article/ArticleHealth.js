@@ -40,15 +40,15 @@ const ArticleHealth = (props) => {
                 className="m-auto text-center d-flex flex-wrap justify-content-center justify-content-between py-3"
                 style={{ paddingLeft: '35%', paddingRight: '35%' }}
               >
-                <div className="article-category article-category-selected-btn text-decoration-none ">
+                <div className="mx-auto article-category article-category-selected-btn text-decoration-none ">
                   <Link to="/article1">衛教資訊</Link>
                 </div>
-                <div className=" article-category article-category-btn text-decoration-none ">
+                <div className="mx-auto article-category article-category-btn text-decoration-none ">
                   <Link className="text-center " to="/article2">
                     性教育
                   </Link>
                 </div>
-                <div className="article-category article-category-btn text-decoration-none ">
+                <div className="mx-auto article-category article-category-btn text-decoration-none ">
                   <Link to="/article3">性別故事</Link>
                 </div>
               </div>
