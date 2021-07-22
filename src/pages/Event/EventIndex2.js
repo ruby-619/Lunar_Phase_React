@@ -57,21 +57,20 @@ const EventIndex2 = (props) => {
               </Link>
             </div>
             <Link to="category/2">
-              <div className="justify-content-center ">
+              <div className="d-flex justify-content-center ">
                 <div className="box box-middle-left">
                   <FaPaintBrush
                     color={color2}
-                    size="70px"
-                    style={{ transform: `translate(${40}px, ${40}px)` }}
+                    size="80px"
+                    style={{ transform: `translate(${30}px, ${30}px)` }}
                     onMouseOver={() => {
                       setcolor2('#E64B4B')
                     }}
                     onMouseLeave={() => {
                       setcolor2('#FDD2BB')
                     }}
-                  />
+                  /><p class="EventIcons">藝文</p>
                 </div>
-                  {/* <p class="EventIcons EventIconsArt">藝文</p> */}
               </div>
             </Link>
             <Link to="/event-list">

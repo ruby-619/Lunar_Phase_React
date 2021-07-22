@@ -138,14 +138,6 @@ div.carousel-root {
   opacity:1;
 }
 
-.box>.EventIconsArt{
-  text-align: center;
-  transform: translate(10px,60px);
-  opacity: 0;
-}
-.box>.EventIconsArt:hover{
-  opacity:1;
-}
 
 
 // 改名
@@ -403,7 +395,7 @@ div.carousel-root {
   transform: translate(25px, 80px);
 }
 .box-middle-left {
-  transform: translate(-25px, 80px);
+  transform: translate(-30px, 80px);
 }
 .box-bottom {
   transform: translateY(250px);
