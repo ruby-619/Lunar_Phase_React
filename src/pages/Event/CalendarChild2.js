@@ -148,6 +148,7 @@ const CalendarChild2 = (props) => {
                         </a>
                         </div>
                       </div>
+                      <img src="/img/Index/calligraphy002.svg" alt="StayTrue" className="mt-5 mx-auto" />
                     </div>
                   </div>
                  
