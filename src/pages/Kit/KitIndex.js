@@ -6,6 +6,9 @@ import SvgShakeHand from './component/svg-component/SvgShakeHand'
 import SvgGive from './component/svg-component/SvgGive'
 // import FlashWall from './component/kit-index/FlashWall'
 import GoTestArea from './component/kit-index/GoTestArea'
+// AOS
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 function KitIndex(props) {
   const { cartQty, bmQty } = props

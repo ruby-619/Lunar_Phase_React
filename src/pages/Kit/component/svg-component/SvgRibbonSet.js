@@ -8,6 +8,7 @@ function SvgRibbonSet() {
         width="108.643"
         height="44.567"
         viewBox="0 0 108.643 44.567"
+        className="ribbon-s"
       >
         <g
           id="Group_423"
