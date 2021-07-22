@@ -37,8 +37,8 @@ function TodoItem(props) {
           alt="avator"
         />
         <div className="ml-4 my-auto text-left">
-          <p className="mb-0">用戶A</p>
-          <small>2021-06-21</small>
+          <p className="mb-0">shih ching huang</p>
+          <small>2021-07-22</small>
         </div>
       </div>
       <div className="border-bottom pb-5 mb-5">
@@ -74,7 +74,10 @@ function TodoItem(props) {
         </div>
         <div className="text-left ml-5 pt-4 d-flex">
           <FcLike
-            className="h5 ml-5 mr-4"
+            style={{
+              cursor: 'pointer',
+            }}
+            className="todo-like h5 ml-5 mr-4"
             onClick={() => {
               setTotal(total + 1)
             }}

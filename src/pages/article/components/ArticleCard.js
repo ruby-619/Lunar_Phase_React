@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import 'react-bootstrap'
 import './articleCarousel.scss'
 import { Link } from 'react-router-dom'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const ArticleCard = () => {
+  useEffect(() => {
+    AOS.init({ offset: 120, duration: 2000 })
+  }, [])
   return (
     <>
-      <div className="container d-flex m-auto">
+      <div data-aos="fade-down" className="container d-flex m-auto">
         <div className="border-right border-dark article-card-col-4 col-12 col-md-6 col-lg-4  mt-3">
           <Link
             to="/article/detail/35"
