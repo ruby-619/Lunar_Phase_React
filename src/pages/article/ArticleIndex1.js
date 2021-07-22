@@ -15,10 +15,12 @@ import 'aos/dist/aos.css'
 // https://ithelp.ithome.com.tw/articles/10227641
 
 const ArticleIndex1 = (props) => {
-  const { cartQty, bmQty } = props
+  const { cartQty, bmQty, updateQty, updateBmQty } = props
 
   useEffect(() => {
     AOS.init({ offset: 120, duration: 2000 })
+    updateQty()
+    updateBmQty()
   }, [])
   return (
     <>
