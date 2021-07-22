@@ -533,7 +533,7 @@ function IndexMy(props) {
           <div
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
-            data-aos-delay="2200"
+            data-aos-delay="1800"
             data-aos-duration="3000"
             className="index-kit-content-r col-12 col-md-8"
           >
@@ -714,7 +714,7 @@ function IndexMy(props) {
                 </li>
                 <li>
                   <Link to="/calendar" className="index-footer-a ml-3">
-                    JOIN US
+                    CALCULATOR
                   </Link>
                 </li>
               </ul>
