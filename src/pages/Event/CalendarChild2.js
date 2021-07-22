@@ -89,7 +89,8 @@ const CalendarChild2 = (props) => {
         <>
         <div className="row">
                 <div className="d-flex">
-                    <h2 className=""><BsNewspaper/> 症狀紀錄</h2>
+                    <h2 className=""><BsNewspaper/> 症狀勾選 <h5 className="mt-3">讓我們替您記住身體的大小事</h5></h2>
+                    
                     <div>
                       <FilterBar
                         className="ml-3 col-3"
@@ -125,7 +126,7 @@ const CalendarChild2 = (props) => {
                     </div>
                     
                       <div class="row">
-                        <h4 className>下次你會更懂得照顧自己一點點</h4>
+                        <h4>下次你會更懂得照顧自己一點點</h4>
                       </div>
                 { displaySymptom.length && displaySymptom.map((s, i) => {
 
@@ -149,6 +150,8 @@ const CalendarChild2 = (props) => {
                       </div>
                     </div>
                   </div>
+                 
+                  
                 
             )
           })}

@@ -172,14 +172,14 @@ const EventDetailCard = (props) => {
               </div>
             </div>
             <div className="item-style d-flex justify-content-between">
-              <h6>規格</h6>
+              <h6>尚有名額</h6>
               <div></div>
               {/* <div className="item-style-tag">
                 <p className="btn-option p-1 m-0">{optionName}</p>
               </div> */}
             </div>
             <div className="item-qty d-flex justify-content-between">
-              <h6>數量</h6>
+              <h6>人數</h6>
               <div className="item-qty-input input-group">
                 <div className="input-group-btn">
                   <button

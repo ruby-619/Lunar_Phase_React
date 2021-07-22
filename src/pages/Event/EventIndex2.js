@@ -9,6 +9,7 @@ import EventCard from './components/HomePageCard'
 import Carousel1 from './components/Carousel1'
 import { GiCampingTent, GiBookCover, GiHamburgerMenu } from 'react-icons/gi'
 import { FaPaintBrush, FaHandPaper } from 'react-icons/fa'
+import {IoIosWine} from 'react-icons/io'
 // FaWineGlass
 import './Event.scss'
 
@@ -29,7 +30,7 @@ const EventIndex2 = (props) => {
           <div className="h6-tc TextAlignCenter mb-5">當期熱門</div>
           <div className="Empty"></div>
           <EventCard />
-          <h2 className="TextAlignCenter">分類找活動</h2>
+          <h2 className="TextAlignCenter">找更多活動</h2>
           <div className="CategoryIcons">
             <div className="d-flex justify-content-center ToHover">
               <Link to="category/1">
@@ -70,7 +71,7 @@ const EventIndex2 = (props) => {
             <Link to="/event-list">
               <div className="d-flex justify-content-center ">
                 <div className="box">
-                  <GiHamburgerMenu
+                  <GiBookCover
                     color={color3}
                     size="90px"
                     style={{ transform: `translate(${30}px, ${30}px)` }}
@@ -80,10 +81,12 @@ const EventIndex2 = (props) => {
                     onMouseLeave={() => {
                       setcolor3('#FDD2BB')
                     }}
-                  /><p class="EventIcons">總覽</p>
+                  /><p class="EventIcons mb-5">講座</p>
+                  <button className="btn-soft-green mt-5 Allevent">總覽</button>
                 </div>
               </div>
             </Link>
+            
             <Link to="category/4">
               <div className="d-flex justify-content-center ">
                 <div className="box box-middle-right">
@@ -104,7 +107,7 @@ const EventIndex2 = (props) => {
             <Link to="category/5">
               <div className="d-flex justify-content-center ">
                 <div className="box box-bottom">
-                  <GiBookCover
+                  <IoIosWine
                     color={color5}
                     size="90px"
                     style={{ transform: `translate(${30}px, ${35}px)` }}
@@ -114,7 +117,7 @@ const EventIndex2 = (props) => {
                     onMouseLeave={() => {
                       setcolor5('#FDD2BB')
                     }}
-                  /><p class="EventIcons">講座</p>
+                  /><p class="EventIcons">品味</p>
                 </div>
               </div>
             </Link>
