@@ -691,7 +691,7 @@ function IndexMy(props) {
               </Link>
             </div>
             <nav className="my-auto col-12 col-md-10 px-0">
-              <ul className="d-flex justify-content-center justify-content-md-end  my-3 my-md-0 px-auto px-md-0 col-12">
+              <ul className="index-footer-btn d-flex justify-content-center justify-content-md-end  my-3 my-md-0 px-auto px-md-0 col-12">
                 <li>
                   <Link to="/product" className="index-footer-a ml-3">
                     PRODUCT
