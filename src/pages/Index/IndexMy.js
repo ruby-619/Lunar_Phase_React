@@ -28,7 +28,9 @@ function IndexMy(props) {
   useEffect(() => {
     // AOS
     AOS.init({ offset: 120, duration: 800 })
+  })
 
+  useEffect(() => {
     // navbar sticky
     const navbar = document.getElementById('navbar')
     const sticky = navbar.offsetTop
@@ -326,7 +328,7 @@ function IndexMy(props) {
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
             data-aos-delay="300"
-            data-aos-offset="0"
+            // data-aos-offset="0"
             className="index-article-topic row col-12"
           >
             <div className="index-article-topic-content text-left col-12 col-md-6 col-lg-8 ml-0 pl-0 pr-0 pr-md-3">
@@ -364,7 +366,7 @@ function IndexMy(props) {
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-delay="600"
-              data-aos-offset="0"
+              // data-aos-offset="0"
               className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
             >
               <div className="p-0 m-0">
@@ -395,7 +397,7 @@ function IndexMy(props) {
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-delay="600"
-              data-aos-offset="0"
+              // data-aos-offset="0"
               className="border-right-2 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
             >
               <div className="p-0 m-0">
@@ -426,7 +428,7 @@ function IndexMy(props) {
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-delay="600"
-              data-aos-offset="0"
+              // data-aos-offset="0"
               className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
             >
               <div className="p-0 m-0">
@@ -457,7 +459,7 @@ function IndexMy(props) {
               data-aos="fade-zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-delay="600"
-              data-aos-offset="0"
+              // data-aos-offset="0"
               className="index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
             >
               <div className="p-0 m-0">
