@@ -11,10 +11,15 @@ import { IoMdCalendar } from 'react-icons/io'
 import { FcBookmark } from 'react-icons/fc'
 import Swal from 'sweetalert2'
 
+// AOS
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 // import { NetworkAuthenticationRequire } from 'http-errors'
 // import { data } from 'jquery'
 
 const EventListCard = (props) => {
+  
   const {updateBmQty} = props
   const [myBookmark, setMyBookmark] = useState(false) //收藏
   const [collection, setcollection] = useState([1, 1, 1, 1, 1, 1])
@@ -30,6 +35,8 @@ const EventListCard = (props) => {
   const [page, setPage] = useState('')
 
   const [dataLoading, setDataLoading] = useState(false)
+  
+  
   var moment = require('moment') //日期格式化需要引入
 
   let active = ''
@@ -98,6 +105,8 @@ const EventListCard = (props) => {
       }),
     })
 
+    
+
     const response = await fetch(request)
     const data = await response.json()
 
@@ -120,6 +129,11 @@ const EventListCard = (props) => {
   }, [page])
   // 四種篩選法
   // 1.依照關鍵字
+
+  useEffect(() => {
+    // AOS
+    AOS.init({ offset: 120, duration: 800 })
+  })
 
   const handleSearch = (event, searchWord) => {
     // console.log(searchWord)
@@ -234,7 +248,7 @@ const EventListCard = (props) => {
 
             {displayEvent.map((v, i) => {
               return (
-                <div class="ecard2 mt-5 d-flex">
+                <div class="ecard2 mt-5 d-flex" data-aos="zoom-in-up">
                   <div class="photo2">
                     <img src={`/img/Event/${v.eventImg}`} />
                   </div>
