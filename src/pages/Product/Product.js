@@ -118,28 +118,52 @@ function Product(props) {
         </div>
         {/* ----- item List ----- */}
         {cateId === 0 && (
-          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} updateQty={updateQty} />
+          <PdItemsAll
+            cateIdPa={cateId}
+            updateBmQty={updateBmQty}
+            updateQty={updateQty}
+          />
         )}
         {cateId === 1 && (
-          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} updateQty={updateQty} />
+          <PdItemsAll
+            cateIdPa={cateId}
+            updateBmQty={updateBmQty}
+            updateQty={updateQty}
+          />
         )}
         {cateId === 2 && (
-          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} updateQty={updateQty} />
+          <PdItemsAll
+            cateIdPa={cateId}
+            updateBmQty={updateBmQty}
+            updateQty={updateQty}
+          />
         )}
         {cateId === 3 && (
-          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} updateQty={updateQty} />
+          <PdItemsAll
+            cateIdPa={cateId}
+            updateBmQty={updateBmQty}
+            updateQty={updateQty}
+          />
         )}
         {cateId === 4 && (
-          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} updateQty={updateQty} />
+          <PdItemsAll
+            cateIdPa={cateId}
+            updateBmQty={updateBmQty}
+            updateQty={updateQty}
+          />
         )}
         {cateId === 5 && (
-          <PdItemsAll cateIdPa={cateId} updateBmQty={updateBmQty} updateQty={updateQty} />
+          <PdItemsAll
+            cateIdPa={cateId}
+            updateBmQty={updateBmQty}
+            updateQty={updateQty}
+          />
         )}
       </div>
       {/* ----- top pick ----- */}
       <PdTopPick updateQty={updateQty} />
       {/* ----- info & link ----- */}
-      <div id="naturally-bolck" className="naturally container-fluid px-0">
+      <div className="naturally container-fluid px-0">
         {drawing ? displayDraw : ''}
         {/* <PdLineHeart /> */}
         <div className="row flex-column">
@@ -178,7 +202,7 @@ function Product(props) {
           </div>
         </div>
 
-        <div className="row justify-content-between mt-5">
+        <div id="naturally-bolck" className="row justify-content-between mt-5">
           <div className="product-order-link col-12 col-md-6">
             <Link to="/kitindex">
               <div className="product-order-link-box">

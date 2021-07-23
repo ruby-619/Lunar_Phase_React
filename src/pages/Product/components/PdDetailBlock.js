@@ -102,6 +102,18 @@ function PdDetailBlock(props) {
   const mutiImgArray = itemImg.split(',')
   // console.log(mutiImgArray)
 
+  // 嘗試換cover圖
+  // const beforeChange = (
+  //   <>
+  //     <img src={`/img/Product/${itemCoverImg}`} alt="" />
+  //   </>
+  // )
+  // const afterChange = (
+  //   <>
+  //     <img src={`/img/Product/${changeImg}`} alt="" />
+  //   </>
+  // )
+
   return (
     <>
       <div className="item-detail-container container-fluid">
@@ -139,6 +151,13 @@ function PdDetailBlock(props) {
                 })}
             </div>
             <div className="item-pic">
+              {/* {changeImg ? afterChange : beforeChange} */}
+              {/* {itemCoverImg && (
+                <>
+                  <img src={`/img/Product/${itemCoverImg}`} alt="" />
+                </>
+              )} */}
+
               <img src={`/img/Product/${changeImg}`} alt="" />
             </div>
           </div>

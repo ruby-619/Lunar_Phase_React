@@ -542,7 +542,7 @@ function IndexMy(props) {
           <div
             data-aos="fade-zoom-in"
             data-aos-easing="ease-in-back"
-            data-aos-delay="1800"
+            data-aos-delay="1600"
             data-aos-duration="3000"
             className="index-kit-content-r col-12 col-md-8"
           >
