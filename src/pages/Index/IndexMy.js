@@ -325,8 +325,9 @@ function IndexMy(props) {
             </div>
           </div>
           <div
-            data-aos="fade-zoom-in"
-            data-aos-easing="ease-in-back"
+            data-aos="fade-up"
+            // data-aos="fade-zoom-in"
+            // data-aos-easing="ease-in-back"
             data-aos-delay="300"
             // data-aos-offset="0"
             className="index-article-topic row col-12"
@@ -363,8 +364,9 @@ function IndexMy(props) {
           </div>
           <div className="index-article-unit-wrap row text-left col-12">
             <div
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
+              data-aos="fade-up"
+              // data-aos="fade-zoom-in"
+              // data-aos-easing="ease-in-back"
               data-aos-delay="600"
               // data-aos-offset="0"
               className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
@@ -394,8 +396,9 @@ function IndexMy(props) {
               </div>
             </div>
             <div
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
+              data-aos="fade-up"
+              // data-aos="fade-zoom-in"
+              // data-aos-easing="ease-in-back"
               data-aos-delay="600"
               // data-aos-offset="0"
               className="border-right-2 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
@@ -425,8 +428,9 @@ function IndexMy(props) {
               </div>
             </div>
             <div
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
+              data-aos="fade-up"
+              // data-aos="fade-zoom-in"
+              // data-aos-easing="ease-in-back"
               data-aos-delay="600"
               // data-aos-offset="0"
               className="border-right-1 index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
@@ -456,8 +460,9 @@ function IndexMy(props) {
               </div>
             </div>
             <div
-              data-aos="fade-zoom-in"
-              data-aos-easing="ease-in-back"
+              data-aos="fade-up"
+              // data-aos="fade-zoom-in"
+              // data-aos-easing="ease-in-back"
               data-aos-delay="600"
               // data-aos-offset="0"
               className="index-article-unit col-12 col-md-6 col-lg-3 mb-5 mb-md-4 mb-lg-0"
