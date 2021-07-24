@@ -1,7 +1,15 @@
 import React from 'react'
 
 function SummaryBig(props) {
-  const { catDay, catEp, handle, smallTotalD, smallTotalE, total } = props
+  const {
+    catDay,
+    catEp,
+    clickName,
+    handle,
+    smallTotalD,
+    smallTotalE,
+    total,
+  } = props
   const _ = require('lodash')
   //計算總價的方式
   console.log('現在應該只有日常', total)
@@ -18,7 +26,7 @@ function SummaryBig(props) {
                 <div className="kit-total-item">
                   {catDay && catDay.length > 0 ? (
                     <div className="kit-item kit-item-name">
-                      {catDay[0].kitCategoryName}
+                      {catDay[0].kitCategoryName + '(' + clickName + ')'}
                     </div>
                   ) : (
                     <div className="kit-item kit-item-name"></div>

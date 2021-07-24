@@ -46,7 +46,7 @@ function BtnMonth(props) {
             'btn-border-s2 ' + (clickMon == 6 ? 'btn-border-s-click' : '')
           }
           onClick={() => {
-            orderMonth(btnHalfYear.month)
+            orderMonth(btnHalfYear.month, btnHalfYear.name)
           }}
         >
           半年份
@@ -56,7 +56,7 @@ function BtnMonth(props) {
             'btn-border-s2 ' + (clickMon > 6 ? 'btn-border-s-click' : '')
           }
           onClick={() => {
-            orderMonth(btnYear.month)
+            orderMonth(btnYear.month, btnYear.name)
           }}
         >
           一年份

@@ -55,7 +55,7 @@ function KitIndex(props) {
           </p>
           {/* 區塊一 */}
           <div className="kit-index-info-wrap-one">
-            {/* 一小塊 */}
+            {/* 一小塊-每月配送 */}
             <div
               className="kit-index-info-box"
               data-aos="fade-up"
@@ -67,12 +67,14 @@ function KitIndex(props) {
                   每個月寄到妳的手中
                 </h4>
                 <p className="kit-index-p">
-                  將於每個月15號宅配寄送散裝禮盒，減少因包裝而產生的垃圾量，定時寄送，
+                  下訂後將於每個月15號定時寄送，宅配到妳的手中，
                   再也不用擔心沒注意到家裡的生理用品庫存。
+                  <br />
+                  方案到期前一個月會以簡訊通知配送期將滿，請會員進會員頁面續約或者是更換配送方案。
                 </p>
               </div>
             </div>
-            {/* 一小塊 */}
+            {/* 一小塊-每月配送 */}
             <div
               className="kit-index-info-img-1"
               data-aos="fade-left"
@@ -82,7 +84,7 @@ function KitIndex(props) {
           </div>
           {/* 區塊二 */}
           <div className="kit-index-info-wrap kit-index-info-wrap">
-            {/* 一小塊 */}
+            {/* 一小塊-終止合約 */}
             <div
               className="kit-index-info-img-2"
               data-aos="fade-right"
@@ -94,7 +96,7 @@ function KitIndex(props) {
               data-aos="fade-up"
               data-aos-duration="2000"
             >
-              {/* 一小塊 */}
+              {/* 一小塊-終止合約 */}
               <div>
                 <div className="kit-shake-hands">
                   <SvgShakeHand />
@@ -118,6 +120,26 @@ function KitIndex(props) {
         data-aos="fade-up"
         data-aos-duration="3000"
       ></div>
+      <div className="kit-index-info-wrap-last">
+        {/* 一小塊-環保散裝 */}
+        <div
+          className="kit-index-info-box-last"
+          data-aos="fade-up"
+          data-aos-duration="2000"
+        >
+          <SvgSurprise />
+          <div className="kit-index-info-text">
+            <h4 className="h4-tc kit-index-info-text-title">
+              Lunar Phase 特製禮盒
+            </h4>
+            <p className="kit-index-p">
+              將各項商品以裸裝方式裝進再生紙盒中，
+              <br />
+              一次將每個月需要的內容寄送給你，減少因包裝而產生的垃圾量。
+            </p>
+          </div>
+        </div>
+      </div>
       <div
         className="kit-index-bottom-text"
         data-aos="fade-up"

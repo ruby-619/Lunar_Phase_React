@@ -169,7 +169,6 @@ function KitShoppingList(props) {
       threeBtn.arr[0].click = true
       arrthreeBtn = threeBtn.arr[0]
       setCatEp(arrthreeBtn)
-
     }
     setCuteBtn(threeBtn)
     // console.log('這邊///', cuteBtn)
@@ -420,7 +419,7 @@ function KitShoppingList(props) {
     let kitcartDE = [
       {
         id: '1',
-        name: catDay[0].kitCategoryName,
+        name: catDay[0].kitCategoryName + '(' + clickName + ')',
         amount: clickMon,
         price: Number(moneyD),
         itemImg: `/img/Kit/${shoppingItemDay[0].kitImg}`,
@@ -496,6 +495,7 @@ function KitShoppingList(props) {
         <SummaryBig
           catDay={catDay}
           catEp={catEp}
+          clickName={clickName}
           handle={handle}
           smallTotalD={smallTotalD}
           smallTotalE={smallTotalE}

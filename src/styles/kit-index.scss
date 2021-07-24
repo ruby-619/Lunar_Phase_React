@@ -41,6 +41,7 @@
 
 .kit-index-hero-icon-2 {
   margin-top: 25px;
+
 }
 
 /* 前導文區塊 */
@@ -51,6 +52,7 @@
 
 .kit-index-p {
   margin: 5px 0;
+  text-align: center;
 }
 
 .kit-index-info-title {
@@ -96,11 +98,29 @@
 
 .kit-index-hero-2 {
   width: 100%;
-  height: 520px;
+  height: 480px;
   // border:solid #e64b4b;
-  margin-bottom: 25px;
-  background: url('http://localhost:3333/img/Kit/lunarBox.jpg') no-repeat center
+  // margin-bottom: 25px;
+  background: linear-gradient(to top, rgba(247, 247, 238, 100), rgba(247, 247, 238, 0)),url('http://localhost:3333/img/Kit/lunarBox.jpg') no-repeat center
     30%/ 100%;
+  position: relative;
+}
+
+.kit-index-info-wrap-last {
+  // margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -80px;
+}
+
+.kit-index-info-box-last {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  margin: 0 80px;
 }
 
 .kit-index-info-text {

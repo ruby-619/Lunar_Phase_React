@@ -29,7 +29,9 @@ function OrderDailySet(props) {
             <div>
               {/* 本人(true為存在所以要大於0)＋本人的長度 */}
               {catDay && catDay.length > 0 ? (
-                <div className="set-title">{catDay[0].kitCategoryName}</div>
+                <div className="set-title">
+                  {catDay[0].kitCategoryName + '(' + clickName + ')'}
+                </div>
               ) : (
                 <div className="set-title"></div>
               )}
