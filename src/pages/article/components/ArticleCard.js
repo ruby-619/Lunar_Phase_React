@@ -7,7 +7,7 @@ import 'aos/dist/aos.css'
 
 const ArticleCard = () => {
   useEffect(() => {
-    AOS.init({ offset: 120, duration: 2000 })
+    AOS.init({ offset: 120, duration: 1000 })
   }, [])
   return (
     <>
