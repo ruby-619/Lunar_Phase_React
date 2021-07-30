@@ -44,7 +44,7 @@ const ArticleIndex2 = (props) => {
         <div className="container">
           <div
             className="mx-auto"
-            style={{ position: 'relative', marginTop: '150px' }}
+            style={{ position: 'relative', marginTop: '200px' }}
           >
             <h3 className="text-center my-5">｜分類文章｜</h3>
           </div>
