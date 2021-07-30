@@ -15,7 +15,6 @@ const EventNAV = (props) => {
         <div class="Enav mt-3">
           <ul class="d-flex justify-content-around">
             <li>
-              {/* <Link to={`${url}/1`}>戶外</Link> */}
               <Link to="/category/1" className="EventNavLink"><GiCampingTent/> 戶外</Link>
             </li>
             <li>
@@ -32,18 +31,6 @@ const EventNAV = (props) => {
             </li>
           </ul>
         </div>
-        {/* <Switch>
-          <Route exact path={path}></Route>
-          <Route path={`${path}/:type?/:id?`}>
-            <EventCategoryCard />
-          </Route>
-        </Switch> */}
-        {/* <Switch>
-          <Route exact path={path}></Route>
-          <Route path={`${path}/:eCategory?`}>
-            <EventCategoryCard />
-          </Route>
-        </Switch> */}
       </div>
     </div>
   )

@@ -9,11 +9,9 @@ const EventDetail = (props) => {
   const{cartQty, bmQty, updateBmQty, updateQty}=props
   return (
     <div>
-       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
-      
+        <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
         <EventDetailCard updateBmQty={updateBmQty} updateQty={updateQty} />
         <LunarPhaseFooter />
-      
     </div>
   )
 }

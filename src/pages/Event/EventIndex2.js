@@ -10,9 +10,9 @@ import Carousel1 from './components/Carousel1'
 import { GiCampingTent, GiBookCover, GiHamburgerMenu } from 'react-icons/gi'
 import { FaPaintBrush, FaHandPaper } from 'react-icons/fa'
 import {IoIosWine} from 'react-icons/io'
-// FaWineGlass
-import './Event.scss'
 
+
+// -------icons變色------------------ //
 const EventIndex2 = (props) => {
   const{cartQty, bmQty, updateQty, updateBmQty }=props
   const [color, setcolor] = useState('FDD2BB')
@@ -30,12 +30,15 @@ const EventIndex2 = (props) => {
     <>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
       <body className="bg1">
+      {/*------輪播圖 --------*/}
         <Carousel1 />
+      {/*----- 當期熱門 -------*/}
         <div class="container">
           <h2 className="TextAlignCenter mt-5">EVENT</h2>
           <div className="h6-tc TextAlignCenter mb-5">當期熱門</div>
           <div className="Empty"></div>
           <EventCard />
+       {/*----- 分類icons區 ----*/}
           <h2 className="TextAlignCenter">找更多活動</h2>
           <div className="CategoryIcons">
             <div className="d-flex justify-content-center ToHover">

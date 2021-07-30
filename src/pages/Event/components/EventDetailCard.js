@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react'
-// import SmallToLarge from '../SmallToLarge'
-// import { BsBookmark } from 'react-icons/bs'
-// import { FcBookmark } from 'react-icons/fc'
 import { withRouter } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 
 const EventDetailCard = (props) => {
   const{ updateBmQty, updateQty } = props
-  // const [total, setTotal] = useState(0)
-  // const [collection, setcollection] = useState(1)// 書籤變色（暫時註解掉）
-  // const [imageChange, setimageChange] = useState({})//小圖換大圖
   const [event, setEvent] = useState([])
   const [eventName, setEventname] = useState([])
   const [myevcart, setMyevcart] = useState([])
@@ -52,15 +46,9 @@ const EventDetailCard = (props) => {
   }
 
   async function getEventFromServer() {
-    // 開啟載入指示
-    // setDataLoading(true)
-
-    // 連接的伺服器資料網址
+    
     const id = props.match.params.id
     const url = 'http://localhost:4567/event/' + id
-    // const url = 'http://localhost:6005/event/:id?'
-
-    // 注意header資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
@@ -78,17 +66,10 @@ const EventDetailCard = (props) => {
   }
   useEffect(() => {
     getEventFromServer()
-    // const newevent = event.find((v, i) => {
-    //   return props.match.params.id === v.id
-    // })
-    // setEvent(newevent)
   }, [])
 
-  // 每次users資料有變動就會X秒後關掉載入指示
+  
   useEffect(() => {
-    setTimeout(() => {
-      setDataLoading(false)
-    }, 1000)
   }, [event])
 
   const [qty, setQty] = useState(1)
@@ -96,18 +77,12 @@ const EventDetailCard = (props) => {
   console.log(event.eventImg)
 
   console.log(event.eventImgGroup)
+
+  // 多圖陣列逗點分格
   const eventImgGroupArray = event.eventImgGroup?.split(',')
   console.log(eventImgGroupArray)
 
-  const loading = (
-    <>
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    </>
-  )
+  
   return (
     <>
       <div className="container-fluid">
@@ -120,6 +95,7 @@ const EventDetailCard = (props) => {
               >
                 <img src={`/img/Event/${event.eventImg}`} alt="" />
               </button>
+              {/* ----------map跑多圖------------ */}
               {eventImgGroupArray?.length &&
                 eventImgGroupArray.map((v, index) => {
                   return (
@@ -147,20 +123,6 @@ const EventDetailCard = (props) => {
               <div className="item-price">
                 <p className="p-price my-auto">$ {event.eventPrice}</p>
               </div>
-              {/* <button
-                className={
-                  bookmark
-                    ? 'item-bookmark-add item-bookmark-added d-flex'
-                    : 'item-bookmark-add d-flex'
-                }
-              >
-                <p
-                  onClick={() => setBookmark(!bookmark)}
-                  className="my-auto mx-0"
-                >
-                  <FaRegBookmark /> + 加入收藏
-                </p>
-              </button> */}
             </div>
             <div className="item-detail">
               <h6>特色</h6>
@@ -174,9 +136,6 @@ const EventDetailCard = (props) => {
             <div className="item-style d-flex justify-content-between">
               <h6>尚有名額</h6>
               <div></div>
-              {/* <div className="item-style-tag">
-                <p className="btn-option p-1 m-0">{optionName}</p>
-              </div> */}
             </div>
             <div className="item-qty d-flex justify-content-between">
               <h6>人數</h6>
@@ -231,16 +190,7 @@ const EventDetailCard = (props) => {
           <div className="eventNameSetting">
             <div className="h4-tc mt-5 mb-5">{event.eventName}</div>
           </div>
-          {/* <div className="photo474">
-            <img src="https://picsum.photos/474/339/?random=1" />
-          </div> */}
           <div className="col-9 m-auto p-tc EventDescriptionLineHeight">
-            {/* {event.eventDescription}
-            猶如在花園中嬉戲，
-            <br />
-            幻想與心上人漫舞的浪漫少女，
-            <br />
-            擺放於家中展現溫柔與生氣。 */}
             <div
               className="col-9 m-auto p-tc  EventDescriptionLineHeight TextAlignCenter"
               dangerouslySetInnerHTML={{ __html: event.eventDescription }}
@@ -250,12 +200,10 @@ const EventDetailCard = (props) => {
       </div>
       <div className="fluidPhoto">
       <img src={`/img/Event/${event.eventImg}`} alt="" />
-        {/* {console.log(event.eventImg)} */}
       </div>
       <div className="container">
         <div className="row">
           <div className="paper">
-            {/* <div className="col-5 NoticeFont">{event.eventNotice}</div> */}
             <div class="eventDetailContent">
               <h4 className="mb-5">活動詳細</h4>
               <div

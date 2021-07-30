@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom'
 import Calendar from 'react-calendar';
 // import CalendarChild2 from './CalendarChild2'
 import 'react-calendar/dist/Calendar.css';
@@ -18,7 +17,7 @@ function Calendar1(props) {
     updateQty()
   },[])
   
-  console.log(value.getDate()) //這裡呢 我去看看喔 你亂跑 差點找不到你拉 笑死我 這可以！是20 today!!!!!! 所以有值?對那~~~應該傳出去要ok阿 我用newMonth皆出去r 那一頁的newMonth就nan?對喔 你是怎麼知道ㄉXD 從哪裡看  我畫面上 哈哈哈 我引入他的地方 那你引入的地方在哪~傳line給你等唷
+  console.log(value.getDate()) 
   const [calStep, setCalStep] = useState(1) //第1頁:part1(calStep=1)、第2,3頁:CalendarChild2(calStep=2)
   const [calStepChild, setCalStepChild] = useState(1) //CalendarChild2之中: 第2頁:ChildPart1(calStepChild=1)或第3頁:ChildPart2(calStepChild=2)
 
@@ -30,14 +29,11 @@ function Calendar1(props) {
           {/* <div className="CalendarArea"> */}
               <h2 className="m-1">上一次生理期的第一天？</h2>
         </div>
-              <Calendar //我貼line囉 是空ㄉ 🥺 居然還可以貼emoji 可愛巴拉
+              <Calendar 
                 onChange={onChange}
-                value={value} //值是這個 //好
-                newMonth={value.getMonth()} // 這是在把月份解析出來
+                value={value} 
+                newMonth={value.getMonth()} // 把月份解析出來
                 newDate={value.getDate()}
-                
-                // 這是在把日解析出來,但傳出去貌似NaN qq 想說要先看看她會不會原本就Nan okkk         好喔  不行喔？？？？？不給con
-                
               />
           {/* </div> */}
              <div className="d-flex justify-content-end m-3">

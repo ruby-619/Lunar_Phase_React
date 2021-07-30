@@ -3,18 +3,15 @@ import { Link } from 'react-router-dom'
 
 const HomePageCard = () => {
   const [event, setEvent] = useState([])
-  const [dataLoading, setDataLoading] = useState(false)
+  // -----時間格式化-------- //
   var moment = require('moment')
 
+
   async function getEventFromServer() {
-    // 開啟載入指示
-    setDataLoading(true)
-
-    // 連接的伺服器資料網址
+    // 連接至server
     const url = 'http://localhost:4567/event'
-    // const url = 'http://localhost:6005/event/?page=1'
 
-    // 注意header資料格式要設定，伺服器才知道是json格式
+    // header資料格式設定，json格式
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
@@ -22,11 +19,10 @@ const HomePageCard = () => {
         'Content-Type': 'appliaction/json',
       }),
     })
-
     const response = await fetch(request)
     const data = await response.json()
 
-    console.log(data)
+    // console.log(data)
     // 設定資料
     setEvent(data)
   }
@@ -34,26 +30,16 @@ const HomePageCard = () => {
     getEventFromServer()
   }, [])
 
-  // 每次users資料有變動就會X秒後關掉載入指示
+  
   useEffect(() => {
-    setTimeout(() => {
-      setDataLoading(false)
-    }, 1000)
   }, [event])
 
-  const loading = (
-    <>
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    </>
-  )
+  
   return (
     <div class="container">
       <div class="row">
-        {/* card1 */}
+
+{/*---------- 資料庫取得活動資料後map出資料 ---------------*/}
         {event?.data?.map((v, i) => {
           return (
             <>
@@ -68,7 +54,6 @@ const HomePageCard = () => {
                   <div className="hcard">
                     <figure className="hcard__thumb">
                       <div className="HomePageCardPhoto">
-                      {/* <img src={`/img/Event/${event.eventImg}`} alt="" className="hcard__image" /> */}
                         <img src={`/img/Event/${v.eventImg}`} className="hcard__image" />
                       </div>
                       <figcaption className="hcard__caption">

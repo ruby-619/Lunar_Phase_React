@@ -6,9 +6,7 @@ import EventListCard from './components/EventListCard'
 // import { BsBookmark } from 'react-icons/bs'
 import EventNAV from './components/EventNAV'
 
-import './Event.scss'
-// import CategoryNav from '../Event/components/CategoryNav'
-// import OneOfCategory from './components/OneOfCategory'
+
 
 const EventList = (props) => {
   const{cartQty, bmQty, updateBmQty}=props
@@ -16,12 +14,8 @@ const EventList = (props) => {
   return (
     <div>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
-
-      {/* <body className="bg2 mt-5"> */}
       <EventNAV />
-      {/* <Input /> */}
       <EventListCard updateBmQty={updateBmQty} />
-      {/* </body> */}
       <Footer/>
     </div>
   )

@@ -6,10 +6,8 @@ import { GoLocation } from 'react-icons/go'
 import { IoMdCalendar } from 'react-icons/io'
 import { withRouter } from 'react-router-dom'
 import {IoArrowBackCircleOutline} from 'react-icons/io5'
-// import CategoryNav from './CategoryNav'
 import LunarPhaseFooter from '../../../components/LunarPhaseFooter'
 import LunarPhaseNavbar from '../../../components/LunarPhaseNavbar'
-// import CategoryNav from './CategoryNav'
 const _ = require('lodash');
 
 const EventCategoryCard = (props) => {
@@ -23,11 +21,10 @@ const EventCategoryCard = (props) => {
     // 開啟載入指示
     setDataLoading(true)
 
-    // 連接的伺服器資料網址
+    // 連接至server
     const eCategory = props.match.params.id
     const url = 'http://localhost:4567/event/category/' + eCategory
-
-    // 注意header資料格式要設定，伺服器才知道是json格式
+    // 資料格式設定
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
@@ -72,7 +69,6 @@ const EventCategoryCard = (props) => {
     <div>
       <LunarPhaseNavbar cartQty={cartQty} bmQty={bmQty}/>
       <body className="bg2">
-        {/* <CategoryNav/> */}
         <div class="container">
         <h6 className="CategoryTitle mt-3 CursorPointer" onClick={() => {
                         props.history.push(`/event-list`)

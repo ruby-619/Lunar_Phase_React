@@ -123,9 +123,8 @@ const CalendarChild2 = (props) => {
   const ChildPart2 = (
     <>
       <div class="row">
-        {/* 嗨嗨 喔你看到了 con一嚇   上面ㄇ 還這邊 應該上面就可以了 或者你可以看這頁的那個components(檢查的) prop裡面的值比較準  那你要不要直接開f12看props*/}
-        {/* 我剛剛在樓上23行下,undefined 喔喔喔喔
-         */}
+        
+        
         {/* <h2 className=""><BsNewspaper/> 血量紀錄</h2> */}
         <h2 className="mt-5">
           <ImHeart color="#E64B4B" /> 您的經期可能在{month}月{date}日開始

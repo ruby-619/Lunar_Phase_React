@@ -15,8 +15,6 @@ import Swal from 'sweetalert2'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-// import { NetworkAuthenticationRequire } from 'http-errors'
-// import { data } from 'jquery'
 
 const EventListCard = (props) => {
   
@@ -25,23 +23,20 @@ const EventListCard = (props) => {
   const [collection, setcollection] = useState([1, 1, 1, 1, 1, 1])
   const [event, setEvent] = useState([]) //初始資料
   const [data, setdata] = useState([]) //初始資料
-
   const [displayEvent, setdisplayEvent] = useState([]) //篩過之後的資料
-
-  const [dateSearch, setdateSearch] = useState('') // 日期搜尋
   const [seletedLocation, setseletedLocation] = useState('') // 地點搜尋
   const [searchWord, setSearchWord] = useState('') // 關鍵字搜尋
   const [sortBy, setSortBy] = useState('')
   const [page, setPage] = useState('')
-
   const [dataLoading, setDataLoading] = useState(false)
   
-  
-  var moment = require('moment') //日期格式化需要引入
+  var moment = require('moment') // 日期格式化
 
   let active = ''
   let items = []
   console.log(data.totalPages)
+
+  
   for (let number = 1; number <= data.totalPages; number++) {
     console.log(number)
 
@@ -58,7 +53,7 @@ const EventListCard = (props) => {
     )
   }
 
-  console.log('我是page', page)
+  // console.log('我是page', page)
 
   const updateMarkToLocalStorage = (item) => {
     const currentMark = JSON.parse(localStorage.getItem('evbookmark')) || []
@@ -78,7 +73,6 @@ const EventListCard = (props) => {
   const alertMark = () => {
     Swal.fire({
       position: 'center',
-      // icon: 'question',
       width: '30%',
       imageUrl: '/img/svg/43-music-note-outline.gif',
       title: '已加入收藏',
@@ -89,14 +83,8 @@ const EventListCard = (props) => {
 
   // 初始化資料
   async function getEventFromServer() {
-    // 開啟載入指示
-    setDataLoading(true)
-
-    // 連接的伺服器資料網址
-
+  // --------連接至server -----------//
     const url = `http://localhost:4567/event?page=${page}`
-
-    // 注意header資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
       method: 'GET',
       headers: new Headers({
@@ -104,14 +92,11 @@ const EventListCard = (props) => {
         'Content-Type': 'appliaction/json',
       }),
     })
-
-    
-
     const response = await fetch(request)
     const data = await response.json()
 
     console.log(data)
-    // 設定資料
+    //--------- 設定資料 -----------//
     setdata(data)
     setEvent(data.data)
     setdisplayEvent(data.data)
@@ -127,21 +112,18 @@ const EventListCard = (props) => {
       getEventFromServer()
     }
   }, [page])
-  // 四種篩選法
-  // 1.依照關鍵字
 
+
+  // AOS
   useEffect(() => {
-    // AOS
     AOS.init({ offset: 120, duration: 800 })
   })
 
+// -------------關鍵字篩選 ----------------- //
   const handleSearch = (event, searchWord) => {
-    // console.log(searchWord)
     let newEvent = [...event]
-
     if (searchWord) {
       newEvent = event.filter((e) => {
-        // console.log(e.eventName.includes(searchWord))
         return e.eventName.includes(searchWord)
       })
     } else {
@@ -151,15 +133,15 @@ const EventListCard = (props) => {
     //console.log(newEvent)
     return newEvent
   }
-  // 2.依照價格排序
+// --------------價格排序 -----------------//
   const handleSort = (event, sortBy) => {
     let newEvent = [...event]
 
-    // 以價格排序-由少至多
+    // 低至高
     if (sortBy === '1') {
       newEvent = [...newEvent].sort((a, b) => a.eventPrice - b.eventPrice)
     }
-
+    // 高至低
     if (sortBy === '2') {
       newEvent = [...newEvent].sort((a, b) => b.eventPrice - a.eventPrice)
     }
@@ -167,10 +149,10 @@ const EventListCard = (props) => {
     if (sortBy === '' && newEvent.length > 0) {
       newEvent = [...newEvent].sort((a, b) => a.id - b.id)
     }
-
     return newEvent
   }
-  // 3.地區間選項
+
+  // ------------- 依照選擇地區 ------------------- //
   const handleLocation = (event, seletedLocation) => {
     let newEvent = [...event]
     if (seletedLocation === '1') {
@@ -179,60 +161,27 @@ const EventListCard = (props) => {
     if (seletedLocation === '7') {
       newEvent = [...newEvent].filter((e) => e.eventLocation === '宜蘭縣')
     }
-
-    //   case '桃園市':
-    //     newEvent = [...newEvent].filter((e) => {
-    //       return e.eventLocation === '桃園市'
-    //     })
-    //     break
-    //   // 指所有的產品都出現
-    //   default:
-    //     break
     // }
 
     return newEvent
   }
 
-  // 每次users資料有變動就會X秒後關掉載入指示
+  
   useEffect(() => {
-    console.log(searchWord)
     let newEvent = [...event]
-
     newEvent = handleSearch(newEvent, searchWord)
-    console.log(newEvent)
     newEvent = handleSort(newEvent, sortBy)
-    console.log(newEvent)
     newEvent = handleLocation(newEvent, seletedLocation)
-    console.log(newEvent)
+    
     setdisplayEvent(newEvent)
-
-
-    setTimeout(() => {
-      setDataLoading(false)
-    }, 1000)
   }, [event, searchWord, sortBy, seletedLocation])
 
-  const loading = (
-    <>
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
-        </div>
-      </div>
-    </>
-  )
-
+  
   return (
     <div>
-      <body className="bg2">
         <div class="container">
           <div class="row">
-            {/* <div class="row"> */}
             <div className="d-flex">
-              {/* <DateSearch
-                dateSearch={dateSearch}
-                setdateSearch={setdateSearch}
-              /> */}
               <Location
                 seletedLocation={seletedLocation}
                 setseletedLocation={setseletedLocation}
@@ -241,10 +190,9 @@ const EventListCard = (props) => {
               <SearchBar
                 searchWord={searchWord}
                 setSearchWord={setSearchWord}
-                className=""
               />
             </div>
-            {/* </div> */}
+           
 
             {displayEvent.map((v, i) => {
               return (
@@ -285,7 +233,7 @@ const EventListCard = (props) => {
                                   newCollection[i] === 1 ? 0 : 1
                                 setcollection(newCollection)
                                 updateMarkToLocalStorage({
-                                  id: v.id, //傳Id
+                                  id: v.id, 
                                   name: v.eventName,
                                   date: v.eventDate,
                                   image: `/img/Event/${v.eventImg}`,
@@ -333,7 +281,6 @@ const EventListCard = (props) => {
             <div>{/* <Pagination>{items}</Pagination> */}</div>
           </div>
         </div>
-      </body>
     </div>
   )
 }

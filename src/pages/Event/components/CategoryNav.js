@@ -6,10 +6,7 @@ import { FaPaintBrush, FaHandPaper, FaWineGlass } from 'react-icons/fa'
 const CategoryNav = () => {
   return (
     <>
-      {/* <link
-        rel="stylesheet"
-        href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-      /> */}
+      
       <nav className="menu">
         <input
           type="checkbox"
